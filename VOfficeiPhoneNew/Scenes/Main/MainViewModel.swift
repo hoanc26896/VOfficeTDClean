@@ -26,6 +26,15 @@ extension MainViewModel: ViewModel {
 
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
         let output = Output()
+        
+        input.load
+            .drive(onNext: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                    self.navigator.toLogin()
+                }
+            })
+            .disposed(by: disposeBag)
+        
 
         return output
     }

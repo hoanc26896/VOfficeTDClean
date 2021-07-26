@@ -13,6 +13,7 @@ def pods
     # Core
     pod 'Reusable', '~> 4.1'
     pod 'Then', '~> 2.7'
+    pod 'SnapKit', '~> 4.0'
 
     # Others
     pod 'MBProgressHUD', '~> 1.2'

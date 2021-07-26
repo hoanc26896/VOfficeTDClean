@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,6 +38,33 @@
 		2E9AC34126AEA8D1005C5FA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9AC33F26AEA8D1005C5FA9 /* LaunchScreen.storyboard */; };
 		2E9AC34C26AEA8D1005C5FA9 /* VOfficeiPhoneNewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC34B26AEA8D1005C5FA9 /* VOfficeiPhoneNewTests.swift */; };
 		2E9AC35726AEA8D1005C5FA9 /* VOfficeiPhoneNewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC35626AEA8D1005C5FA9 /* VOfficeiPhoneNewUITests.swift */; };
+		2E9AC36726AEAC24005C5FA9 /* logo_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9AC36626AEAC24005C5FA9 /* logo_home.png */; };
+		2E9AC39726AEB1A0005C5FA9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9AC39626AEB1A0005C5FA9 /* Login.storyboard */; };
+		2E9AC39826AEB1A0005C5FA9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9AC39626AEB1A0005C5FA9 /* Login.storyboard */; };
+		2E9AC39926AEB1A0005C5FA9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9AC39626AEB1A0005C5FA9 /* Login.storyboard */; };
+		2E9AC39B26AEB218005C5FA9 /* Storyboards+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC39A26AEB218005C5FA9 /* Storyboards+Login.swift */; };
+		2E9AC39C26AEB218005C5FA9 /* Storyboards+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC39A26AEB218005C5FA9 /* Storyboards+Login.swift */; };
+		2E9AC39D26AEB218005C5FA9 /* Storyboards+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC39A26AEB218005C5FA9 /* Storyboards+Login.swift */; };
+		2E9AC3A326AEB481005C5FA9 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC39E26AEB481005C5FA9 /* LoginAssembler.swift */; };
+		2E9AC3A426AEB481005C5FA9 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC39E26AEB481005C5FA9 /* LoginAssembler.swift */; };
+		2E9AC3A526AEB481005C5FA9 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC39E26AEB481005C5FA9 /* LoginAssembler.swift */; };
+		2E9AC3A626AEB481005C5FA9 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC39F26AEB481005C5FA9 /* LoginNavigator.swift */; };
+		2E9AC3A726AEB481005C5FA9 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC39F26AEB481005C5FA9 /* LoginNavigator.swift */; };
+		2E9AC3A826AEB481005C5FA9 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC39F26AEB481005C5FA9 /* LoginNavigator.swift */; };
+		2E9AC3A926AEB481005C5FA9 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC3A026AEB481005C5FA9 /* LoginUseCase.swift */; };
+		2E9AC3AA26AEB481005C5FA9 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC3A026AEB481005C5FA9 /* LoginUseCase.swift */; };
+		2E9AC3AB26AEB481005C5FA9 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC3A026AEB481005C5FA9 /* LoginUseCase.swift */; };
+		2E9AC3AC26AEB481005C5FA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC3A126AEB481005C5FA9 /* LoginViewController.swift */; };
+		2E9AC3AD26AEB481005C5FA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC3A126AEB481005C5FA9 /* LoginViewController.swift */; };
+		2E9AC3AE26AEB481005C5FA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC3A126AEB481005C5FA9 /* LoginViewController.swift */; };
+		2E9AC3AF26AEB481005C5FA9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC3A226AEB481005C5FA9 /* LoginViewModel.swift */; };
+		2E9AC3B026AEB481005C5FA9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC3A226AEB481005C5FA9 /* LoginViewModel.swift */; };
+		2E9AC3B126AEB481005C5FA9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9AC3A226AEB481005C5FA9 /* LoginViewModel.swift */; };
+		2E9AC3B326AEBC5E005C5FA9 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9AC3B226AEBC5E005C5FA9 /* bg_login.png */; };
+		2E9AC3B426AEBC5E005C5FA9 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9AC3B226AEBC5E005C5FA9 /* bg_login.png */; };
+		2E9AC3B526AEBC5E005C5FA9 /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E9AC3B226AEBC5E005C5FA9 /* bg_login.png */; };
+		B48A06A7E0B3EAA919E4F695 /* Pods_VOfficeiPhoneNew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5083735EFC66A7D009D135E /* Pods_VOfficeiPhoneNew.framework */; };
+		DEA56DD896FA5CD8E6C5A789 /* Pods_VOfficeiPhoneNewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F9BB31D545FB36F86A6D338 /* Pods_VOfficeiPhoneNewTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +87,7 @@
 /* Begin PBXFileReference section */
 		2E9AC2F926AEA8CD005C5FA9 /* VOfficeiPhoneNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOfficeiPhoneNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9AC2FC26AEA8CD005C5FA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2E9AC2FE26AEA8CD005C5FA9 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		2E9AC2FE26AEA8CD005C5FA9 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2E9AC30026AEA8CD005C5FA9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
 		2E9AC30226AEA8CD005C5FA9 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		2E9AC30426AEA8CD005C5FA9 /* UnitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +122,21 @@
 		2E9AC35226AEA8D1005C5FA9 /* VOfficeiPhoneNewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VOfficeiPhoneNewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9AC35626AEA8D1005C5FA9 /* VOfficeiPhoneNewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VOfficeiPhoneNewUITests.swift; sourceTree = "<group>"; };
 		2E9AC35826AEA8D1005C5FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E9AC36626AEAC24005C5FA9 /* logo_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_home.png; sourceTree = "<group>"; };
+		2E9AC39626AEB1A0005C5FA9 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		2E9AC39A26AEB218005C5FA9 /* Storyboards+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboards+Login.swift"; sourceTree = "<group>"; };
+		2E9AC39E26AEB481005C5FA9 /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
+		2E9AC39F26AEB481005C5FA9 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
+		2E9AC3A026AEB481005C5FA9 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		2E9AC3A126AEB481005C5FA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2E9AC3A226AEB481005C5FA9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2E9AC3B226AEBC5E005C5FA9 /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
+		399207CA5071853C775A4DA1 /* Pods-VOfficeiPhoneNew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNew.debug.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNew/Pods-VOfficeiPhoneNew.debug.xcconfig"; sourceTree = "<group>"; };
+		6F36806276DA2D9404A9BAAA /* Pods-VOfficeiPhoneNewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNewTests.release.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests.release.xcconfig"; sourceTree = "<group>"; };
+		6F9BB31D545FB36F86A6D338 /* Pods_VOfficeiPhoneNewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VOfficeiPhoneNewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8068063B970CE31F19859E64 /* Pods-VOfficeiPhoneNewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNewTests.debug.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E5083735EFC66A7D009D135E /* Pods_VOfficeiPhoneNew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VOfficeiPhoneNew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFA3FF239CA754241F6750FF /* Pods-VOfficeiPhoneNew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNew.release.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNew/Pods-VOfficeiPhoneNew.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B48A06A7E0B3EAA919E4F695 /* Pods_VOfficeiPhoneNew.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA56DD896FA5CD8E6C5A789 /* Pods_VOfficeiPhoneNewTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +166,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08F8C46997C0AF5AF2ABACD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5083735EFC66A7D009D135E /* Pods_VOfficeiPhoneNew.framework */,
+				6F9BB31D545FB36F86A6D338 /* Pods_VOfficeiPhoneNewTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		25E6C10677F6ECE68A69961B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				399207CA5071853C775A4DA1 /* Pods-VOfficeiPhoneNew.debug.xcconfig */,
+				EFA3FF239CA754241F6750FF /* Pods-VOfficeiPhoneNew.release.xcconfig */,
+				8068063B970CE31F19859E64 /* Pods-VOfficeiPhoneNewTests.debug.xcconfig */,
+				6F36806276DA2D9404A9BAAA /* Pods-VOfficeiPhoneNewTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2E9AC2F026AEA8CD005C5FA9 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +193,8 @@
 				2E9AC34A26AEA8D1005C5FA9 /* VOfficeiPhoneNewTests */,
 				2E9AC35526AEA8D1005C5FA9 /* VOfficeiPhoneNewUITests */,
 				2E9AC2FA26AEA8CD005C5FA9 /* Products */,
+				25E6C10677F6ECE68A69961B /* Pods */,
+				08F8C46997C0AF5AF2ABACD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +211,7 @@
 		2E9AC2FB26AEA8CD005C5FA9 /* VOfficeiPhoneNew */ = {
 			isa = PBXGroup;
 			children = (
+				2E9AC36426AEABE1005C5FA9 /* Resources */,
 				2E9AC2FC26AEA8CD005C5FA9 /* AppDelegate.swift */,
 				2E9AC2FE26AEA8CD005C5FA9 /* Podfile */,
 				2E9AC30026AEA8CD005C5FA9 /* .swiftlint.yml */,
@@ -226,6 +293,7 @@
 		2E9AC31D26AEA8CD005C5FA9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2E9AC37D26AEB0E3005C5FA9 /* Login */,
 				2E9AC31E26AEA8CD005C5FA9 /* Storyboards.swift */,
 				2E9AC32026AEA8CD005C5FA9 /* App */,
 				2E9AC32926AEA8CD005C5FA9 /* Main */,
@@ -285,6 +353,37 @@
 			path = VOfficeiPhoneNewUITests;
 			sourceTree = "<group>";
 		};
+		2E9AC36426AEABE1005C5FA9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2E9AC36526AEABF3005C5FA9 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2E9AC36526AEABF3005C5FA9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2E9AC3B226AEBC5E005C5FA9 /* bg_login.png */,
+				2E9AC36626AEAC24005C5FA9 /* logo_home.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		2E9AC37D26AEB0E3005C5FA9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2E9AC39626AEB1A0005C5FA9 /* Login.storyboard */,
+				2E9AC39A26AEB218005C5FA9 /* Storyboards+Login.swift */,
+				2E9AC39E26AEB481005C5FA9 /* LoginAssembler.swift */,
+				2E9AC39F26AEB481005C5FA9 /* LoginNavigator.swift */,
+				2E9AC3A026AEB481005C5FA9 /* LoginUseCase.swift */,
+				2E9AC3A126AEB481005C5FA9 /* LoginViewController.swift */,
+				2E9AC3A226AEB481005C5FA9 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -292,9 +391,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E9AC35B26AEA8D1005C5FA9 /* Build configuration list for PBXNativeTarget "VOfficeiPhoneNew" */;
 			buildPhases = (
+				D45F55C1B74DB5FA3E28B94C /* [CP] Check Pods Manifest.lock */,
 				2E9AC2F526AEA8CD005C5FA9 /* Sources */,
 				2E9AC2F626AEA8CD005C5FA9 /* Frameworks */,
 				2E9AC2F726AEA8CD005C5FA9 /* Resources */,
+				C0FDBEDB049AE924571EA743 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,9 +410,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E9AC35E26AEA8D1005C5FA9 /* Build configuration list for PBXNativeTarget "VOfficeiPhoneNewTests" */;
 			buildPhases = (
+				D9B4E9E01C3EA6D5B8EE3E04 /* [CP] Check Pods Manifest.lock */,
 				2E9AC34326AEA8D1005C5FA9 /* Sources */,
 				2E9AC34426AEA8D1005C5FA9 /* Frameworks */,
 				2E9AC34526AEA8D1005C5FA9 /* Resources */,
+				2D4D78D4FE67970B068B95E3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -388,13 +491,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E9AC3B326AEBC5E005C5FA9 /* bg_login.png in Resources */,
 				2E9AC30C26AEA8CD005C5FA9 /* Entity.md in Resources */,
+				2E9AC36726AEAC24005C5FA9 /* logo_home.png in Resources */,
 				2E9AC32B26AEA8CD005C5FA9 /* Main.storyboard in Resources */,
 				2E9AC30126AEA8CD005C5FA9 /* .swiftlint.yml in Resources */,
 				2E9AC30F26AEA8CD005C5FA9 /* UseCase.md in Resources */,
 				2E9AC34126AEA8D1005C5FA9 /* LaunchScreen.storyboard in Resources */,
 				2E9AC33E26AEA8D1005C5FA9 /* Assets.xcassets in Resources */,
 				2E9AC2FF26AEA8CD005C5FA9 /* Podfile in Resources */,
+				2E9AC39726AEB1A0005C5FA9 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +508,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E9AC3B426AEBC5E005C5FA9 /* bg_login.png in Resources */,
+				2E9AC39826AEB1A0005C5FA9 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,31 +517,120 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E9AC3B526AEBC5E005C5FA9 /* bg_login.png in Resources */,
+				2E9AC39926AEB1A0005C5FA9 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D4D78D4FE67970B068B95E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0FDBEDB049AE924571EA743 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VOfficeiPhoneNew/Pods-VOfficeiPhoneNew-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VOfficeiPhoneNew/Pods-VOfficeiPhoneNew-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VOfficeiPhoneNew/Pods-VOfficeiPhoneNew-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D45F55C1B74DB5FA3E28B94C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VOfficeiPhoneNew-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9B4E9E01C3EA6D5B8EE3E04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VOfficeiPhoneNewTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2E9AC2F526AEA8CD005C5FA9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E9AC3AC26AEB481005C5FA9 /* LoginViewController.swift in Sources */,
 				2E9AC30826AEA8CD005C5FA9 /* APIUrls.swift in Sources */,
 				2E9AC32F26AEA8CD005C5FA9 /* MainAssembler.swift in Sources */,
+				2E9AC39B26AEB218005C5FA9 /* Storyboards+Login.swift in Sources */,
 				2E9AC31526AEA8CD005C5FA9 /* APIInput.swift in Sources */,
 				2E9AC32826AEA8CD005C5FA9 /* AppViewModel.swift in Sources */,
+				2E9AC3A626AEB481005C5FA9 /* LoginNavigator.swift in Sources */,
 				2E9AC32D26AEA8CD005C5FA9 /* Storyboards+Main.swift in Sources */,
 				2E9AC33526AEA8CD005C5FA9 /* MainViewController.swift in Sources */,
 				2E9AC30526AEA8CD005C5FA9 /* UnitTestViewController.swift in Sources */,
 				2E9AC32626AEA8CD005C5FA9 /* AppUseCase.swift in Sources */,
 				2E9AC30326AEA8CD005C5FA9 /* Assembler.swift in Sources */,
+				2E9AC3A926AEB481005C5FA9 /* LoginUseCase.swift in Sources */,
 				2E9AC33326AEA8CD005C5FA9 /* MainUseCase.swift in Sources */,
 				2E9AC31C26AEA8CD005C5FA9 /* GatewaysAssembler.swift in Sources */,
 				2E9AC32426AEA8CD005C5FA9 /* AppNavigator.swift in Sources */,
 				2E9AC33126AEA8CD005C5FA9 /* MainNavigator.swift in Sources */,
+				2E9AC3A326AEB481005C5FA9 /* LoginAssembler.swift in Sources */,
 				2E9AC31726AEA8CD005C5FA9 /* APIOutput.swift in Sources */,
 				2E9AC33A26AEA8CD005C5FA9 /* UIViewController+.swift in Sources */,
+				2E9AC3AF26AEB481005C5FA9 /* LoginViewModel.swift in Sources */,
 				2E9AC32226AEA8CD005C5FA9 /* AppAssembler.swift in Sources */,
 				2E9AC33726AEA8CD005C5FA9 /* MainViewModel.swift in Sources */,
 				2E9AC31F26AEA8CD005C5FA9 /* Storyboards.swift in Sources */,
@@ -448,7 +645,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E9AC3AD26AEB481005C5FA9 /* LoginViewController.swift in Sources */,
+				2E9AC39C26AEB218005C5FA9 /* Storyboards+Login.swift in Sources */,
 				2E9AC34C26AEA8D1005C5FA9 /* VOfficeiPhoneNewTests.swift in Sources */,
+				2E9AC3A426AEB481005C5FA9 /* LoginAssembler.swift in Sources */,
+				2E9AC3A726AEB481005C5FA9 /* LoginNavigator.swift in Sources */,
+				2E9AC3AA26AEB481005C5FA9 /* LoginUseCase.swift in Sources */,
+				2E9AC3B026AEB481005C5FA9 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +659,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E9AC3AE26AEB481005C5FA9 /* LoginViewController.swift in Sources */,
+				2E9AC39D26AEB218005C5FA9 /* Storyboards+Login.swift in Sources */,
 				2E9AC35726AEA8D1005C5FA9 /* VOfficeiPhoneNewUITests.swift in Sources */,
+				2E9AC3A526AEB481005C5FA9 /* LoginAssembler.swift in Sources */,
+				2E9AC3A826AEB481005C5FA9 /* LoginNavigator.swift in Sources */,
+				2E9AC3AB26AEB481005C5FA9 /* LoginUseCase.swift in Sources */,
+				2E9AC3B126AEB481005C5FA9 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +814,7 @@
 		};
 		2E9AC35C26AEA8D1005C5FA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 399207CA5071853C775A4DA1 /* Pods-VOfficeiPhoneNew.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -624,6 +834,7 @@
 		};
 		2E9AC35D26AEA8D1005C5FA9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFA3FF239CA754241F6750FF /* Pods-VOfficeiPhoneNew.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -643,6 +854,7 @@
 		};
 		2E9AC35F26AEA8D1005C5FA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8068063B970CE31F19859E64 /* Pods-VOfficeiPhoneNewTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -665,6 +877,7 @@
 		};
 		2E9AC36026AEA8D1005C5FA9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F36806276DA2D9404A9BAAA /* Pods-VOfficeiPhoneNewTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

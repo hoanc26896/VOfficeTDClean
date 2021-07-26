@@ -8,6 +8,7 @@
 protocol Assembler: AnyObject,
                     MainAssembler,
                     AppAssembler,
+                    LoginAssembler,
                     GatewaysAssembler {
     
 }
