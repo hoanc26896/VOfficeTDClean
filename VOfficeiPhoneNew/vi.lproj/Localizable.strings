@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  VOfficeiPhoneNew
+
+  Created by Hoa Nguyen on 7/27/21.
+  
+*/
+// Global
+"gl_thong_bao" = "Thông báo";
+
+// Login
+"lg_dang_nhap" = "Đăng nhập";
+"lg_tieng_viet" = "Tiếng Việt";
+"lg_tieng_anh" = "English";
+"lg_tai_khoan" = "Tài khoản";
+"lg_mat_khau" = "Mật khẩu";
+"lg_dang_ket_noi" = "Đang kết nối...";
+"lg_dong_chi_chua_nhap_tai_khoan" = "Đồng chí chưa nhập tài khoản.";
+"lg_dong_chi_chua_nhap_mat_khau" = "Đồng chí chưa nhập mật khẩu.";

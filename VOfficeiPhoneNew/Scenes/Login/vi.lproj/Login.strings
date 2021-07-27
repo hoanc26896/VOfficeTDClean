@@ -1,0 +1,15 @@
+
+/* Class = "UISegmentedControl"; 9Pg-vt-R39.segmentTitles[0] = "Tiếng Việt"; ObjectID = "9Pg-vt-R39"; */
+"9Pg-vt-R39.segmentTitles[0]" = "Tiếng Việt";
+
+/* Class = "UISegmentedControl"; 9Pg-vt-R39.segmentTitles[1] = "English"; ObjectID = "9Pg-vt-R39"; */
+"9Pg-vt-R39.segmentTitles[1]" = "English";
+
+/* Class = "UITextField"; placeholder = "Tài khoản"; ObjectID = "GKw-2P-0dO"; */
+"GKw-2P-0dO.placeholder" = "Tài khoản";
+
+/* Class = "UITextField"; placeholder = "Mật khẩu"; ObjectID = "TdH-r2-6Tb"; */
+"TdH-r2-6Tb.placeholder" = "Mật khẩu";
+
+/* Class = "UIButton"; normalTitle = "Đăng nhập"; ObjectID = "Y0K-iH-Fox"; */
+"Y0K-iH-Fox.normalTitle" = "Đăng nhập";

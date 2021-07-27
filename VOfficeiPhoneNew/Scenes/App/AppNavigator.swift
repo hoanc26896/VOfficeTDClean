@@ -17,9 +17,9 @@ struct AppNavigator: AppNavigatorType {
     
     func toMain() {
         let nav = UINavigationController()
+        nav.navigationBar.isHidden = true
         let vc: MainViewController = assembler.resolve(navigationController: nav)
         nav.viewControllers.append(vc)
-        
         window.rootViewController = nav
         window.makeKeyAndVisible()
     }
