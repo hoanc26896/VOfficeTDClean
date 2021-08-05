@@ -108,6 +108,15 @@
                                             <constraint firstItem="Y0K-iH-Fox" firstAttribute="leading" secondItem="zdG-vd-zHP" secondAttribute="leading" constant="25" id="scT-DZ-JaK"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXh-zm-g6M">
+                                        <rect key="frame" x="110" y="295" width="60" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="TFb-Nu-EPZ"/>
+                                            <constraint firstAttribute="height" constant="70" id="fcF-4T-gU7"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <state key="normal" image="icTouchId"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -115,6 +124,7 @@
                                     <constraint firstAttribute="trailing" secondItem="to6-r9-ACG" secondAttribute="trailing" constant="16" id="8pz-zZ-ZW7"/>
                                     <constraint firstItem="zdG-vd-zHP" firstAttribute="leading" secondItem="zch-7d-2nb" secondAttribute="leading" id="Ef3-AF-ACE"/>
                                     <constraint firstAttribute="bottom" secondItem="1y8-n9-TIq" secondAttribute="bottom" id="FpQ-ow-av1"/>
+                                    <constraint firstItem="aXh-zm-g6M" firstAttribute="top" secondItem="zdG-vd-zHP" secondAttribute="bottom" constant="15" id="I4L-vh-O6E"/>
                                     <constraint firstItem="1y8-n9-TIq" firstAttribute="leading" secondItem="zch-7d-2nb" secondAttribute="leading" id="MfY-HH-QaZ"/>
                                     <constraint firstItem="to6-r9-ACG" firstAttribute="top" secondItem="zch-7d-2nb" secondAttribute="top" constant="10" id="Qdb-jG-w65"/>
                                     <constraint firstAttribute="trailing" secondItem="1y8-n9-TIq" secondAttribute="trailing" id="V2M-yc-ImL"/>
@@ -123,14 +133,15 @@
                                     <constraint firstAttribute="width" constant="280" id="fv1-x8-X8O"/>
                                     <constraint firstAttribute="trailing" secondItem="zdG-vd-zHP" secondAttribute="trailing" id="hzF-2o-TcJ"/>
                                     <constraint firstItem="1y8-n9-TIq" firstAttribute="top" secondItem="zch-7d-2nb" secondAttribute="top" id="lWg-Ye-VxB"/>
+                                    <constraint firstItem="aXh-zm-g6M" firstAttribute="centerX" secondItem="zch-7d-2nb" secondAttribute="centerX" id="m9M-yU-tyy"/>
                                     <constraint firstAttribute="height" constant="280" id="pel-Md-8Qb"/>
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Pg-vt-R39">
-                                <rect key="frame" x="244" y="44" width="160" height="33"/>
+                                <rect key="frame" x="224" y="44" width="180" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="dW8-7m-NRX"/>
-                                    <constraint firstAttribute="width" constant="160" id="l2H-rV-rsT"/>
+                                    <constraint firstAttribute="width" constant="180" id="l2H-rV-rsT"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Tiếng Việt"/>
@@ -153,6 +164,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnBiometric" destination="aXh-zm-g6M" id="GuV-VI-tco"/>
                         <outlet property="btnLogin" destination="Y0K-iH-Fox" id="bpz-8L-Asc"/>
                         <outlet property="smLanguage" destination="9Pg-vt-R39" id="MzN-vp-FlR"/>
                         <outlet property="tfPassword" destination="TdH-r2-6Tb" id="7Pu-kL-7Zt"/>
@@ -169,9 +181,13 @@
         <image name="IcPassword" width="275" height="46"/>
         <image name="IcUser" width="275" height="46"/>
         <image name="bg_login.png" width="768" height="1280"/>
+        <image name="icTouchId" width="48" height="48"/>
         <image name="logo_home.png" width="360" height="172"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

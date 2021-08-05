@@ -21,18 +21,21 @@ final class LoginViewController: UIViewController, Bindable {
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var smLanguage: UISegmentedControl!
+    @IBOutlet weak var btnBiometric: UIButton!
+    
     
     // MARK: - Properties
     
     var viewModel: LoginViewModel!
     var disposeBag = DisposeBag()
     
-    // MARK: - Life Cycle
+    // MARK: - Constant
+    static let VIETNAMMESE_SM_INDEX = 0
+    static let ENGLIST_SM_INDEX = 1
     
     // MARK: - Variable
-    var isUserShowAlert = true
-    var isPassShowAlert = true
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
@@ -46,12 +49,19 @@ final class LoginViewController: UIViewController, Bindable {
     // MARK: - Methods
     
     private func configView() {
+        // segment control language
+//        smLanguage.selectedSegmentIndex = AppSettings.language == "vi" ? LoginViewController.VIETNAMMESE_SM_INDEX : LoginViewController.ENGLIST_SM_INDEX
         
+        // biometric btn
+        btnBiometric.tintColor = .systemRed
+        btnBiometric.backgroundColor = .white
+        btnBiometric.layer.cornerRadius = 20
+        btnBiometric.isHidden = BiometricContext.isAllowBioButton()
     }
     
     private func configLocalizeToView(){
-        smLanguage.setTitle(localize(key: "lg_tieng_viet", comment: "Viettnammese segment title"), forSegmentAt: 0)
-        smLanguage.setTitle(localize(key: "lg_tieng_anh", comment: "Englist segment title"), forSegmentAt: 1)
+        smLanguage.setTitle(localize(key: "lg_tieng_viet", comment: "Viettnammese segment title"), forSegmentAt: LoginViewController.VIETNAMMESE_SM_INDEX)
+        smLanguage.setTitle(localize(key: "lg_tieng_anh", comment: "Englist segment title"), forSegmentAt: LoginViewController.ENGLIST_SM_INDEX)
         
         tfUsername.placeholder = localize(key: "lg_tai_khoan", comment: "Placeholder username textfield")
         tfPassword.placeholder = localize(key: "lg_mat_khau", comment: "Placeholder password textfield")
@@ -59,17 +69,22 @@ final class LoginViewController: UIViewController, Bindable {
     }
     
     func bindViewModel() {
-        let input = LoginViewModel.Input(
-            username: tfUsername.rx.text.orEmpty.asDriver(), password: tfPassword.rx.text.orEmpty.asDriver(), login: btnLogin.rx.tap.asDriver()
-        )
+        let usernameDriver = tfUsername.rx.text.orEmpty.asDriver()
+        let passwordDriver = tfPassword.rx.text.orEmpty.asDriver()
+        let loginDriver = btnLogin.rx.tap.asDriver()
+        let selectSegmentDriver = smLanguage.rx.selectedSegmentIndex.asDriver()
+        let biometricTouchDriver = btnBiometric.rx.tap.asDriver()
+        
+        let input = LoginViewModel.Input.init(username: usernameDriver, password: passwordDriver, login: loginDriver, selectSegment: selectSegmentDriver, biometricTouch: biometricTouchDriver)
         
         let output = viewModel.transform(input, disposeBag: disposeBag)
         
-        output.$usernameValidationMessage.asDriver().drive(usernameValidationMessageBinder).disposed(by: disposeBag)
+        output.$userValidation.asDriver().drive(usernameValidationMessageBinder).disposed(by: disposeBag)
         
-        output.$passwordValidationMessage.asDriver().drive(passwordValidationMessageBinder).disposed(by: disposeBag)
+        output.$passValidation.asDriver().drive(passwordValidationMessageBinder).disposed(by: disposeBag)
         
-        output.$isLoginEnabled.asDriver().drive(loginEnabledBinder).disposed(by: disposeBag)
+        //        output.$isLoginEnabled.asDriver().drive(loginEnabledBinder).disposed(by: disposeBag)
+//        output.$segmentIndex.asDriver().drive(segmentIndexBinder).disposed(by: disposeBag)
         
         output.$isLoading.asDriver().drive(rx.isLoading).disposed(by: disposeBag)
         
@@ -80,29 +95,24 @@ final class LoginViewController: UIViewController, Bindable {
 
 // MARK: - Binders
 extension LoginViewController {
-    var usernameValidationIsValidBinder: Binder<Bool>{
-        return Binder(self) { vc, isValid in
-            vc.isUserShowAlert = !isValid
+    
+    var usernameValidationMessageBinder: Binder<ValidateLoginError> {
+        return Binder(self) { vc, validate in
+//            vc.tfUsername.resignFirstResponder()
+            if (!validate.isValid && !validate.message.isEmpty){
+                vc.showError(message: validate.message)
+//                vc.tfUsername.becomeFirstResponder()
+            }
         }
     }
     
-    var usernameValidationMessageBinder: Binder<String> {
-        return Binder(self) { vc, message in
-            if !vc.isUserShowAlert {return}
-            vc.showError(message: message)
-        }
-    }
-    
-    var passwordValidationIsValidBinder: Binder<Bool>{
-              return Binder(self) { vc, isValid in
-                  vc.isPassShowAlert = !isValid
-              }
-          }
-    
-    var passwordValidationMessageBinder: Binder<String> {
-        return Binder(self) { vc, message in
-            if !vc.isPassShowAlert {return}
-            vc.showError(message: message)
+    var passwordValidationMessageBinder: Binder<ValidateLoginError> {
+        return Binder(self) { vc, validate in
+//            vc.tfPassword.resignFirstResponder()
+            if (!validate.isValid && !validate.message.isEmpty){
+                vc.showError(message: validate.message)
+//                vc.tfPassword.becomeFirstResponder()
+            }
         }
     }
     
@@ -114,7 +124,7 @@ extension LoginViewController {
     
     var isLoadingBinder: Binder<Bool> {
         return Binder(self) { vc, isLoading in
-           
+            
             if (isLoading){
                 let hud = MBProgressHUD.showAdded(to: vc.view, animated: true)
                 hud.offset.y = -30
@@ -123,6 +133,17 @@ extension LoginViewController {
                 MBProgressHUD.hide(for: vc.view, animated: true)
                 vc.btnLogin.setTitle(localize(key: "lg_btn_login", comment: "Title login"), for: .normal)
             }
+        }
+    }
+    
+    var segmentIndexBinder: Binder<Int>{
+        return Binder(self) { vc, segmentIndex in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+                print("Reload")
+                vc.viewDidLoad()
+                vc.viewWillAppear(true)
+            }
+        
         }
     }
 }

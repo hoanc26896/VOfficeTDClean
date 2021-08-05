@@ -15,5 +15,8 @@ func after(interval: TimeInterval, completion: (() -> Void)?) {
 }
 
 func localize(key: String, comment: String) -> String {
-    return NSLocalizedString(key, comment: comment)
+    let appLang = AppSettings.language
+    let path = Bundle.main.path(forResource: appLang, ofType: "lproj")
+    let bundle = Bundle(path: path!)
+    return NSLocalizedString(key, tableName: nil, bundle: bundle!, value: "", comment: comment)
 }

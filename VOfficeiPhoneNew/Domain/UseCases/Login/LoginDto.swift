@@ -13,7 +13,7 @@ struct LoginDto: Dto {
     @Validated(.nonEmpty(message: localize(key: "lg_dong_chi_chua_nhap_tai_khoan", comment: "Message When Username empty")))
     var username: String? = ""
     
-    @Validated(.nonEmpty(message: localize(key: "lg_dong_chi_chua_nhap_mat_khau", comment: "Message When Username empty")))
+    @Validated(.nonEmpty(message: localize(key: "lg_dong_chi_chua_nhap_mat_khau", comment: "Message When Password empty")))
     var password: String? = ""
     
     var validatedProperties: [ValidatedProperty] {
@@ -34,4 +34,9 @@ extension LoginDto {
     static func validatePassword(_ password: String) -> Result<String, ValidationError> {
         LoginDto()._password.isValid(value: password)
     }
+}
+
+struct ValidateLoginError {
+    var isValid = false;
+    var message = ""
 }
