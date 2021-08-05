@@ -16,7 +16,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     var assembler: Assembler = DefaultAssembler()
     var disposeBag = DisposeBag()
     
-    static let AppDelegateShared = AppDelegate()
+    static let AppDelegateShared = AppDelegate()    
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
         let window = UIWindow(frame: UIScreen.main.bounds)
