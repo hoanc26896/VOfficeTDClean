@@ -17,6 +17,12 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     var disposeBag = DisposeBag()
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         

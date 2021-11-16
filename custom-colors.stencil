@@ -1,0 +1,107 @@
+// swiftlint:disable all
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+
+import UIKit
+
+{% macro enumBlock assets %}
+{% call casesBlock assets %}
+{% if param.allValues %}
+
+// swiftlint:disable trailing_comma
+{% if resourceCount.color > 0 %}
+{{accessModifier}} static let allColors: [{{colorType}}] = [
+{% filter indent:2 %}{% call allValuesBlock assets "color" "" %}{% endfilter %}
+]
+{% endif %}
+// swiftlint:enable trailing_comma
+{% endif %}
+{% endmacro %}
+
+{% macro casesBlockData assets %}
+{% for asset in assets %}
+public var {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}: UIColor { return ColorAsset{{arResourceGroupType}}(name: "{{asset.value}}").color }
+{% endfor %}
+{% endmacro %}
+
+
+{% macro casesBlock assets %}
+{% for asset in assets %}
+{{accessModifier}}var {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}: UIColor { get }
+{% endfor %}
+{% endmacro %}
+{% macro allValuesBlock assets filter prefix %}
+{% for asset in assets %}
+{% if asset.type == filter %}
+{{prefix}}{{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}},
+{% elif asset.items and ( forceNamespaces == "true" or asset.isNamespaced == "true" ) %}
+{% set prefix2 %}{{prefix}}{{asset.name|swiftIdentifier:"pretty"|escapeReservedKeywords}}.{% endset %}
+{% call allValuesBlock asset.items filter prefix2 %}
+{% elif asset.items %}
+{% call allValuesBlock asset.items filter prefix %}
+{% endif %}
+{% endfor %}
+{% endmacro %}
+public protocol AppColor {
+{% for catalog in catalogs %}
+{% filter indent:2 %}{% call enumBlock catalog.assets %}{% endfilter %}
+}
+{% endfor %}
+
+public struct TCBAppColor: AppColor {
+{% for catalog in catalogs %}
+{% filter indent:2 %}{% call casesBlockData catalog.assets %}{% endfilter %}
+{% endfor %}
+}
+
+public final class ColorAsset {
+  public fileprivate(set) var name: String
+
+  #if os(macOS)
+  public typealias Color = NSColor
+  #elseif os(iOS) || os(tvOS) || os(watchOS)
+  public typealias Color = UIColor
+  #endif
+
+ @available(iOS 11.0, tvOS 11.0, watchOS 4.0, macOS 10.13, *)
+  public private(set) lazy var color: Color = {
+    if let color = Color(asset: self) {
+        return color
+    } else {
+        let bundle = BundleToken.bundle
+        guard let color = Color(named: name, in: bundle, compatibleWith: nil) else {
+          fatalError("Unable to load color asset named \(name).")
+        }
+        return color
+    }
+  }()
+
+  fileprivate init(name: String) {
+    self.name = name
+  }
+}
+
+public extension ColorAsset.Color {
+  @available(iOS 11.0, tvOS 11.0, watchOS 4.0, macOS 10.13, *)
+  convenience init?(asset: ColorAsset) {
+    let bundle = BundleToken.bundle
+    #if os(iOS) || os(tvOS)
+    self.init(named: asset.name, in: bundle, compatibleWith: nil)
+    #elseif os(macOS)
+    self.init(named: NSColor.Name(asset.name), bundle: bundle)
+    #elseif os(watchOS)
+    self.init(named: asset.name)
+    #endif
+  }
+}
+
+// swiftlint:disable convenience_type
+private final class BundleToken {
+  static let bundle: Bundle = {
+    #if SWIFT_PACKAGE
+    return Bundle.module
+    #else
+    return Bundle(for: BundleToken.self)
+    #endif
+  }()
+}
+// swiftlint:enable convenience_type

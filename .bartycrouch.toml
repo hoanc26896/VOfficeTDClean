@@ -1,0 +1,34 @@
+[update]
+tasks = ["code", "transform", "normalize"]
+
+[update.interfaces]
+paths = ["Resources"]
+defaultToBase = false
+ignoreEmptyStrings = false
+unstripped = false
+
+[update.code]
+codePaths = ["VOfficeiPhoneNew"]
+localizablePaths = ["Resources"]
+defaultToKeys = false
+additive = true
+unstripped = false
+
+[update.transform]
+codePaths = ["Sources"]
+localizablePaths = ["Resources"]
+transformer = "swiftgenStructured"
+supportedLanguageEnumPath = "VOfficeiPhoneNew/Helper/Localization"
+typeName = "BartyCrouch"
+translateMethodName = "translate"
+
+[update.normalize]
+paths = ["Resources"]
+sourceLocale = "en"
+harmonizeWithSource = true
+sortByKeys = true
+
+[lint]
+paths = ["Resources"]
+duplicateKeys = true
+emptyValues = true

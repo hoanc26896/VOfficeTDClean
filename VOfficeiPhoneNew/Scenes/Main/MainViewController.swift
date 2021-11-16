@@ -46,8 +46,3 @@ final class MainViewController: UIViewController, Bindable {
         let output = viewModel.transform(input, disposeBag: disposeBag)
     }
 }
-
-// MARK: - StoryboardSceneBased
-extension MainViewController: StoryboardSceneBased {
-    static var sceneStoryboard = Storyboards.main
-}

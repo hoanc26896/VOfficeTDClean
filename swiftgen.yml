@@ -1,0 +1,23 @@
+xcassets:
+    - inputs:
+        - Resources/Assets.xcassets
+      outputs:
+        - templatePath: custom-images.stencil
+          output: VOfficeiPhoneNew/Design/Assets.swift
+          params:
+            publicAccess: public
+            enumName: LAsset
+#    - inputs:
+#        - Resources/Colors.xcassets
+#      outputs:
+#        - templatePath: custom-colors.stencil
+#          output: Sources/Design/Colors.swift
+#          params:
+#            publicAccess: public
+#            enumName: LColor
+strings:
+    - inputs:
+        - Resources/en.lproj/Localizable.strings
+      outputs:
+        - templatePath: custom-strings.stencil
+          output: VOfficeiPhoneNew/Design/Strings.swift

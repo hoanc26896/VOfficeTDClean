@@ -7,6 +7,7 @@
 
 protocol Assembler: AnyObject,
                     MainAssembler,
+                    LoginAssembler,
                     AppAssembler,
                     GatewaysAssembler {
     

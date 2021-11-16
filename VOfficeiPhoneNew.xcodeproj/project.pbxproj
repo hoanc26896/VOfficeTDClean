@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		109E34C7A64EC82DFF2BB912 /* Pods_VOfficeiPhoneNew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B042A426234C8263015A20BA /* Pods_VOfficeiPhoneNew.framework */; };
+		2E85E3082743B32700FF9412 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85E3072743B32700FF9412 /* UIView+.swift */; };
 		2ED08C68273E0648009B4068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C67273E0648009B4068 /* AppDelegate.swift */; };
 		2ED08C6A273E0648009B4068 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08C69273E0648009B4068 /* Podfile */; };
 		2ED08C6C273E0648009B4068 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08C6B273E0648009B4068 /* .swiftlint.yml */; };
@@ -25,8 +27,6 @@
 		2ED08C8F273E0648009B4068 /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C8E273E0648009B4068 /* AppNavigator.swift */; };
 		2ED08C91273E0648009B4068 /* AppUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C90273E0648009B4068 /* AppUseCase.swift */; };
 		2ED08C93273E0648009B4068 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C92273E0648009B4068 /* AppViewModel.swift */; };
-		2ED08C96273E0648009B4068 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08C95273E0648009B4068 /* Main.storyboard */; };
-		2ED08C98273E0648009B4068 /* Storyboards+Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C97273E0648009B4068 /* Storyboards+Main.swift */; };
 		2ED08C9A273E0648009B4068 /* MainAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C99273E0648009B4068 /* MainAssembler.swift */; };
 		2ED08C9C273E0648009B4068 /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C9B273E0648009B4068 /* MainNavigator.swift */; };
 		2ED08C9E273E0648009B4068 /* MainUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C9D273E0648009B4068 /* MainUseCase.swift */; };
@@ -39,6 +39,31 @@
 		2ED08CB6273E064C009B4068 /* VOfficeiPhoneNewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08CB5273E064C009B4068 /* VOfficeiPhoneNewTests.swift */; };
 		2ED08CC0273E064C009B4068 /* VOfficeiPhoneNewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08CBF273E064C009B4068 /* VOfficeiPhoneNewUITests.swift */; };
 		2ED08CC2273E064C009B4068 /* VOfficeiPhoneNewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08CC1273E064C009B4068 /* VOfficeiPhoneNewUITestsLaunchTests.swift */; };
+		2ED08CD1273E0A6A009B4068 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08CD0273E0A6A009B4068 /* swiftgen.yml */; };
+		2ED08CD5273E0AC8009B4068 /* custom-colors.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08CD2273E0AC7009B4068 /* custom-colors.stencil */; };
+		2ED08CD6273E0AC8009B4068 /* custom-images.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08CD3273E0AC7009B4068 /* custom-images.stencil */; };
+		2ED08CD7273E0AC8009B4068 /* custom-strings.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08CD4273E0AC7009B4068 /* custom-strings.stencil */; };
+		2ED08CDA273E0AFD009B4068 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08CD9273E0AFD009B4068 /* Strings.swift */; };
+		2ED08CDC273E0B1B009B4068 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08CDB273E0B1B009B4068 /* Assets.swift */; };
+		2ED08CDE273E0B29009B4068 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08CDD273E0B29009B4068 /* Fonts.swift */; };
+		2ED08CE0273E0CFE009B4068 /* .bartycrouch.toml in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08CDF273E0CFE009B4068 /* .bartycrouch.toml */; };
+		2ED08CE7273E0F2F009B4068 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08CE9273E0F2F009B4068 /* Localizable.strings */; };
+		2ED08CEE273E0FF5009B4068 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08CED273E0FF5009B4068 /* Localization.swift */; };
+		2ED08D04273E1854009B4068 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08CFF273E1854009B4068 /* LoginAssembler.swift */; };
+		2ED08D05273E1854009B4068 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D00273E1854009B4068 /* LoginNavigator.swift */; };
+		2ED08D06273E1854009B4068 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D01273E1854009B4068 /* LoginUseCase.swift */; };
+		2ED08D07273E1854009B4068 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D02273E1854009B4068 /* LoginViewController.swift */; };
+		2ED08D08273E1854009B4068 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D03273E1854009B4068 /* LoginViewModel.swift */; };
+		2ED08D15273E20BC009B4068 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D14273E20BC009B4068 /* BaseViewController.swift */; };
+		2ED08D1F273E21C1009B4068 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D16273E21BE009B4068 /* UIImage+Ext.swift */; };
+		2ED08D20273E21C1009B4068 /* UINavigationBar+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D17273E21BE009B4068 /* UINavigationBar+Ext.swift */; };
+		2ED08D21273E21C1009B4068 /* DefaultDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D18273E21BE009B4068 /* DefaultDesign.swift */; };
+		2ED08D22273E21C1009B4068 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D19273E21BF009B4068 /* ViewModelType.swift */; };
+		2ED08D23273E21C1009B4068 /* BaseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D1A273E21BF009B4068 /* BaseComponent.swift */; };
+		2ED08D24273E21C1009B4068 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D1B273E21C0009B4068 /* UIColor+Ext.swift */; };
+		2ED08D25273E21C1009B4068 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D1C273E21C0009B4068 /* UITableView+Extensions.swift */; };
+		2ED08D26273E21C1009B4068 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D1D273E21C0009B4068 /* UIView+Ext.swift */; };
+		C6780266ABBC3EF7958EB3C2 /* Pods_VOfficeiPhoneNewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2BCC226498AD4E366FAD4A /* Pods_VOfficeiPhoneNewTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +84,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18BB51A61CDB2718B73647D4 /* Pods-VOfficeiPhoneNewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNewTests.debug.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2E85E3072743B32700FF9412 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2ED08C64273E0648009B4068 /* VOfficeiPhoneNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOfficeiPhoneNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED08C67273E0648009B4068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2ED08C69273E0648009B4068 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
-		2ED08C6B273E0648009B4068 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
+		2ED08C69273E0648009B4068 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2ED08C6B273E0648009B4068 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		2ED08C6D273E0648009B4068 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		2ED08C6F273E0648009B4068 /* UnitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestViewController.swift; sourceTree = "<group>"; };
 		2ED08C72273E0648009B4068 /* APIUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrls.swift; sourceTree = "<group>"; };
@@ -78,8 +105,6 @@
 		2ED08C8E273E0648009B4068 /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
 		2ED08C90273E0648009B4068 /* AppUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUseCase.swift; sourceTree = "<group>"; };
 		2ED08C92273E0648009B4068 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
-		2ED08C95273E0648009B4068 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		2ED08C97273E0648009B4068 /* Storyboards+Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboards+Main.swift"; sourceTree = "<group>"; };
 		2ED08C99273E0648009B4068 /* MainAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembler.swift; sourceTree = "<group>"; };
 		2ED08C9B273E0648009B4068 /* MainNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigator.swift; sourceTree = "<group>"; };
 		2ED08C9D273E0648009B4068 /* MainUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCase.swift; sourceTree = "<group>"; };
@@ -94,6 +119,37 @@
 		2ED08CBB273E064C009B4068 /* VOfficeiPhoneNewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VOfficeiPhoneNewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED08CBF273E064C009B4068 /* VOfficeiPhoneNewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VOfficeiPhoneNewUITests.swift; sourceTree = "<group>"; };
 		2ED08CC1273E064C009B4068 /* VOfficeiPhoneNewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VOfficeiPhoneNewUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2ED08CD0273E0A6A009B4068 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		2ED08CD2273E0AC7009B4068 /* custom-colors.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "custom-colors.stencil"; sourceTree = "<group>"; };
+		2ED08CD3273E0AC7009B4068 /* custom-images.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "custom-images.stencil"; sourceTree = "<group>"; };
+		2ED08CD4273E0AC7009B4068 /* custom-strings.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "custom-strings.stencil"; sourceTree = "<group>"; };
+		2ED08CD9273E0AFD009B4068 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		2ED08CDB273E0B1B009B4068 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		2ED08CDD273E0B29009B4068 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		2ED08CDF273E0CFE009B4068 /* .bartycrouch.toml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .bartycrouch.toml; sourceTree = "<group>"; };
+		2ED08CE8273E0F2F009B4068 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2ED08CEA273E0F42009B4068 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		2ED08CEB273E0F43009B4068 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2ED08CED273E0FF5009B4068 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		2ED08CFF273E1854009B4068 /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
+		2ED08D00273E1854009B4068 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
+		2ED08D01273E1854009B4068 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		2ED08D02273E1854009B4068 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2ED08D03273E1854009B4068 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2ED08D14273E20BC009B4068 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2ED08D16273E21BE009B4068 /* UIImage+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
+		2ED08D17273E21BE009B4068 /* UINavigationBar+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Ext.swift"; sourceTree = "<group>"; };
+		2ED08D18273E21BE009B4068 /* DefaultDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultDesign.swift; sourceTree = "<group>"; };
+		2ED08D19273E21BF009B4068 /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		2ED08D1A273E21BF009B4068 /* BaseComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseComponent.swift; sourceTree = "<group>"; };
+		2ED08D1B273E21C0009B4068 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		2ED08D1C273E21C0009B4068 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		2ED08D1D273E21C0009B4068 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		3B2BCC226498AD4E366FAD4A /* Pods_VOfficeiPhoneNewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VOfficeiPhoneNewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		595000CBC51DFCA878942911 /* Pods-VOfficeiPhoneNewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNewTests.release.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests.release.xcconfig"; sourceTree = "<group>"; };
+		A49BC69D95D6298874AA0E33 /* Pods-VOfficeiPhoneNew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNew.debug.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNew/Pods-VOfficeiPhoneNew.debug.xcconfig"; sourceTree = "<group>"; };
+		B042A426234C8263015A20BA /* Pods_VOfficeiPhoneNew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VOfficeiPhoneNew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E59D116E87A44BFAC72A5B8E /* Pods-VOfficeiPhoneNew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNew.release.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNew/Pods-VOfficeiPhoneNew.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				109E34C7A64EC82DFF2BB912 /* Pods_VOfficeiPhoneNew.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6780266ABBC3EF7958EB3C2 /* Pods_VOfficeiPhoneNewTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,13 +179,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1ABC1F2FBF332FB84747FA88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A49BC69D95D6298874AA0E33 /* Pods-VOfficeiPhoneNew.debug.xcconfig */,
+				E59D116E87A44BFAC72A5B8E /* Pods-VOfficeiPhoneNew.release.xcconfig */,
+				18BB51A61CDB2718B73647D4 /* Pods-VOfficeiPhoneNewTests.debug.xcconfig */,
+				595000CBC51DFCA878942911 /* Pods-VOfficeiPhoneNewTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2ED08C5B273E0648009B4068 = {
 			isa = PBXGroup;
 			children = (
+				2ED08CF3273E178A009B4068 /* Resources */,
+				2ED08CEF273E16B3009B4068 /* Deployment */,
 				2ED08C66273E0648009B4068 /* VOfficeiPhoneNew */,
 				2ED08CB4273E064C009B4068 /* VOfficeiPhoneNewTests */,
 				2ED08CBE273E064C009B4068 /* VOfficeiPhoneNewUITests */,
 				2ED08C65273E0648009B4068 /* Products */,
+				1ABC1F2FBF332FB84747FA88 /* Pods */,
+				3E776D0257FEAFB85AAEAFF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,12 +218,10 @@
 			isa = PBXGroup;
 			children = (
 				2ED08C67273E0648009B4068 /* AppDelegate.swift */,
-				2ED08C69273E0648009B4068 /* Podfile */,
-				2ED08C6B273E0648009B4068 /* .swiftlint.yml */,
 				2ED08C6D273E0648009B4068 /* Assembler.swift */,
 				2ED08C6F273E0648009B4068 /* UnitTestViewController.swift */,
-				2ED08CA8273E064B009B4068 /* Assets.xcassets */,
-				2ED08CAA273E064B009B4068 /* LaunchScreen.storyboard */,
+				2ED08CEC273E0FDE009B4068 /* Helper */,
+				2ED08CD8273E0AE4009B4068 /* Design */,
 				2ED08C71273E0648009B4068 /* Config */,
 				2ED08C74273E0648009B4068 /* Domain */,
 				2ED08C7B273E0648009B4068 /* Data */,
@@ -226,6 +297,8 @@
 			children = (
 				2ED08C89273E0648009B4068 /* Storyboards.swift */,
 				2ED08C8B273E0648009B4068 /* App */,
+				2ED08D09273E1F3F009B4068 /* Base */,
+				2ED08CFE273E183B009B4068 /* Login */,
 				2ED08C94273E0648009B4068 /* Main */,
 			);
 			path = Scenes;
@@ -245,8 +318,6 @@
 		2ED08C94273E0648009B4068 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				2ED08C95273E0648009B4068 /* Main.storyboard */,
-				2ED08C97273E0648009B4068 /* Storyboards+Main.swift */,
 				2ED08C99273E0648009B4068 /* MainAssembler.swift */,
 				2ED08C9B273E0648009B4068 /* MainNavigator.swift */,
 				2ED08C9D273E0648009B4068 /* MainUseCase.swift */,
@@ -261,6 +332,7 @@
 			children = (
 				2ED08CA4273E0648009B4068 /* UIViewController+.swift */,
 				2ED08CA6273E0648009B4068 /* UIViewController+Rx.swift */,
+				2E85E3072743B32700FF9412 /* UIView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +354,85 @@
 			path = VOfficeiPhoneNewUITests;
 			sourceTree = "<group>";
 		};
+		2ED08CD8273E0AE4009B4068 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				2ED08CD9273E0AFD009B4068 /* Strings.swift */,
+				2ED08CDB273E0B1B009B4068 /* Assets.swift */,
+				2ED08CDD273E0B29009B4068 /* Fonts.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		2ED08CEC273E0FDE009B4068 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2ED08D1A273E21BF009B4068 /* BaseComponent.swift */,
+				2ED08D18273E21BE009B4068 /* DefaultDesign.swift */,
+				2ED08D1B273E21C0009B4068 /* UIColor+Ext.swift */,
+				2ED08D16273E21BE009B4068 /* UIImage+Ext.swift */,
+				2ED08D17273E21BE009B4068 /* UINavigationBar+Ext.swift */,
+				2ED08D1C273E21C0009B4068 /* UITableView+Extensions.swift */,
+				2ED08D1D273E21C0009B4068 /* UIView+Ext.swift */,
+				2ED08D19273E21BF009B4068 /* ViewModelType.swift */,
+				2ED08CED273E0FF5009B4068 /* Localization.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		2ED08CEF273E16B3009B4068 /* Deployment */ = {
+			isa = PBXGroup;
+			children = (
+				2ED08CDF273E0CFE009B4068 /* .bartycrouch.toml */,
+				2ED08CD0273E0A6A009B4068 /* swiftgen.yml */,
+				2ED08CD2273E0AC7009B4068 /* custom-colors.stencil */,
+				2ED08CD3273E0AC7009B4068 /* custom-images.stencil */,
+				2ED08CD4273E0AC7009B4068 /* custom-strings.stencil */,
+			);
+			name = Deployment;
+			sourceTree = "<group>";
+		};
+		2ED08CF3273E178A009B4068 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2ED08CA8273E064B009B4068 /* Assets.xcassets */,
+				2ED08CAA273E064B009B4068 /* LaunchScreen.storyboard */,
+				2ED08CE9273E0F2F009B4068 /* Localizable.strings */,
+				2ED08C69273E0648009B4068 /* Podfile */,
+				2ED08C6B273E0648009B4068 /* .swiftlint.yml */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2ED08CFE273E183B009B4068 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2ED08CFF273E1854009B4068 /* LoginAssembler.swift */,
+				2ED08D00273E1854009B4068 /* LoginNavigator.swift */,
+				2ED08D01273E1854009B4068 /* LoginUseCase.swift */,
+				2ED08D02273E1854009B4068 /* LoginViewController.swift */,
+				2ED08D03273E1854009B4068 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2ED08D09273E1F3F009B4068 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2ED08D14273E20BC009B4068 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		3E776D0257FEAFB85AAEAFF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B042A426234C8263015A20BA /* Pods_VOfficeiPhoneNew.framework */,
+				3B2BCC226498AD4E366FAD4A /* Pods_VOfficeiPhoneNewTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -289,9 +440,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2ED08CC5273E064C009B4068 /* Build configuration list for PBXNativeTarget "VOfficeiPhoneNew" */;
 			buildPhases = (
+				67ED4C2DD12EE25A799E4BF9 /* [CP] Check Pods Manifest.lock */,
+				2ED08CE1273E0D64009B4068 /* Bartycrouch */,
+				2ED08CCE273E09A4009B4068 /* SwiftGen */,
 				2ED08C60273E0648009B4068 /* Sources */,
 				2ED08C61273E0648009B4068 /* Frameworks */,
 				2ED08C62273E0648009B4068 /* Resources */,
+				2B5E58E7104D9DA33E081D65 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -306,9 +461,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2ED08CC8273E064C009B4068 /* Build configuration list for PBXNativeTarget "VOfficeiPhoneNewTests" */;
 			buildPhases = (
+				491205D36851B7A16CEF258E /* [CP] Check Pods Manifest.lock */,
 				2ED08CAD273E064C009B4068 /* Sources */,
 				2ED08CAE273E064C009B4068 /* Frameworks */,
 				2ED08CAF273E064C009B4068 /* Resources */,
+				1F7C8939F041028BE1566E75 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -368,6 +525,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = 2ED08C5B273E0648009B4068;
 			productRefGroup = 2ED08C65273E0648009B4068 /* Products */;
@@ -386,13 +544,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ED08CD7273E0AC8009B4068 /* custom-strings.stencil in Resources */,
+				2ED08CE7273E0F2F009B4068 /* Localizable.strings in Resources */,
 				2ED08C77273E0648009B4068 /* Entity.md in Resources */,
-				2ED08C96273E0648009B4068 /* Main.storyboard in Resources */,
+				2ED08CD1273E0A6A009B4068 /* swiftgen.yml in Resources */,
+				2ED08CE0273E0CFE009B4068 /* .bartycrouch.toml in Resources */,
 				2ED08C6C273E0648009B4068 /* .swiftlint.yml in Resources */,
 				2ED08C7A273E0648009B4068 /* UseCase.md in Resources */,
+				2ED08CD6273E0AC8009B4068 /* custom-images.stencil in Resources */,
 				2ED08CAC273E064B009B4068 /* LaunchScreen.storyboard in Resources */,
 				2ED08CA9273E064B009B4068 /* Assets.xcassets in Resources */,
 				2ED08C6A273E0648009B4068 /* Podfile in Resources */,
+				2ED08CD5273E0AC8009B4068 /* custom-colors.stencil in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,30 +575,165 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F7C8939F041028BE1566E75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B5E58E7104D9DA33E081D65 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VOfficeiPhoneNew/Pods-VOfficeiPhoneNew-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VOfficeiPhoneNew/Pods-VOfficeiPhoneNew-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VOfficeiPhoneNew/Pods-VOfficeiPhoneNew-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2ED08CCE273E09A4009B4068 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+		2ED08CE1273E0D64009B4068 /* Bartycrouch */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Bartycrouch;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ $PATH == *\"/usr/local/bin/\"* ]]; then\n    echo \"Local bin is found in path\"\nelse\n    export PATH=\"$PATH:/usr/local/bin/\"\nfi\nif which bartycrouch > /dev/null; then\n    bartycrouch update -v -x\n    bartycrouch lint -x\nelse\n    if which brew > /dev/null; then\n        brew install bartycrouch\n        bartycrouch update -x\n        bartycrouch lint -x\n    else\n        echo \"error: BartyCrouch and Homebrew not installed. Install Homebrew then run 'brew install bartycrouch'\"\n    fi\nfi\n";
+		};
+		491205D36851B7A16CEF258E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VOfficeiPhoneNewTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67ED4C2DD12EE25A799E4BF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VOfficeiPhoneNew-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2ED08C60273E0648009B4068 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ED08D20273E21C1009B4068 /* UINavigationBar+Ext.swift in Sources */,
 				2ED08C73273E0648009B4068 /* APIUrls.swift in Sources */,
+				2ED08CDC273E0B1B009B4068 /* Assets.swift in Sources */,
 				2ED08C9A273E0648009B4068 /* MainAssembler.swift in Sources */,
+				2E85E3082743B32700FF9412 /* UIView+.swift in Sources */,
 				2ED08C80273E0648009B4068 /* APIInput.swift in Sources */,
+				2ED08D15273E20BC009B4068 /* BaseViewController.swift in Sources */,
 				2ED08C93273E0648009B4068 /* AppViewModel.swift in Sources */,
-				2ED08C98273E0648009B4068 /* Storyboards+Main.swift in Sources */,
+				2ED08D07273E1854009B4068 /* LoginViewController.swift in Sources */,
 				2ED08CA0273E0648009B4068 /* MainViewController.swift in Sources */,
+				2ED08CEE273E0FF5009B4068 /* Localization.swift in Sources */,
+				2ED08D24273E21C1009B4068 /* UIColor+Ext.swift in Sources */,
+				2ED08D1F273E21C1009B4068 /* UIImage+Ext.swift in Sources */,
+				2ED08D08273E1854009B4068 /* LoginViewModel.swift in Sources */,
+				2ED08D23273E21C1009B4068 /* BaseComponent.swift in Sources */,
 				2ED08C70273E0648009B4068 /* UnitTestViewController.swift in Sources */,
+				2ED08D25273E21C1009B4068 /* UITableView+Extensions.swift in Sources */,
+				2ED08D22273E21C1009B4068 /* ViewModelType.swift in Sources */,
 				2ED08C91273E0648009B4068 /* AppUseCase.swift in Sources */,
 				2ED08C6E273E0648009B4068 /* Assembler.swift in Sources */,
+				2ED08D04273E1854009B4068 /* LoginAssembler.swift in Sources */,
+				2ED08D06273E1854009B4068 /* LoginUseCase.swift in Sources */,
 				2ED08C9E273E0648009B4068 /* MainUseCase.swift in Sources */,
+				2ED08D05273E1854009B4068 /* LoginNavigator.swift in Sources */,
 				2ED08C87273E0648009B4068 /* GatewaysAssembler.swift in Sources */,
 				2ED08C8F273E0648009B4068 /* AppNavigator.swift in Sources */,
 				2ED08C9C273E0648009B4068 /* MainNavigator.swift in Sources */,
+				2ED08CDA273E0AFD009B4068 /* Strings.swift in Sources */,
+				2ED08D21273E21C1009B4068 /* DefaultDesign.swift in Sources */,
 				2ED08C82273E0648009B4068 /* APIOutput.swift in Sources */,
 				2ED08CA5273E0648009B4068 /* UIViewController+.swift in Sources */,
+				2ED08CDE273E0B29009B4068 /* Fonts.swift in Sources */,
 				2ED08C8D273E0648009B4068 /* AppAssembler.swift in Sources */,
 				2ED08CA2273E0648009B4068 /* MainViewModel.swift in Sources */,
 				2ED08C8A273E0648009B4068 /* Storyboards.swift in Sources */,
 				2ED08C7E273E0648009B4068 /* APIError.swift in Sources */,
+				2ED08D26273E21C1009B4068 /* UIView+Ext.swift in Sources */,
 				2ED08C84273E0648009B4068 /* APIService.swift in Sources */,
 				2ED08CA7273E0648009B4068 /* UIViewController+Rx.swift in Sources */,
 				2ED08C68273E0648009B4068 /* AppDelegate.swift in Sources */,
@@ -479,8 +777,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				2ED08CAB273E064B009B4068 /* Base */,
+				2ED08CEA273E0F42009B4068 /* vi */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2ED08CE9273E0F2F009B4068 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2ED08CE8273E0F2F009B4068 /* en */,
+				2ED08CEB273E0F43009B4068 /* vi */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -490,6 +798,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -551,6 +860,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -604,6 +914,7 @@
 		};
 		2ED08CC6273E064C009B4068 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A49BC69D95D6298874AA0E33 /* Pods-VOfficeiPhoneNew.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -630,6 +941,7 @@
 		};
 		2ED08CC7273E064C009B4068 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E59D116E87A44BFAC72A5B8E /* Pods-VOfficeiPhoneNew.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -656,6 +968,7 @@
 		};
 		2ED08CC9273E064C009B4068 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18BB51A61CDB2718B73647D4 /* Pods-VOfficeiPhoneNewTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -681,6 +994,7 @@
 		};
 		2ED08CCA273E064C009B4068 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 595000CBC51DFCA878942911 /* Pods-VOfficeiPhoneNewTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

@@ -1,0 +1,6 @@
+framework module Pods_VOfficeiPhoneNewTests {
+  umbrella header "Pods-VOfficeiPhoneNewTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
