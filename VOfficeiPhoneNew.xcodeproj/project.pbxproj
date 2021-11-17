@@ -63,6 +63,14 @@
 		2ED08D24273E21C1009B4068 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D1B273E21C0009B4068 /* UIColor+Ext.swift */; };
 		2ED08D25273E21C1009B4068 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D1C273E21C0009B4068 /* UITableView+Extensions.swift */; };
 		2ED08D26273E21C1009B4068 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D1D273E21C0009B4068 /* UIView+Ext.swift */; };
+		2EFA86BA27448F8A000B1569 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA86B927448F8A000B1569 /* UIImage+.swift */; };
+		2EFA86BC2744A889000B1569 /* custom-rx-strings.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA86BB2744A889000B1569 /* custom-rx-strings.stencil */; };
+		2EFA86BE2744AB91000B1569 /* RxStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA86BD2744AB91000B1569 /* RxStrings.swift */; };
+		2EFA86C22744B403000B1569 /* run-swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA86C02744B403000B1569 /* run-swiftgen.sh */; };
+		2EFA86C32744B403000B1569 /* localizable-dups.rb in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA86C12744B403000B1569 /* localizable-dups.rb */; };
+		2EFA86C72744FB13000B1569 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA86C62744FB13000B1569 /* AppSettings.swift */; };
+		2EFA86C92744FB37000B1569 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA86C82744FB37000B1569 /* CacheStorage.swift */; };
+		2EFA86CB2744FB57000B1569 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA86CA2744FB57000B1569 /* Storage.swift */; };
 		C6780266ABBC3EF7958EB3C2 /* Pods_VOfficeiPhoneNewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2BCC226498AD4E366FAD4A /* Pods_VOfficeiPhoneNewTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +153,14 @@
 		2ED08D1B273E21C0009B4068 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		2ED08D1C273E21C0009B4068 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		2ED08D1D273E21C0009B4068 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		2EFA86B927448F8A000B1569 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		2EFA86BB2744A889000B1569 /* custom-rx-strings.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "custom-rx-strings.stencil"; sourceTree = "<group>"; };
+		2EFA86BD2744AB91000B1569 /* RxStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxStrings.swift; sourceTree = "<group>"; };
+		2EFA86C02744B403000B1569 /* run-swiftgen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "run-swiftgen.sh"; sourceTree = "<group>"; };
+		2EFA86C12744B403000B1569 /* localizable-dups.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = "localizable-dups.rb"; sourceTree = "<group>"; };
+		2EFA86C62744FB13000B1569 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		2EFA86C82744FB37000B1569 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
+		2EFA86CA2744FB57000B1569 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		3B2BCC226498AD4E366FAD4A /* Pods_VOfficeiPhoneNewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VOfficeiPhoneNewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		595000CBC51DFCA878942911 /* Pods-VOfficeiPhoneNewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNewTests.release.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests.release.xcconfig"; sourceTree = "<group>"; };
 		A49BC69D95D6298874AA0E33 /* Pods-VOfficeiPhoneNew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNew.debug.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNew/Pods-VOfficeiPhoneNew.debug.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +233,7 @@
 		2ED08C66273E0648009B4068 /* VOfficeiPhoneNew */ = {
 			isa = PBXGroup;
 			children = (
+				2EFA86BF2744B403000B1569 /* scripts */,
 				2ED08C67273E0648009B4068 /* AppDelegate.swift */,
 				2ED08C6D273E0648009B4068 /* Assembler.swift */,
 				2ED08C6F273E0648009B4068 /* UnitTestViewController.swift */,
@@ -267,6 +284,7 @@
 		2ED08C7B273E0648009B4068 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				2EFA86C52744FA96000B1569 /* UserDefaults */,
 				2ED08C7C273E0648009B4068 /* API */,
 				2ED08C85273E0648009B4068 /* Gateways */,
 			);
@@ -333,6 +351,7 @@
 				2ED08CA4273E0648009B4068 /* UIViewController+.swift */,
 				2ED08CA6273E0648009B4068 /* UIViewController+Rx.swift */,
 				2E85E3072743B32700FF9412 /* UIView+.swift */,
+				2EFA86B927448F8A000B1569 /* UIImage+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -360,6 +379,7 @@
 				2ED08CD9273E0AFD009B4068 /* Strings.swift */,
 				2ED08CDB273E0B1B009B4068 /* Assets.swift */,
 				2ED08CDD273E0B29009B4068 /* Fonts.swift */,
+				2EFA86BD2744AB91000B1569 /* RxStrings.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -387,6 +407,7 @@
 				2ED08CD0273E0A6A009B4068 /* swiftgen.yml */,
 				2ED08CD2273E0AC7009B4068 /* custom-colors.stencil */,
 				2ED08CD3273E0AC7009B4068 /* custom-images.stencil */,
+				2EFA86BB2744A889000B1569 /* custom-rx-strings.stencil */,
 				2ED08CD4273E0AC7009B4068 /* custom-strings.stencil */,
 			);
 			name = Deployment;
@@ -422,6 +443,25 @@
 				2ED08D14273E20BC009B4068 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		2EFA86BF2744B403000B1569 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				2EFA86C02744B403000B1569 /* run-swiftgen.sh */,
+				2EFA86C12744B403000B1569 /* localizable-dups.rb */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
+		2EFA86C52744FA96000B1569 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				2EFA86C62744FB13000B1569 /* AppSettings.swift */,
+				2EFA86C82744FB37000B1569 /* CacheStorage.swift */,
+				2EFA86CA2744FB57000B1569 /* Storage.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		3E776D0257FEAFB85AAEAFF2 /* Frameworks */ = {
@@ -546,9 +586,12 @@
 			files = (
 				2ED08CD7273E0AC8009B4068 /* custom-strings.stencil in Resources */,
 				2ED08CE7273E0F2F009B4068 /* Localizable.strings in Resources */,
+				2EFA86C32744B403000B1569 /* localizable-dups.rb in Resources */,
 				2ED08C77273E0648009B4068 /* Entity.md in Resources */,
+				2EFA86C22744B403000B1569 /* run-swiftgen.sh in Resources */,
 				2ED08CD1273E0A6A009B4068 /* swiftgen.yml in Resources */,
 				2ED08CE0273E0CFE009B4068 /* .bartycrouch.toml in Resources */,
+				2EFA86BC2744A889000B1569 /* custom-rx-strings.stencil in Resources */,
 				2ED08C6C273E0648009B4068 /* .swiftlint.yml in Resources */,
 				2ED08C7A273E0648009B4068 /* UseCase.md in Resources */,
 				2ED08CD6273E0AC8009B4068 /* custom-images.stencil in Resources */,
@@ -626,7 +669,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    $SRCROOT/VOfficeiPhoneNew/scripts/run-swiftgen.sh\nfi\n";
 		};
 		2ED08CE1273E0D64009B4068 /* Bartycrouch */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -711,6 +754,7 @@
 				2ED08D24273E21C1009B4068 /* UIColor+Ext.swift in Sources */,
 				2ED08D1F273E21C1009B4068 /* UIImage+Ext.swift in Sources */,
 				2ED08D08273E1854009B4068 /* LoginViewModel.swift in Sources */,
+				2EFA86CB2744FB57000B1569 /* Storage.swift in Sources */,
 				2ED08D23273E21C1009B4068 /* BaseComponent.swift in Sources */,
 				2ED08C70273E0648009B4068 /* UnitTestViewController.swift in Sources */,
 				2ED08D25273E21C1009B4068 /* UITableView+Extensions.swift in Sources */,
@@ -726,14 +770,18 @@
 				2ED08C9C273E0648009B4068 /* MainNavigator.swift in Sources */,
 				2ED08CDA273E0AFD009B4068 /* Strings.swift in Sources */,
 				2ED08D21273E21C1009B4068 /* DefaultDesign.swift in Sources */,
+				2EFA86BA27448F8A000B1569 /* UIImage+.swift in Sources */,
 				2ED08C82273E0648009B4068 /* APIOutput.swift in Sources */,
 				2ED08CA5273E0648009B4068 /* UIViewController+.swift in Sources */,
 				2ED08CDE273E0B29009B4068 /* Fonts.swift in Sources */,
 				2ED08C8D273E0648009B4068 /* AppAssembler.swift in Sources */,
+				2EFA86C92744FB37000B1569 /* CacheStorage.swift in Sources */,
 				2ED08CA2273E0648009B4068 /* MainViewModel.swift in Sources */,
 				2ED08C8A273E0648009B4068 /* Storyboards.swift in Sources */,
 				2ED08C7E273E0648009B4068 /* APIError.swift in Sources */,
 				2ED08D26273E21C1009B4068 /* UIView+Ext.swift in Sources */,
+				2EFA86BE2744AB91000B1569 /* RxStrings.swift in Sources */,
+				2EFA86C72744FB13000B1569 /* AppSettings.swift in Sources */,
 				2ED08C84273E0648009B4068 /* APIService.swift in Sources */,
 				2ED08CA7273E0648009B4068 /* UIViewController+Rx.swift in Sources */,
 				2ED08C68273E0648009B4068 /* AppDelegate.swift in Sources */,
@@ -921,6 +969,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3267Z52VP5;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"COCOAPODS=1",
+					"BETA=1",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1064,6 +1116,144 @@
 			};
 			name = Release;
 		};
+		2EFA86CC2745058D000B1569 /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Beta;
+		};
+		2EFA86CD2745058D000B1569 /* Beta */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A49BC69D95D6298874AA0E33 /* Pods-VOfficeiPhoneNew.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3267Z52VP5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.viettel.VOfficeiPhoneNew;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Beta;
+		};
+		2EFA86CE2745058D000B1569 /* Beta */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18BB51A61CDB2718B73647D4 /* Pods-VOfficeiPhoneNewTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3267Z52VP5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.viettel.VOfficeiPhoneNewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VOfficeiPhoneNew.app/VOfficeiPhoneNew";
+			};
+			name = Beta;
+		};
+		2EFA86CF2745058D000B1569 /* Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3267Z52VP5;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.viettel.VOfficeiPhoneNewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VOfficeiPhoneNew;
+			};
+			name = Beta;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1071,6 +1261,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2ED08CC3273E064C009B4068 /* Debug */,
+				2EFA86CC2745058D000B1569 /* Beta */,
 				2ED08CC4273E064C009B4068 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1080,6 +1271,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2ED08CC6273E064C009B4068 /* Debug */,
+				2EFA86CD2745058D000B1569 /* Beta */,
 				2ED08CC7273E064C009B4068 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1089,6 +1281,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2ED08CC9273E064C009B4068 /* Debug */,
+				2EFA86CE2745058D000B1569 /* Beta */,
 				2ED08CCA273E064C009B4068 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1098,6 +1291,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2ED08CCC273E064C009B4068 /* Debug */,
+				2EFA86CF2745058D000B1569 /* Beta */,
 				2ED08CCD273E064C009B4068 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

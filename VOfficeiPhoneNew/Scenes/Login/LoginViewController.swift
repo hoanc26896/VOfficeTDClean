@@ -26,8 +26,8 @@ final class LoginViewController: BaseViewController,Bindable  {
     }()
     
     lazy var languageSegment: UISegmentedControl = {
-        let control = UISegmentedControl(items: [L10n.Core.Login.vietnammese, L10n.Core.Login.english])
-        control.selectedSegmentIndex = 0
+        let control = UISegmentedControl(items: [L10n.coreLoginVietnammese, L10n.coreLoginEnglish])
+        control.selectedSegmentIndex = AppSettings.language == "vi" ? 0 : 1
         control.tintColor = LAsset.button.color
         self.view.addSubview(control)
         return control
@@ -59,7 +59,7 @@ final class LoginViewController: BaseViewController,Bindable  {
     }()
     
     lazy var loginUsernameIcon: UIImageView = {
-        let image = LAsset.lgUserIc
+        let image = LAsset.lgUserIc.resize(to: CGSize(width: 20, height: 20))
         let view = UIImageView(image: image)
         view.contentMode =  .center
         loginUsernameSv.addArrangedSubview(view)
@@ -68,7 +68,7 @@ final class LoginViewController: BaseViewController,Bindable  {
     
     lazy var loginUsernameTf: UITextField = {
         let view = UITextField()
-        view.placeholder = L10n.Core.Login.account
+        view.localizedPlaceholder = RxL10n.coreLoginAccount
         view.backgroundColor = LAsset.input.color
         view.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0)
         loginUsernameSv.addArrangedSubview(view)
@@ -86,9 +86,8 @@ final class LoginViewController: BaseViewController,Bindable  {
     }()
     
     lazy var loginPassIcon: UIImageView = {
-        let image = LAsset.lgPassIc
+        let image = LAsset.lgPassIc.resize(to: CGSize(width: 20, height: 20))
         let view = UIImageView(image: image)
-      
         view.contentMode = .center
         loginPassSv.addArrangedSubview(view)
         return view
@@ -96,7 +95,8 @@ final class LoginViewController: BaseViewController,Bindable  {
     
     lazy var loginPassTf: UITextField = {
         let view = UITextField()
-        view.placeholder =  L10n.Core.Login.password
+        view.isSecureTextEntry = true
+        view.localizedPlaceholder =  RxL10n.coreLoginPassword
         view.backgroundColor = LAsset.input.color
         view.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0)
         loginPassSv.addArrangedSubview(view)
@@ -105,10 +105,9 @@ final class LoginViewController: BaseViewController,Bindable  {
     
     lazy var loginBtn: UIButton = {
         let view = UIButton()
-        view.setTitle( L10n.Core.Login.login, for: .normal)
+        view.localizedTitle = RxL10n.coreLoginLogin
         view.backgroundColor = LAsset.button.color
         loginSv.addSubview(view)
-        
         return view
     }()
     
@@ -131,7 +130,7 @@ final class LoginViewController: BaseViewController,Bindable  {
     
     private func configView() {
         title = "Login"
-       
+        
         loginBgImg.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -201,18 +200,38 @@ final class LoginViewController: BaseViewController,Bindable  {
         }
         
         loginBtn.snp.makeConstraints { make in
-            make.top.equalTo(loginPassSv.snp.bottom).offset(15)
+            make.top.equalTo(loginPassSv.snp.bottom).offset(20)
             make.left.equalToSuperview().offset(15)
             make.right.equalToSuperview().offset(-15)
             make.height.equalTo(44)
         }
-        
-        
     }
     
     func bindViewModel() {
-        let input = LoginViewModel.Input()
+        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+            .mapToVoid()
+            .asDriverOnErrorJustComplete()
+        let onChangeLanguage = languageSegment.rx.selectedSegmentIndex.asDriver()
+        
+        let onChangeUser = loginUsernameTf.rx.text.orEmpty.asDriver()
+        let onChangePass = loginPassTf.rx.text.orEmpty.asDriver()
+        
+        let onLogin = loginBtn.rx.tap.asDriver()
+        
+        let input = LoginViewModel.Input(
+            onLoad: viewWillAppear,
+            onChangeLanguage: onChangeLanguage,
+            onChangeUser: onChangeUser,
+            onChangePass: onChangePass,
+            onLogin: onLogin
+        )
         let output = viewModel.transform(input, disposeBag: disposeBag)
+        output.$selectedSegmentIndex.asDriver().drive(languageSegment.rx.selectedSegmentIndex).disposed(by: disposeBag)
+        output.$messageInvalidUsername.asDriver().drive(onNext: { message in
+            let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Click", style:.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }).disposed(by: disposeBag)
     }
 }
 

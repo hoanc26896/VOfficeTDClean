@@ -7,50 +7,38 @@ import Foundation
 
 // MARK: - Strings
 
-// swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
-// swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
+// swiftlint:disable function_parameter_count identifier_name line_length type_body_length
 internal enum L10n {
-
-  internal enum Core {
-    internal enum Login {
-      /// Username
-      internal static var account: String { return L10n.tr("Localizable", "core.login.account") }
-      /// English
-      internal static var english: String { return L10n.tr("Localizable", "core.login.english") }
-      /// Login
-      internal static var login: String { return L10n.tr("Localizable", "core.login.login") }
-      /// Password
-      internal static var password: String { return L10n.tr("Localizable", "core.login.password") }
-      /// Vietnammese
-      internal static var vietnammese: String { return L10n.tr("Localizable", "core.login.vietnammese") }
-    }
-  }
+  /// Username
+  internal static let coreLoginAccount = L10n.tr("Localizable", "core.login.account")
+  /// English
+  internal static let coreLoginEnglish = L10n.tr("Localizable", "core.login.english")
+  /// Login
+  internal static let coreLoginLogin = L10n.tr("Localizable", "core.login.login")
+  /// Password
+  internal static let coreLoginPassword = L10n.tr("Localizable", "core.login.password")
+  /// Tiếng Việt
+  internal static let coreLoginVietnammese = L10n.tr("Localizable", "core.login.vietnammese")
 }
-// swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
-// swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
+// swiftlint:enable function_parameter_count identifier_name line_length type_body_length
 
 // MARK: - Implementation Details
 
 extension L10n {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg...) -> String {
     let format = BundleToken.bundle.localizedString(forKey: key, value: nil, table: table)
-    let lang = (UserDefaults.standard.value(forKey: "AppleLanguages") as? [String])?.first ?? "en"
-    return String(format: format, locale: Locale.init(identifier: lang), arguments: args)
+    return String(format: format, locale: Locale.current, arguments: args)
   }
 }
 
 // swiftlint:disable convenience_type
 private final class BundleToken {
-  static var bundle: Bundle {
+  static let bundle: Bundle = {
     #if SWIFT_PACKAGE
     return Bundle.module
     #else
-    let lang = (UserDefaults.standard.value(forKey: "AppleLanguages") as? [String])?.first ?? "en"
-    guard let path = Bundle(for: BundleToken.self).path(forResource: lang, ofType: "lproj") else {
-        return Bundle(for: BundleToken.self)
-    }
-    return Bundle(path: path) ?? Bundle(for: BundleToken.self)
+    return Bundle(for: BundleToken.self)
     #endif
-  }
+  }()
 }
 // swiftlint:enable convenience_type

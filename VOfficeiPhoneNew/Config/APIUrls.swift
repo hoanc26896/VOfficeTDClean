@@ -6,7 +6,8 @@
 //
 
 extension API {
+    static let BaseUrl = AppSettings.baseUrl
     enum Urls {
-
+        
     }
 }

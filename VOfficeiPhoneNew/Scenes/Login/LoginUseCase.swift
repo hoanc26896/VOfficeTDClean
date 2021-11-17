@@ -8,9 +8,12 @@
 import RxSwift
 
 protocol LoginUseCaseType {
-    
+    func changeLanguage(lang: String) -> Void
 }
 
 struct LoginUseCase: LoginUseCaseType {
-    
+    func changeLanguage(lang: String) {
+        AppSettings.language = lang
+        Bundle.setLanguage(with: lang)
+    }
 }
