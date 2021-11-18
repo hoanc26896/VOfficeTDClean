@@ -9,12 +9,12 @@ import UIKit
 import MBProgressHUD
 
 extension UIViewController {
-    func showError(message: String, completion: (() -> Void)? = nil) {
-        let ac = UIAlertController(title: "Error",
+    func showError(message: String, okTitle: String = L10n.coreCommonClose, completion: (() -> Void)? = nil) {
+        let ac = UIAlertController(title: L10n.coreCommonAlert,
                                    message: message,
                                    preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "OK", style: .cancel) { _ in
+        let okAction = UIAlertAction(title: okTitle, style: .cancel) { _ in
             completion?()
         }
         

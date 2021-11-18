@@ -13,6 +13,9 @@ final class API: APIBase {
     static var shared = API()
     
     override func handleResponseError(response: HTTPURLResponse, data: Data, json: JSONDictionary?) -> Error {
+        print("handleResponseError - response", response)
+        print("handleResponseError - data", data)
+        print("handleResponseError - json", json)
         if let json = json, let message = json["message"] as? String {
             return APIResponseError(statusCode: response.statusCode, message: message)
         }

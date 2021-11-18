@@ -208,6 +208,8 @@ final class LoginViewController: BaseViewController,Bindable  {
     }
     
     func bindViewModel() {
+       
+        
         let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
             .mapToVoid()
             .asDriverOnErrorJustComplete()
@@ -227,15 +229,15 @@ final class LoginViewController: BaseViewController,Bindable  {
         )
         let output = viewModel.transform(input, disposeBag: disposeBag)
         output.$selectedSegmentIndex.asDriver().drive(languageSegment.rx.selectedSegmentIndex).disposed(by: disposeBag)
-        output.$messageInvalidUsername.asDriver().drive(onNext: { message in
-            let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Click", style:.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }).disposed(by: disposeBag)
+        output.$messageInvalidError.asDriver().drive(messageInvalidErrorBinder).disposed(by: disposeBag)
     }
 }
 
 // MARK: - Binders
 extension LoginViewController {
-    
+    var messageInvalidErrorBinder: Binder<String> {
+        return Binder(self) { vc, message in
+            vc.showError(message: message, okTitle: L10n.coreCommonInputAgain, completion: nil)
+        }
+    }
 }

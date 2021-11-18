@@ -63,6 +63,14 @@
 		2ED08D24273E21C1009B4068 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D1B273E21C0009B4068 /* UIColor+Ext.swift */; };
 		2ED08D25273E21C1009B4068 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D1C273E21C0009B4068 /* UITableView+Extensions.swift */; };
 		2ED08D26273E21C1009B4068 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08D1D273E21C0009B4068 /* UIView+Ext.swift */; };
+		2EE891DC2745FB3E00196114 /* Validation+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE891D92745FB3E00196114 /* Validation+String.swift */; };
+		2EE891DD2745FB3E00196114 /* Validation+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE891DA2745FB3E00196114 /* Validation+Collection.swift */; };
+		2EE891DE2745FB3E00196114 /* Validation+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE891DB2745FB3E00196114 /* Validation+Comparable.swift */; };
+		2EE891E22745FB5D00196114 /* LoggingIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE891E02745FB5D00196114 /* LoggingIn.swift */; };
+		2EE891E32745FB5D00196114 /* LoginDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE891E12745FB5D00196114 /* LoginDto.swift */; };
+		2EE891E527460DB300196114 /* Api+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE891E427460DB300196114 /* Api+Login.swift */; };
+		2EE891E72746327D00196114 /* RSAKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE891E62746327D00196114 /* RSAKey.swift */; };
+		2EE891E9274635DD00196114 /* RSAGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE891E8274635DD00196114 /* RSAGateway.swift */; };
 		2EFA86BA27448F8A000B1569 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA86B927448F8A000B1569 /* UIImage+.swift */; };
 		2EFA86BC2744A889000B1569 /* custom-rx-strings.stencil in Resources */ = {isa = PBXBuildFile; fileRef = 2EFA86BB2744A889000B1569 /* custom-rx-strings.stencil */; };
 		2EFA86BE2744AB91000B1569 /* RxStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA86BD2744AB91000B1569 /* RxStrings.swift */; };
@@ -153,6 +161,14 @@
 		2ED08D1B273E21C0009B4068 /* UIColor+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		2ED08D1C273E21C0009B4068 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		2ED08D1D273E21C0009B4068 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		2EE891D92745FB3E00196114 /* Validation+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Validation+String.swift"; sourceTree = "<group>"; };
+		2EE891DA2745FB3E00196114 /* Validation+Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Validation+Collection.swift"; sourceTree = "<group>"; };
+		2EE891DB2745FB3E00196114 /* Validation+Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Validation+Comparable.swift"; sourceTree = "<group>"; };
+		2EE891E02745FB5D00196114 /* LoggingIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingIn.swift; sourceTree = "<group>"; };
+		2EE891E12745FB5D00196114 /* LoginDto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDto.swift; sourceTree = "<group>"; };
+		2EE891E427460DB300196114 /* Api+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+Login.swift"; sourceTree = "<group>"; };
+		2EE891E62746327D00196114 /* RSAKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAKey.swift; sourceTree = "<group>"; };
+		2EE891E8274635DD00196114 /* RSAGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSAGateway.swift; sourceTree = "<group>"; };
 		2EFA86B927448F8A000B1569 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		2EFA86BB2744A889000B1569 /* custom-rx-strings.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "custom-rx-strings.stencil"; sourceTree = "<group>"; };
 		2EFA86BD2744AB91000B1569 /* RxStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxStrings.swift; sourceTree = "<group>"; };
@@ -269,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				2ED08C76273E0648009B4068 /* Entity.md */,
+				2EE891E62746327D00196114 /* RSAKey.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -276,6 +293,8 @@
 		2ED08C78273E0648009B4068 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				2EE891DF2745FB5D00196114 /* Login */,
+				2EE891D82745FB3E00196114 /* Validations */,
 				2ED08C79273E0648009B4068 /* UseCase.md */,
 			);
 			path = UseCases;
@@ -298,6 +317,7 @@
 				2ED08C7F273E0648009B4068 /* APIInput.swift */,
 				2ED08C81273E0648009B4068 /* APIOutput.swift */,
 				2ED08C83273E0648009B4068 /* APIService.swift */,
+				2EE891E427460DB300196114 /* Api+Login.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -306,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				2ED08C86273E0648009B4068 /* GatewaysAssembler.swift */,
+				2EE891E8274635DD00196114 /* RSAGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -443,6 +464,25 @@
 				2ED08D14273E20BC009B4068 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		2EE891D82745FB3E00196114 /* Validations */ = {
+			isa = PBXGroup;
+			children = (
+				2EE891D92745FB3E00196114 /* Validation+String.swift */,
+				2EE891DA2745FB3E00196114 /* Validation+Collection.swift */,
+				2EE891DB2745FB3E00196114 /* Validation+Comparable.swift */,
+			);
+			path = Validations;
+			sourceTree = "<group>";
+		};
+		2EE891DF2745FB5D00196114 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2EE891E02745FB5D00196114 /* LoggingIn.swift */,
+				2EE891E12745FB5D00196114 /* LoginDto.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		2EFA86BF2744B403000B1569 /* scripts */ = {
@@ -743,18 +783,22 @@
 				2ED08D20273E21C1009B4068 /* UINavigationBar+Ext.swift in Sources */,
 				2ED08C73273E0648009B4068 /* APIUrls.swift in Sources */,
 				2ED08CDC273E0B1B009B4068 /* Assets.swift in Sources */,
+				2EE891DC2745FB3E00196114 /* Validation+String.swift in Sources */,
 				2ED08C9A273E0648009B4068 /* MainAssembler.swift in Sources */,
 				2E85E3082743B32700FF9412 /* UIView+.swift in Sources */,
 				2ED08C80273E0648009B4068 /* APIInput.swift in Sources */,
+				2EE891DD2745FB3E00196114 /* Validation+Collection.swift in Sources */,
 				2ED08D15273E20BC009B4068 /* BaseViewController.swift in Sources */,
 				2ED08C93273E0648009B4068 /* AppViewModel.swift in Sources */,
 				2ED08D07273E1854009B4068 /* LoginViewController.swift in Sources */,
 				2ED08CA0273E0648009B4068 /* MainViewController.swift in Sources */,
 				2ED08CEE273E0FF5009B4068 /* Localization.swift in Sources */,
+				2EE891E22745FB5D00196114 /* LoggingIn.swift in Sources */,
 				2ED08D24273E21C1009B4068 /* UIColor+Ext.swift in Sources */,
 				2ED08D1F273E21C1009B4068 /* UIImage+Ext.swift in Sources */,
 				2ED08D08273E1854009B4068 /* LoginViewModel.swift in Sources */,
 				2EFA86CB2744FB57000B1569 /* Storage.swift in Sources */,
+				2EE891E72746327D00196114 /* RSAKey.swift in Sources */,
 				2ED08D23273E21C1009B4068 /* BaseComponent.swift in Sources */,
 				2ED08C70273E0648009B4068 /* UnitTestViewController.swift in Sources */,
 				2ED08D25273E21C1009B4068 /* UITableView+Extensions.swift in Sources */,
@@ -763,15 +807,19 @@
 				2ED08C6E273E0648009B4068 /* Assembler.swift in Sources */,
 				2ED08D04273E1854009B4068 /* LoginAssembler.swift in Sources */,
 				2ED08D06273E1854009B4068 /* LoginUseCase.swift in Sources */,
+				2EE891E9274635DD00196114 /* RSAGateway.swift in Sources */,
 				2ED08C9E273E0648009B4068 /* MainUseCase.swift in Sources */,
 				2ED08D05273E1854009B4068 /* LoginNavigator.swift in Sources */,
 				2ED08C87273E0648009B4068 /* GatewaysAssembler.swift in Sources */,
 				2ED08C8F273E0648009B4068 /* AppNavigator.swift in Sources */,
 				2ED08C9C273E0648009B4068 /* MainNavigator.swift in Sources */,
+				2EE891E32745FB5D00196114 /* LoginDto.swift in Sources */,
 				2ED08CDA273E0AFD009B4068 /* Strings.swift in Sources */,
 				2ED08D21273E21C1009B4068 /* DefaultDesign.swift in Sources */,
 				2EFA86BA27448F8A000B1569 /* UIImage+.swift in Sources */,
+				2EE891E527460DB300196114 /* Api+Login.swift in Sources */,
 				2ED08C82273E0648009B4068 /* APIOutput.swift in Sources */,
+				2EE891DE2745FB3E00196114 /* Validation+Comparable.swift in Sources */,
 				2ED08CA5273E0648009B4068 /* UIViewController+.swift in Sources */,
 				2ED08CDE273E0B29009B4068 /* Fonts.swift in Sources */,
 				2ED08C8D273E0648009B4068 /* AppAssembler.swift in Sources */,

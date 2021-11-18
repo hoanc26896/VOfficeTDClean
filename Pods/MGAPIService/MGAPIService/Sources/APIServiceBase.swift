@@ -199,6 +199,7 @@ open class APIBase {
     }
     
     open func process<U: JSONData>(_ response: (HTTPURLResponse, Data)) throws -> APIResponse<U> {
+        print(response)
         let (urlResponse, data) = response
         let json: U? = (try? JSONSerialization.jsonObject(with: data, options: [])) as? U
         

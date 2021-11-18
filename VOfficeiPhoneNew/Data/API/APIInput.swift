@@ -17,9 +17,10 @@ class APIInput: APIInputBase {  // swiftlint:disable:this final_class
                    parameters: parameters,
                    method: method,
                    requireAccessToken: requireAccessToken)
+        let transactionTime = "\(NSDate().timeIntervalSince1970 * 1000)"
         self.headers = [
-            "Content-Type": "application/json; charset=utf-8",
-            "Accept": "application/json"
+            "Content-Type": "application/x-www-form-urlencoded",
+            "transactionTime": transactionTime
         ]
         self.user = nil
         self.password = nil

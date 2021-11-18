@@ -35,7 +35,7 @@ extension LoginViewModel: ViewModel {
     
     struct Output {
         @Property var selectedSegmentIndex: Int = 0
-        @Property var messageInvalidUsername: String = ""
+        @Property var messageInvalidError: String = ""
     }
     
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
@@ -46,24 +46,52 @@ extension LoginViewModel: ViewModel {
             self.defaultLanguage()
         }.asDriver()
         let changeLanguageTrigger = Driver.merge(defaultLanguage, input.onChangeLanguage)
-        changeLanguageTrigger.filter(self.filterLanguage).map(self.mapLanguage).distinctUntilChanged().drive(onNext: self.useCase.changeLanguage).disposed(by: disposeBag)
-        changeLanguageTrigger.drive(output.$selectedSegmentIndex).disposed(by: disposeBag)
+        changeLanguageTrigger
+            .filter(self.filterLanguage)
+            .map(self.mapLanguage)
+            .distinctUntilChanged()
+            .drive(onNext: self.useCase.changeLanguage)
+            .disposed(by: disposeBag)
+        changeLanguageTrigger
+            .drive(output.$selectedSegmentIndex)
+            .disposed(by: disposeBag)
         
         // Login
-        let isEmptyUsername = input.onLogin.withLatestFrom(input.onChangeUser).filter { username in
-            return username.isEmpty
-        }.map { _ in
-            "Nhap lai"
-        }
-        isEmptyUsername.drive(output.$messageInvalidUsername).disposed(by: disposeBag)
+        let usernameValidation = input.onLogin.withLatestFrom(input.onChangeUser)
+            .map { $0 }
+            .map(useCase.validateUserName(_:))
         
-        let isEmptyPassword = input.onLogin.withLatestFrom(input.onChangePass).filter { password in
-            return password.isEmpty
-        }.map { _ in
-            "Nhap lai"
-        }
-        isEmptyUsername.drive(output.$messageInvalidUsername).disposed(by: disposeBag)
+        let messageUserValidation = usernameValidation
+            .map { $0.message }
+            
+        let passwordValidation = input.onLogin.withLatestFrom(input.onChangePass)
+            .map { $0 }
+            .map(useCase.validatePassword(_:))
         
+        let messagePassValidation = passwordValidation
+            .map { $0.message }
+
+        Driver.merge(messageUserValidation, messagePassValidation)
+            .filter{!$0.isEmpty}
+            .drive(output.$messageInvalidError)
+            .disposed(by: disposeBag)
+        
+        let validation = Driver.and(
+            usernameValidation.map { $0.isValid },
+            passwordValidation.map { $0.isValid }
+        ).startWith(true)
+
+        
+        input.onLogin
+            .withLatestFrom(validation)
+            .filter{$0}
+            .withLatestFrom(Driver.combineLatest(input.onChangeUser, input.onChangePass))
+            .flatMap { username, password -> Driver<Void> in
+                print("usname", username)
+                print("password", password)
+                return self.useCase.postRSAKeyPublic().asDriverOnErrorJustComplete()
+            }.drive()
+            .disposed(by: disposeBag)
         
         return output
     }

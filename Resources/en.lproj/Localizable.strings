@@ -1,6 +1,26 @@
+"core.common.alert" = "Alert";
+
+"core.common.cannot_connect_to_internet" = "Can not connect to internet, please try again";
+
+"core.common.close" = "Close";
+
+"core.common.input_again" = "Type Again";
+
+"core.common.no" = "No";
+
+"core.common.warning" = "Warning";
+
+"core.common.yes" = "Yes";
+
 "core.login.account" = "Username";
 
+"core.login.do_not_enter_password" = "You do not enter password";
+
+"core.login.do_not_enter_username" = "You do not enter account";
+
 "core.login.english" = "English";
+
+"core.login.enter_min_8_number" = "You must enter at least 8 characters";
 
 "core.login.login" = "Login";
 
