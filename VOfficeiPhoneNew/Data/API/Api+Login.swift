@@ -27,8 +27,7 @@ extension API{
         
         override func mapping(map: Map) {
             super.mapping(map: map)
-            print("mapping", map)
-            rsaKey <- map["result"]
+            rsaKey <- map["result.data"]
         }
         
         static func == (lhs: API.PostRSAKeyPublicOutput, rhs: API.PostRSAKeyPublicOutput) -> Bool {

@@ -20,6 +20,8 @@ extension LoggingIn {
         if let error = dto.validationError {
             return Observable.error(error)
         }
+        print(dto.username)
+        print(dto.password)
         
         return Observable.create { observer in
             DispatchQueue.global().asyncAfter(deadline: .now() + 0.5, execute: {
@@ -30,8 +32,8 @@ extension LoggingIn {
         }
     }
     
-    func postRSAKeyPublic() -> Observable<Void> {
-        return rsaGateway.postRSAKeyPublic().mapToVoid()
+    func postRSAKeyPublic() -> Observable<RSAKey> {
+        return rsaGateway.postRSAKeyPublicGateway()
     }
     
     

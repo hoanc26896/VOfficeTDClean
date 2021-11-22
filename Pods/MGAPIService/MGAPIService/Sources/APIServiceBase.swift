@@ -68,7 +68,9 @@ open class APIBase {
         
         return response
             .map { apiResponse -> APIResponse<T> in
+                print("apiResponse: ", apiResponse)
                 if let t = T(JSON: apiResponse.data) {
+                   
                     return APIResponse(header: apiResponse.header, data: t)
                 }
                 
@@ -156,6 +158,7 @@ open class APIBase {
                 return try self.handleRequestError(error, input: input)
             }
             .do(onNext: { response in
+                print("requestJSON - response ", response)
                 if input.usingCache {
                     DispatchQueue.global().async {
                         try? CacheManager.sharedInstance.write(urlString: input.urlEncodingString,

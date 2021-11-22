@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		109E34C7A64EC82DFF2BB912 /* Pods_VOfficeiPhoneNew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B042A426234C8263015A20BA /* Pods_VOfficeiPhoneNew.framework */; };
+		2E348D5D274B994900F76E20 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E348D5C274B994900F76E20 /* Constant.swift */; };
 		2E85E3082743B32700FF9412 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85E3072743B32700FF9412 /* UIView+.swift */; };
 		2ED08C68273E0648009B4068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C67273E0648009B4068 /* AppDelegate.swift */; };
 		2ED08C6A273E0648009B4068 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08C69273E0648009B4068 /* Podfile */; };
@@ -101,6 +102,7 @@
 
 /* Begin PBXFileReference section */
 		18BB51A61CDB2718B73647D4 /* Pods-VOfficeiPhoneNewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNewTests.debug.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2E348D5C274B994900F76E20 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		2E85E3072743B32700FF9412 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2ED08C64273E0648009B4068 /* VOfficeiPhoneNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOfficeiPhoneNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED08C67273E0648009B4068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			children = (
 				2ED08C76273E0648009B4068 /* Entity.md */,
 				2EE891E62746327D00196114 /* RSAKey.swift */,
+				2E348D5C274B994900F76E20 /* Constant.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 				2ED08CA2273E0648009B4068 /* MainViewModel.swift in Sources */,
 				2ED08C8A273E0648009B4068 /* Storyboards.swift in Sources */,
 				2ED08C7E273E0648009B4068 /* APIError.swift in Sources */,
+				2E348D5D274B994900F76E20 /* Constant.swift in Sources */,
 				2ED08D26273E21C1009B4068 /* UIView+Ext.swift in Sources */,
 				2EFA86BE2744AB91000B1569 /* RxStrings.swift in Sources */,
 				2EFA86C72744FB13000B1569 /* AppSettings.swift in Sources */,

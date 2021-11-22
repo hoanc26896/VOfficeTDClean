@@ -9,19 +9,21 @@ import ObjectMapper
 import Then
 
 struct RSAKey {
-    var strPublicKey: String
-    var strAesKey: String
-
+    public static var share = RSAKey()
+    
+    var strPublicKey: String = ""
+    var strAesKey: String = ""
 }
 
 extension RSAKey: Then, Equatable { }
 
 extension RSAKey: Mappable {
     init?(map: Map) {
-        self.init(map: map)
+        self.init()
     }
-    
+
     mutating func mapping(map: Map) {
+        print("map[strPublicKey]", map["strPublicKey"])
         strPublicKey <- map["strPublicKey"]
         strAesKey <- map["strAesKey"]
     }

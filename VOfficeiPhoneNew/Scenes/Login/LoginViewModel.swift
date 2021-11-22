@@ -85,12 +85,19 @@ extension LoginViewModel: ViewModel {
         input.onLogin
             .withLatestFrom(validation)
             .filter{$0}
-            .withLatestFrom(Driver.combineLatest(input.onChangeUser, input.onChangePass))
-            .flatMap { username, password -> Driver<Void> in
-                print("usname", username)
-                print("password", password)
+            .flatMap({ _ -> Driver<RSAKey> in
                 return self.useCase.postRSAKeyPublic().asDriverOnErrorJustComplete()
-            }.drive()
+            })
+            .filter({ rsaKey in
+                return !rsaKey.strPublicKey.isEmpty && !rsaKey.strAesKey.isEmpty
+            })
+            .withLatestFrom(Driver.combineLatest(input.onChangeUser, input.onChangePass))
+            .flatMapLatest { username, password -> Driver<Void> in
+               
+                self.useCase.login(dto: LoginDto(username: username, password: password))
+                    .asDriverOnErrorJustComplete()
+            }
+            .drive()
             .disposed(by: disposeBag)
         
         return output

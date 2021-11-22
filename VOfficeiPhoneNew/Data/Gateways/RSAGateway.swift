@@ -11,19 +11,19 @@ import MGArchitecture
 import Then
 
 protocol RSAGatewayType{
-    func postRSAKeyPublic() -> Observable<RSAKey>
+    func postRSAKeyPublicGateway() -> Observable<RSAKey>
 }
 
 struct RSAGateway: RSAGatewayType {
-    func postRSAKeyPublic() -> Observable<RSAKey> {
+    func postRSAKeyPublicGateway() -> Observable<RSAKey> {
         let input = API.PostRSAKeyPublicInput()
         return API.shared.postRSAKeyPublic(input)
             .map{$0.rsaKey}
             .unwrap()
             .distinctUntilChanged{$0 == $1}
-            .map { rsakey in
-                print(rsakey)
-            return rsakey
+            .map { rsaKey in
+                Constant.share().rsaKey = rsaKey
+            return rsaKey
         }
     }
     

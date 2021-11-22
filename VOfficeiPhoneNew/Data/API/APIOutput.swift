@@ -10,8 +10,11 @@ import MGAPIService
 
 class APIOutput: APIOutputBase {  // swiftlint:disable:this final_class
     var message: String?
-    
+    var errorCode: Int?
+
+  
     override func mapping(map: Map) {
-        message <- map["message"]
+        message <- map["result.mess.message"]
+        errorCode <- map["result.mess.errorCode"]
     }
 }
