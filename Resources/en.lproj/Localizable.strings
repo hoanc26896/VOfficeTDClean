@@ -2,17 +2,23 @@
 
 "core.common.cannot_connect_to_internet" = "Can not connect to internet, please try again";
 
+"core.common.cannot_connect_to_network" = "Can not connect to network, please check and try again";
+
 "core.common.close" = "Close";
 
 "core.common.input_again" = "Type Again";
 
 "core.common.no" = "No";
 
+"core.common.try_again" = "Try again";
+
 "core.common.warning" = "Warning";
 
 "core.common.yes" = "Yes";
 
 "core.login.account" = "Username";
+
+"core.login.connecting" = "Connecting ...";
 
 "core.login.do_not_enter_password" = "You do not enter password";
 

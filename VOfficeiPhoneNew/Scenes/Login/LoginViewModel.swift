@@ -36,6 +36,10 @@ extension LoginViewModel: ViewModel {
     struct Output {
         @Property var selectedSegmentIndex: Int = 0
         @Property var messageInvalidError: String = ""
+        @Property var messageError: String = ""
+        @Property var isAllowLogin = true
+        @Property var isLoading = false
+        @Property var error: Error?
     }
     
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
@@ -46,6 +50,7 @@ extension LoginViewModel: ViewModel {
             self.defaultLanguage()
         }.asDriver()
         let changeLanguageTrigger = Driver.merge(defaultLanguage, input.onChangeLanguage)
+            
         changeLanguageTrigger
             .filter(self.filterLanguage)
             .map(self.mapLanguage)
@@ -57,6 +62,17 @@ extension LoginViewModel: ViewModel {
             .disposed(by: disposeBag)
         
         // Login
+        let errorTracker = ErrorTracker()
+        errorTracker
+            .drive(output.$error)
+            .disposed(by: disposeBag)
+        
+        let activityIndicator = ActivityIndicator()
+        let isLoading = activityIndicator.asDriver()
+        isLoading
+            .drive(output.$isLoading)
+            .disposed(by: disposeBag)
+        
         let usernameValidation = input.onLogin.withLatestFrom(input.onChangeUser)
             .map { $0 }
             .map(useCase.validateUserName(_:))
@@ -79,26 +95,31 @@ extension LoginViewModel: ViewModel {
         let validation = Driver.and(
             usernameValidation.map { $0.isValid },
             passwordValidation.map { $0.isValid }
-        ).startWith(true)
+        ).startWith(false)
 
+        let isAllowLogin = Driver.merge(validation, isLoading)
+        isAllowLogin.drive(output.$isAllowLogin).disposed(by: disposeBag)
         
-        input.onLogin
-            .withLatestFrom(validation)
+        let onCallRSA = input.onLogin
+            .withLatestFrom(isAllowLogin)
             .filter{$0}
             .flatMap({ _ -> Driver<RSAKey> in
-                return self.useCase.postRSAKeyPublic().asDriverOnErrorJustComplete()
+                return self.useCase.postRSAKeyPublic().trackError(errorTracker).trackActivity(activityIndicator).asDriverOnErrorJustComplete()
             })
-            .filter({ rsaKey in
+            .map({ rsaKey in
                 return !rsaKey.strPublicKey.isEmpty && !rsaKey.strAesKey.isEmpty
             })
+        
+        let onLogin = onCallRSA
+            .filter{$0}
             .withLatestFrom(Driver.combineLatest(input.onChangeUser, input.onChangePass))
             .flatMapLatest { username, password -> Driver<Void> in
-               
+
                 self.useCase.login(dto: LoginDto(username: username, password: password))
                     .asDriverOnErrorJustComplete()
-            }
-            .drive()
+            }.drive()
             .disposed(by: disposeBag)
+           
         
         return output
     }

@@ -13,18 +13,24 @@ internal enum L10n {
   internal static let coreCommonAlert = L10n.tr("Localizable", "core.common.alert")
   /// Can not connect to internet, please try again
   internal static let coreCommonCannotConnectToInternet = L10n.tr("Localizable", "core.common.cannot_connect_to_internet")
+  /// Can not connect to network, please check and try again
+  internal static let coreCommonCannotConnectToNetwork = L10n.tr("Localizable", "core.common.cannot_connect_to_network")
   /// Close
   internal static let coreCommonClose = L10n.tr("Localizable", "core.common.close")
   /// Type Again
   internal static let coreCommonInputAgain = L10n.tr("Localizable", "core.common.input_again")
   /// No
   internal static let coreCommonNo = L10n.tr("Localizable", "core.common.no")
+  /// Try again
+  internal static let coreCommonTryAgain = L10n.tr("Localizable", "core.common.try_again")
   /// Warning
   internal static let coreCommonWarning = L10n.tr("Localizable", "core.common.warning")
   /// Yes
   internal static let coreCommonYes = L10n.tr("Localizable", "core.common.yes")
   /// Username
   internal static let coreLoginAccount = L10n.tr("Localizable", "core.login.account")
+  /// Connecting ...
+  internal static let coreLoginConnecting = L10n.tr("Localizable", "core.login.connecting")
   /// You do not enter password
   internal static let coreLoginDoNotEnterPassword = L10n.tr("Localizable", "core.login.do_not_enter_password")
   /// You do not enter account

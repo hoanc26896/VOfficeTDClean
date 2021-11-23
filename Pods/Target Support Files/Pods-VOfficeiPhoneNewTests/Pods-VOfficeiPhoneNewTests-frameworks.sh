@@ -175,6 +175,10 @@ code_sign_if_enabled() {
   fi
 }
 
+if [[ "$CONFIGURATION" == "Beta" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework"
+fi
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework"

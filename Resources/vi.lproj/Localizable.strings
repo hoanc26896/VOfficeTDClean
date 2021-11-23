@@ -2,17 +2,23 @@
 
 "core.common.cannot_connect_to_internet" = "Không kết nối được đến máy chủ, vui lòng thử lại";
 
+"core.common.cannot_connect_to_network" = "Không có kết nối mạng, vui lòng kiểm tra và thử lại";
+
 "core.common.close" = "Đóng";
 
 "core.common.input_again" = "Nhập lại";
 
 "core.common.no" = "Không";
 
-"core.common.warning" = "Warning";
+"core.common.try_again" = "Thử lại";
+
+"core.common.warning" = "Cảnh báo";
 
 "core.common.yes" = "Có";
 
 "core.login.account" = "Tài khoản";
+
+"core.login.connecting" = "Đang kết nối ...";
 
 "core.login.do_not_enter_password" = "Đồng chí chưa nhập mật khẩu";
 

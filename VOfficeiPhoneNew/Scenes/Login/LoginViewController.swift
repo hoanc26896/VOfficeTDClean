@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import Reusable
 import Then
+import MBProgressHUD
 
 final class LoginViewController: BaseViewController,Bindable  {
     
@@ -27,7 +28,7 @@ final class LoginViewController: BaseViewController,Bindable  {
     
     lazy var languageSegment: UISegmentedControl = {
         let control = UISegmentedControl(items: [L10n.coreLoginVietnammese, L10n.coreLoginEnglish])
-        control.selectedSegmentIndex = AppSettings.language == "vi" ? 0 : 1
+//        control.selectedSegmentIndex = AppSettings.language == "vi" ? 0 : 1
         control.tintColor = LAsset.button.color
         self.view.addSubview(control)
         return control
@@ -230,6 +231,9 @@ final class LoginViewController: BaseViewController,Bindable  {
         let output = viewModel.transform(input, disposeBag: disposeBag)
         output.$selectedSegmentIndex.asDriver().drive(languageSegment.rx.selectedSegmentIndex).disposed(by: disposeBag)
         output.$messageInvalidError.asDriver().drive(messageInvalidErrorBinder).disposed(by: disposeBag)
+        output.$error.asDriver().unwrap().drive(messageApiErrorBinder).disposed(by: disposeBag)
+        output.$isAllowLogin.asDriver().drive(isAllowLoginBinder).disposed(by: disposeBag)
+        output.$isLoading.asDriver().drive(isLoading).disposed(by: disposeBag)
     }
 }
 
@@ -238,6 +242,45 @@ extension LoginViewController {
     var messageInvalidErrorBinder: Binder<String> {
         return Binder(self) { vc, message in
             vc.showError(message: message, okTitle: L10n.coreCommonInputAgain, completion: nil)
+        }
+    }
+    
+    var messageApiErrorBinder: Binder<Error> {
+        return Binder(self) { vc, error in
+            guard let error = error as? CommonError else {
+                vc.showError(title: L10n.coreCommonAlert, message: error.localizedDescription, okTitle: L10n.coreCommonTryAgain, cancelTitle: L10n.coreCommonClose) {
+                    
+                } cancelCompletion: {
+                    
+                }
+
+                return
+            }
+            vc.showError(title: L10n.coreCommonAlert, message: error.getMessage(), okTitle: L10n.coreCommonTryAgain, cancelTitle: L10n.coreCommonClose) {
+                
+            } cancelCompletion: {
+                
+            }
+        }
+    }
+    
+    var isAllowLoginBinder: Binder<Bool>{
+        return Binder(self){ vc, isAllow in
+            vc.loginBtn.localizedTitle = isAllow ? RxL10n.coreLoginConnecting : RxL10n.coreLoginLogin
+        }
+    }
+    
+    var isLoading: Binder<Bool> {
+        return Binder(self) { vc, isLoading in
+            if isLoading {
+                let hud = MBProgressHUD.showAdded(to: vc.view, animated: true)
+                hud.bezelView.style = .solidColor
+                hud.bezelView.color = UIColor (red: 0, green: 0, blue: 0, alpha: 0.6)
+                hud.backgroundColor = UIColor (red: 0, green: 0, blue: 0, alpha: 0.4)
+                hud.offset.y = -30
+            } else {
+                MBProgressHUD.hide(for: vc.view, animated: true)
+            }
         }
     }
 }

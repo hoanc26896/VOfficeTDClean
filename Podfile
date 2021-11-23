@@ -19,6 +19,7 @@ def pods
     pod 'MBProgressHUD', '~> 1.2'
     pod 'SDWebImage', '~> 5.8.3'
     pod 'SwiftGen', '~> 6.0'
+#    pod 'ChameleonFramework/Swift'
 end
 
 def test_pods

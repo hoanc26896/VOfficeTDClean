@@ -9,7 +9,7 @@ import MGAPIService
 import Foundation
 
 struct APIResponseError: APIError {
-    let errorCode: Int?
+    let statusCode: Int?
     let message: String
     
     var errorDescription: String? {

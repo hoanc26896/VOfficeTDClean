@@ -22,6 +22,24 @@ extension UIViewController {
         present(ac, animated: true, completion: nil)
     }
     
+    func showError(title: String = L10n.coreCommonAlert, message: String, okTitle: String, cancelTitle:String, okCompletion: (() -> Void)? = nil,  cancelCompletion: (() -> Void)? = nil) {
+        let ac = UIAlertController(title: L10n.coreCommonAlert,
+                                   message: message,
+                                   preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: okTitle, style: .default) { _ in
+            okCompletion?()
+        }
+        
+        let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel) { _ in
+            cancelCompletion?()
+        }
+        
+        ac.addAction(okAction)
+        ac.addAction(cancelAction)
+        present(ac, animated: true, completion: nil)
+    }
+    
     func showAutoCloseMessage(image: UIImage?,
                               title: String?,
                               message: String?,

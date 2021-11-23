@@ -24,7 +24,7 @@ struct RSAGateway: RSAGatewayType {
             .map { rsaKey in
                 Constant.share().rsaKey = rsaKey
             return rsaKey
-        }
+            }
     }
     
     

@@ -16,18 +16,24 @@ internal enum RxL10n {
   internal static let coreCommonAlert = RxL10n.tr("Localizable", "core.common.alert")
   /// Can not connect to internet, please try again
   internal static let coreCommonCannotConnectToInternet = RxL10n.tr("Localizable", "core.common.cannot_connect_to_internet")
+  /// Can not connect to network, please check and try again
+  internal static let coreCommonCannotConnectToNetwork = RxL10n.tr("Localizable", "core.common.cannot_connect_to_network")
   /// Close
   internal static let coreCommonClose = RxL10n.tr("Localizable", "core.common.close")
   /// Type Again
   internal static let coreCommonInputAgain = RxL10n.tr("Localizable", "core.common.input_again")
   /// No
   internal static let coreCommonNo = RxL10n.tr("Localizable", "core.common.no")
+  /// Try again
+  internal static let coreCommonTryAgain = RxL10n.tr("Localizable", "core.common.try_again")
   /// Warning
   internal static let coreCommonWarning = RxL10n.tr("Localizable", "core.common.warning")
   /// Yes
   internal static let coreCommonYes = RxL10n.tr("Localizable", "core.common.yes")
   /// Username
   internal static let coreLoginAccount = RxL10n.tr("Localizable", "core.login.account")
+  /// Connecting ...
+  internal static let coreLoginConnecting = RxL10n.tr("Localizable", "core.login.connecting")
   /// You do not enter password
   internal static let coreLoginDoNotEnterPassword = RxL10n.tr("Localizable", "core.login.do_not_enter_password")
   /// You do not enter account

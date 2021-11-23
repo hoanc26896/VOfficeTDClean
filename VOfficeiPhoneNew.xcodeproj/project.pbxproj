@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		109E34C7A64EC82DFF2BB912 /* Pods_VOfficeiPhoneNew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B042A426234C8263015A20BA /* Pods_VOfficeiPhoneNew.framework */; };
 		2E348D5D274B994900F76E20 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E348D5C274B994900F76E20 /* Constant.swift */; };
+		2E5F81AF274C9D1F00357CDC /* Error+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F81AE274C9D1F00357CDC /* Error+.swift */; };
 		2E85E3082743B32700FF9412 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85E3072743B32700FF9412 /* UIView+.swift */; };
 		2ED08C68273E0648009B4068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C67273E0648009B4068 /* AppDelegate.swift */; };
 		2ED08C6A273E0648009B4068 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08C69273E0648009B4068 /* Podfile */; };
@@ -80,7 +80,8 @@
 		2EFA86C72744FB13000B1569 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA86C62744FB13000B1569 /* AppSettings.swift */; };
 		2EFA86C92744FB37000B1569 /* CacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA86C82744FB37000B1569 /* CacheStorage.swift */; };
 		2EFA86CB2744FB57000B1569 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA86CA2744FB57000B1569 /* Storage.swift */; };
-		C6780266ABBC3EF7958EB3C2 /* Pods_VOfficeiPhoneNewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2BCC226498AD4E366FAD4A /* Pods_VOfficeiPhoneNewTests.framework */; };
+		50D67E175AA224FEC42CD717 /* Pods_VOfficeiPhoneNew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32EE20DBD60044F6806E0276 /* Pods_VOfficeiPhoneNew.framework */; };
+		892180B449A6A3BD67BF9230 /* Pods_VOfficeiPhoneNewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08693761741B2E9C00085763 /* Pods_VOfficeiPhoneNewTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,8 +102,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08693761741B2E9C00085763 /* Pods_VOfficeiPhoneNewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VOfficeiPhoneNewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BB51A61CDB2718B73647D4 /* Pods-VOfficeiPhoneNewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNewTests.debug.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2E348D5C274B994900F76E20 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		2E5F81AE274C9D1F00357CDC /* Error+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+.swift"; sourceTree = "<group>"; };
 		2E85E3072743B32700FF9412 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2ED08C64273E0648009B4068 /* VOfficeiPhoneNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOfficeiPhoneNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED08C67273E0648009B4068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -179,10 +182,11 @@
 		2EFA86C62744FB13000B1569 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		2EFA86C82744FB37000B1569 /* CacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStorage.swift; sourceTree = "<group>"; };
 		2EFA86CA2744FB57000B1569 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		3B2BCC226498AD4E366FAD4A /* Pods_VOfficeiPhoneNewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VOfficeiPhoneNewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32EE20DBD60044F6806E0276 /* Pods_VOfficeiPhoneNew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VOfficeiPhoneNew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		595000CBC51DFCA878942911 /* Pods-VOfficeiPhoneNewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNewTests.release.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests.release.xcconfig"; sourceTree = "<group>"; };
+		5E2D46474ACEA13FCF88112B /* Pods-VOfficeiPhoneNewTests.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNewTests.beta.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests.beta.xcconfig"; sourceTree = "<group>"; };
 		A49BC69D95D6298874AA0E33 /* Pods-VOfficeiPhoneNew.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNew.debug.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNew/Pods-VOfficeiPhoneNew.debug.xcconfig"; sourceTree = "<group>"; };
-		B042A426234C8263015A20BA /* Pods_VOfficeiPhoneNew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VOfficeiPhoneNew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC9CD2053379729AC84A285C /* Pods-VOfficeiPhoneNew.beta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNew.beta.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNew/Pods-VOfficeiPhoneNew.beta.xcconfig"; sourceTree = "<group>"; };
 		E59D116E87A44BFAC72A5B8E /* Pods-VOfficeiPhoneNew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNew.release.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNew/Pods-VOfficeiPhoneNew.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,7 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				109E34C7A64EC82DFF2BB912 /* Pods_VOfficeiPhoneNew.framework in Frameworks */,
+				50D67E175AA224FEC42CD717 /* Pods_VOfficeiPhoneNew.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +203,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6780266ABBC3EF7958EB3C2 /* Pods_VOfficeiPhoneNewTests.framework in Frameworks */,
+				892180B449A6A3BD67BF9230 /* Pods_VOfficeiPhoneNewTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +224,8 @@
 				E59D116E87A44BFAC72A5B8E /* Pods-VOfficeiPhoneNew.release.xcconfig */,
 				18BB51A61CDB2718B73647D4 /* Pods-VOfficeiPhoneNewTests.debug.xcconfig */,
 				595000CBC51DFCA878942911 /* Pods-VOfficeiPhoneNewTests.release.xcconfig */,
+				CC9CD2053379729AC84A285C /* Pods-VOfficeiPhoneNew.beta.xcconfig */,
+				5E2D46474ACEA13FCF88112B /* Pods-VOfficeiPhoneNewTests.beta.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -227,6 +233,7 @@
 		2ED08C5B273E0648009B4068 = {
 			isa = PBXGroup;
 			children = (
+				2ED08C69273E0648009B4068 /* Podfile */,
 				2ED08CF3273E178A009B4068 /* Resources */,
 				2ED08CEF273E16B3009B4068 /* Deployment */,
 				2ED08C66273E0648009B4068 /* VOfficeiPhoneNew */,
@@ -376,6 +383,7 @@
 				2ED08CA6273E0648009B4068 /* UIViewController+Rx.swift */,
 				2E85E3072743B32700FF9412 /* UIView+.swift */,
 				2EFA86B927448F8A000B1569 /* UIImage+.swift */,
+				2E5F81AE274C9D1F00357CDC /* Error+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -443,7 +451,6 @@
 				2ED08CA8273E064B009B4068 /* Assets.xcassets */,
 				2ED08CAA273E064B009B4068 /* LaunchScreen.storyboard */,
 				2ED08CE9273E0F2F009B4068 /* Localizable.strings */,
-				2ED08C69273E0648009B4068 /* Podfile */,
 				2ED08C6B273E0648009B4068 /* .swiftlint.yml */,
 			);
 			path = Resources;
@@ -510,8 +517,8 @@
 		3E776D0257FEAFB85AAEAFF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B042A426234C8263015A20BA /* Pods_VOfficeiPhoneNew.framework */,
-				3B2BCC226498AD4E366FAD4A /* Pods_VOfficeiPhoneNewTests.framework */,
+				32EE20DBD60044F6806E0276 /* Pods_VOfficeiPhoneNew.framework */,
+				08693761741B2E9C00085763 /* Pods_VOfficeiPhoneNewTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -819,6 +826,7 @@
 				2EE891E32745FB5D00196114 /* LoginDto.swift in Sources */,
 				2ED08CDA273E0AFD009B4068 /* Strings.swift in Sources */,
 				2ED08D21273E21C1009B4068 /* DefaultDesign.swift in Sources */,
+				2E5F81AF274C9D1F00357CDC /* Error+.swift in Sources */,
 				2EFA86BA27448F8A000B1569 /* UIImage+.swift in Sources */,
 				2EE891E527460DB300196114 /* Api+Login.swift in Sources */,
 				2ED08C82273E0648009B4068 /* APIOutput.swift in Sources */,
@@ -1030,6 +1038,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1039,7 +1048,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1057,6 +1066,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1066,7 +1076,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1232,7 +1242,7 @@
 		};
 		2EFA86CD2745058D000B1569 /* Beta */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A49BC69D95D6298874AA0E33 /* Pods-VOfficeiPhoneNew.debug.xcconfig */;
+			baseConfigurationReference = CC9CD2053379729AC84A285C /* Pods-VOfficeiPhoneNew.beta.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1244,6 +1254,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1253,13 +1264,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Beta;
 		};
 		2EFA86CE2745058D000B1569 /* Beta */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18BB51A61CDB2718B73647D4 /* Pods-VOfficeiPhoneNewTests.debug.xcconfig */;
+			baseConfigurationReference = 5E2D46474ACEA13FCF88112B /* Pods-VOfficeiPhoneNewTests.beta.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

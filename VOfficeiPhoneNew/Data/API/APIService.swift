@@ -18,13 +18,33 @@ final class API: APIBase {
         logOptions = LogOptions.all
     }
     
+    override func handleRequestError<U>(_ error: Error, input: APIInputBase) throws -> Observable<APIResponse<U>> where U : JSONData {
+        let networkStatus = NetworkReachabilityManager.default?.status
+        if (networkStatus == .notReachable){
+            throw CommonError.apiNotConnectToNetwork
+        }else{
+//            if error._code == NSURLErrorTimedOut {
+//                throw
+//            }
+            throw CommonError.apiNotConnectToInternet
+        }
+      
+    }
+    
     override func handleResponseError(response: HTTPURLResponse, data: Data, json: JSONDictionary?) -> Error {
      
+        let networkStatus = NetworkReachabilityManager.default?.status
+        if (networkStatus == .notReachable){
+            return APIResponseError(statusCode: 999, message: L10n.coreCommonCannotConnectToNetwork)
+        }
+        
         if let result = json?["result"] as? [String: Any], let mess = result["mess"] as? [String: Any],
            let errorCode = mess["errorCode"] as? Int, let message = mess["message"] as? String {
-            return APIResponseError(errorCode: errorCode, message: message)
+            return APIResponseError(statusCode: errorCode, message: message)
+        }else{
+            return APIResponseError(statusCode: 999, message: L10n.coreCommonCannotConnectToInternet)
         }
-        return super.handleResponseError(response: response, data: data, json: json)
+        
     }
     
     override func preprocess(_ input: APIInputBase) -> Observable<APIInputBase> {

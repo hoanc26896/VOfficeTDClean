@@ -8,6 +8,7 @@
 import RxCocoa
 import RxSwift
 import UIKit
+import MBProgressHUD
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
         }
+        UIActivityIndicatorView.appearance(whenContainedInInstancesOf:[MBProgressHUD.self]).color = .white
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         
