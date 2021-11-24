@@ -17,19 +17,11 @@ protocol LoggingIn {
 
 extension LoggingIn {
     func login(dto: LoginDto) -> Observable<Void> {
-        if let error = dto.validationError {
-            return Observable.error(error)
-        }
-        print(dto.username)
-        print(dto.password)
-        
-        return Observable.create { observer in
-            DispatchQueue.global().asyncAfter(deadline: .now() + 0.5, execute: {
-                observer.onNext(())
-                observer.onCompleted()
-            })
-            return Disposables.create()
-        }
+//        if let error = dto.validationError {
+//            return Observable.error(error)
+//        }
+        guard let username = dto.username, let password = dto.password else { return Observable.empty() }
+        return rsaGateway.postApiLoginGateway(username: username, password: password)
     }
     
     func postRSAKeyPublic() -> Observable<RSAKey> {

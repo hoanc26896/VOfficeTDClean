@@ -12,9 +12,16 @@ import Then
 
 protocol RSAGatewayType{
     func postRSAKeyPublicGateway() -> Observable<RSAKey>
+    func postApiLoginGateway(username: String, password: String) -> Observable<Void>
 }
 
 struct RSAGateway: RSAGatewayType {
+    func postApiLoginGateway(username: String, password: String) -> Observable<Void> {
+        let params = API.PostAPILoginInputParams(username, password)
+        let input = API.PostAPILoginInput(params: params)
+        return API.shared.postApiLogin(input).mapToVoid()
+    }
+    
     func postRSAKeyPublicGateway() -> Observable<RSAKey> {
         let input = API.PostRSAKeyPublicInput()
         return API.shared.postRSAKeyPublic(input)
@@ -22,10 +29,13 @@ struct RSAGateway: RSAGatewayType {
             .unwrap()
             .distinctUntilChanged{$0 == $1}
             .map { rsaKey in
-                Constant.share().rsaKey = rsaKey
+                Constant.share().rsaKey = RSAKey(strPublicKey: rsaKey.strPublicKeySSO, strAesKey: rsaKey.strAesKeySSO)
+                print("mapping - Constant.share().rsaKey", Constant.share().rsaKey)
             return rsaKey
             }
     }
+    
+    
     
     
 }

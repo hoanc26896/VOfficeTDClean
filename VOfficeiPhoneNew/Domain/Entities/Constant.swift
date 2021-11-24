@@ -14,5 +14,4 @@ public class Constant {
     
     var rsaKey: RSAKey?
     
-    
 }

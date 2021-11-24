@@ -1,0 +1,6 @@
+framework module RsaSignner {
+  umbrella header "RsaSignner.h"
+
+  export *
+  module * { export * }
+}

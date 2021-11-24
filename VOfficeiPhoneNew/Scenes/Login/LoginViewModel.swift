@@ -20,10 +20,13 @@ protocol LoginViewModelProtocol {
 struct LoginViewModel {
     let navigator: LoginNavigatorType
     let useCase: LoginUseCaseType
+    let tryAgainLogin = PublishSubject<Void>()
 }
 
 // MARK: - ViewModel
 extension LoginViewModel: ViewModel {
+   
+    
     struct Input {
         let onLoad: Driver<Void>
         let onChangeLanguage: Driver<Int>
@@ -45,15 +48,16 @@ extension LoginViewModel: ViewModel {
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
         let output = Output()
         
-        // Change Segment
+        // Change Segment Language
         let defaultLanguage = input.onLoad.map { _ in
             self.defaultLanguage()
         }.asDriver()
         let changeLanguageTrigger = Driver.merge(defaultLanguage, input.onChangeLanguage)
-            
+        
         changeLanguageTrigger
             .filter(self.filterLanguage)
             .map(self.mapLanguage)
+            .unwrap()
             .distinctUntilChanged()
             .drive(onNext: self.useCase.changeLanguage)
             .disposed(by: disposeBag)
@@ -73,20 +77,23 @@ extension LoginViewModel: ViewModel {
             .drive(output.$isLoading)
             .disposed(by: disposeBag)
         
-        let usernameValidation = input.onLogin.withLatestFrom(input.onChangeUser)
+        let onLogin = Driver.merge(input.onLogin, tryAgainLogin.asDriver(onErrorJustReturn: ()))
+        
+        // Validate username, password
+        let usernameValidation = onLogin.withLatestFrom(input.onChangeUser)
             .map { $0 }
             .map(useCase.validateUserName(_:))
         
         let messageUserValidation = usernameValidation
             .map { $0.message }
-            
-        let passwordValidation = input.onLogin.withLatestFrom(input.onChangePass)
+        
+        let passwordValidation = onLogin.withLatestFrom(input.onChangePass)
             .map { $0 }
             .map(useCase.validatePassword(_:))
         
         let messagePassValidation = passwordValidation
             .map { $0.message }
-
+        
         Driver.merge(messageUserValidation, messagePassValidation)
             .filter{!$0.isEmpty}
             .drive(output.$messageInvalidError)
@@ -96,30 +103,32 @@ extension LoginViewModel: ViewModel {
             usernameValidation.map { $0.isValid },
             passwordValidation.map { $0.isValid }
         ).startWith(false)
-
+        
         let isAllowLogin = Driver.merge(validation, isLoading)
         isAllowLogin.drive(output.$isAllowLogin).disposed(by: disposeBag)
         
-        let onCallRSA = input.onLogin
+        // Call service
+        let onCallRSA = onLogin
             .withLatestFrom(isAllowLogin)
             .filter{$0}
             .flatMap({ _ -> Driver<RSAKey> in
                 return self.useCase.postRSAKeyPublic().trackError(errorTracker).trackActivity(activityIndicator).asDriverOnErrorJustComplete()
             })
             .map({ rsaKey in
-                return !rsaKey.strPublicKey.isEmpty && !rsaKey.strAesKey.isEmpty
+                return !rsaKey.strAesKeySSO.isEmpty && !rsaKey.strPublicKeySSO.isEmpty
             })
         
-        let onLogin = onCallRSA
+        let onCallLogin = onCallRSA
             .filter{$0}
             .withLatestFrom(Driver.combineLatest(input.onChangeUser, input.onChangePass))
             .flatMapLatest { username, password -> Driver<Void> in
-
-                self.useCase.login(dto: LoginDto(username: username, password: password))
+                print("onCallLogin - username", username)
+                print("onCallLogin - password", password)
+                return self.useCase.login(dto: LoginDto(username: username, password: password))
                     .asDriverOnErrorJustComplete()
             }.drive()
             .disposed(by: disposeBag)
-           
+        
         
         return output
     }
@@ -128,18 +137,19 @@ extension LoginViewModel: ViewModel {
 extension LoginViewModel: LoginViewModelProtocol{
     func defaultLanguage() -> Int {
         let lang = AppSettings.language
-        return lang == "vi" ? 0 : 1
+        return lang == "en" ? 1 : 0
     }
-
-   
+    
+    
     
     func mapLanguage(selectIndex: Int) -> String {
-        return selectIndex == 0 ? "vi" : "en"
+        return selectIndex == 1 ? "en" : "vi"
     }
     
     func filterLanguage(selectIndex: Int) -> Bool {
+        if selectIndex < 0 {return false}
         let lang = AppSettings.language
-        let newLang = selectIndex == 0 ? "vi" : "en"
+        let newLang = selectIndex == 1 ? "en" : "vi"
         return lang != newLang
     }
     
