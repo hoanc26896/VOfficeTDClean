@@ -19,7 +19,10 @@ struct RSAGateway: RSAGatewayType {
     func postApiLoginGateway(username: String, password: String) -> Observable<Void> {
         let params = API.PostAPILoginInputParams(username, password)
         let input = API.PostAPILoginInput(params: params)
-        return API.shared.postApiLogin(input).mapToVoid()
+        return API.shared.postApiLogin(input).map { result in
+            print("result", result)
+            return ()
+        }
     }
     
     func postRSAKeyPublicGateway() -> Observable<RSAKey> {
@@ -29,8 +32,7 @@ struct RSAGateway: RSAGatewayType {
             .unwrap()
             .distinctUntilChanged{$0 == $1}
             .map { rsaKey in
-                Constant.share().rsaKey = RSAKey(strPublicKey: rsaKey.strPublicKeySSO, strAesKey: rsaKey.strAesKeySSO)
-                print("mapping - Constant.share().rsaKey", Constant.share().rsaKey)
+                Constant.share().rsaKey = rsaKey
             return rsaKey
             }
     }

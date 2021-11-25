@@ -4,13 +4,37 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/Base64.h</key>
+		<data>
+		x6zN9dG0Zqlsz1LJSJq48O094Vg=
+		</data>
+		<key>Headers/Base64Transcoder.h</key>
+		<data>
+		mNleQ4H+Ys024g9qBTI0S/4DX/I=
+		</data>
 		<key>Headers/CryptLib.h</key>
 		<data>
 		1CqEhflB7DxipT5HUwt/QB7WgMo=
 		</data>
+		<key>Headers/EncryptBase64.h</key>
+		<data>
+		B0UZBk61bgxq7ywdnLVVnpw+jgA=
+		</data>
 		<key>Headers/NSData+Base64.h</key>
 		<data>
 		ksdbLH24FQ5j17YkQSYxGimIWO0=
+		</data>
+		<key>Headers/NSData-AES.h</key>
+		<data>
+		+rhbFSkg//Ubc3gVTDf4V6+Vrn8=
+		</data>
+		<key>Headers/NSFileManager-AES.h</key>
+		<data>
+		C9NX93csS63970sWom+rMgiQHRI=
+		</data>
+		<key>Headers/NSString+Base64.h</key>
+		<data>
+		eYZQq3dEbShrnBMYNxsmymG3HQ8=
 		</data>
 		<key>Headers/RSAFile.h</key>
 		<data>
@@ -18,7 +42,7 @@
 		</data>
 		<key>Headers/RsaSignner.h</key>
 		<data>
-		PSwT7H/S1UNjatQZZDDWdB0zd0c=
+		tMvrblB4/xtAXmOtbKdhfHYqqJA=
 		</data>
 		<key>Headers/Util.h</key>
 		<data>
@@ -27,6 +51,10 @@
 		<key>Headers/X509Util.h</key>
 		<data>
 		mEKNuiIru747OMpV0lgK6snQ6xo=
+		</data>
+		<key>Headers/rijndael.h</key>
+		<data>
+		kM5qPqB+FHAR9/3Sg/dICiQeG4I=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -39,6 +67,20 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/Base64.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tM9dmAH8sfkZzSCf+2moO+1JY2oIbp6b3ZGkUkpU1EQ=
+			</data>
+		</dict>
+		<key>Headers/Base64Transcoder.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			J1xpYoVWRjqbyvuWvLToPOutIJtxd3EjilZWYyYGMoM=
+			</data>
+		</dict>
 		<key>Headers/CryptLib.h</key>
 		<dict>
 			<key>hash2</key>
@@ -46,11 +88,39 @@
 			JBCjNI+ciib+1WK+8UjiftWsbh2XWcEbsPZ+jCOHFT4=
 			</data>
 		</dict>
+		<key>Headers/EncryptBase64.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bwfvz4SdPVQ39Wy9GDkPP0wgWkZW8jR7vTsPxhq0Ul0=
+			</data>
+		</dict>
 		<key>Headers/NSData+Base64.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			5Vu105kssCy9K1IbMRXluBnxL9XUS+nANYrktLrQ3vs=
+			</data>
+		</dict>
+		<key>Headers/NSData-AES.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fRm0dVOWGxRGIinWdnSNcpybyGz88Ky3OI+LMFP5Qro=
+			</data>
+		</dict>
+		<key>Headers/NSFileManager-AES.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9kDAcEPpokGr6lKq80yl7dgRXn2cdmRZqJl11gV5iZU=
+			</data>
+		</dict>
+		<key>Headers/NSString+Base64.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zaEUsgS1ETr6TipkXaLdSVZnWJuBYanCz94Io2zPFNk=
 			</data>
 		</dict>
 		<key>Headers/RSAFile.h</key>
@@ -64,7 +134,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OeI5Yca4humrD+C3DEJVst9wlcFljgqsTR+1hXxZp5E=
+			y4Zv0XQUfTBleSx+360A5+jlEmUCpzqSotNOd5FHrwY=
 			</data>
 		</dict>
 		<key>Headers/Util.h</key>
@@ -79,6 +149,13 @@
 			<key>hash2</key>
 			<data>
 			w51u3cfkq0ZqTwFVKP6pDGbAnHi8gS+Jq7g0JWsmL40=
+			</data>
+		</dict>
+		<key>Headers/rijndael.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Q6n8V8buXUHTskv1IUrq7C8j1F0pR8lcsPExrXWNnNw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

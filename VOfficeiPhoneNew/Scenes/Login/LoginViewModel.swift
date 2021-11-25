@@ -125,7 +125,8 @@ extension LoginViewModel: ViewModel {
                 print("onCallLogin - username", username)
                 print("onCallLogin - password", password)
                 return self.useCase.login(dto: LoginDto(username: username, password: password))
-                    .asDriverOnErrorJustComplete()
+                    .trackError(errorTracker).trackActivity(activityIndicator).asDriverOnErrorJustComplete()
+                
             }.drive()
             .disposed(by: disposeBag)
         

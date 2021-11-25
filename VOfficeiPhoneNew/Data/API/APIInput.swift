@@ -14,13 +14,13 @@ class APIInput: APIInputBase {
     
     override init(urlString: String,
                   parameters: [String: Any]?,
-                  method: HTTPMethod,
+                  method: HTTPMethod = .post,
                   requireAccessToken: Bool) {
         super.init(urlString: urlString,
                    parameters: parameters,
                    method: method,
                    requireAccessToken: requireAccessToken)
-        let transactionTime = "\(NSDate().timeIntervalSince1970 * 1000)"
+        let transactionTime = "\(Date().timeIntervalSince1970 * 1000)"
         self.headers = [
             "Content-Type": "application/x-www-form-urlencoded",
             "transactionTime": transactionTime

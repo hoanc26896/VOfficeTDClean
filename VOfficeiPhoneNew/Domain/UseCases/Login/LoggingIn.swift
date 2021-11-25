@@ -21,7 +21,7 @@ extension LoggingIn {
 //            return Observable.error(error)
 //        }
         guard let username = dto.username, let password = dto.password else { return Observable.empty() }
-        return rsaGateway.postApiLoginGateway(username: username, password: password)
+        return rsaGateway.postApiLoginGateway(username: username, password: password).mapToVoid()
     }
     
     func postRSAKeyPublic() -> Observable<RSAKey> {

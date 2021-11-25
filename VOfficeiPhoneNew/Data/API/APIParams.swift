@@ -14,7 +14,7 @@ public class CommonParams: NSObject{
     
     
     override init() {
-        self.deviceName = "Iphone"
+        self.deviceName = "VOffice-iPhone 2.5.2 - Simulator - 15.0"
         self.tempTime = Date.getDate()
         self.transactionTime = "\(Date().timeIntervalSince1970 * 1000)"
     }

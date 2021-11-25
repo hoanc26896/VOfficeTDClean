@@ -6,8 +6,12 @@
 //
 
 import Foundation
+
+protocol MyError: Error {
+    func getMessage() -> String
+}
     
-enum CommonError: Error{
+enum CommonError: MyError{
     case apiNotConnectToNetwork
     case apiNotConnectToInternet
     case timeout

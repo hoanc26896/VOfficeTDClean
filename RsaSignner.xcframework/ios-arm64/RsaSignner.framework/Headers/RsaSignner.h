@@ -20,3 +20,11 @@ FOUNDATION_EXPORT const unsigned char RsaSignnerVersionString[];
 #import <RsaSignner/CryptLib.h>
 #import <RsaSignner/Util.h>
 #import <RsaSignner/NSData+Base64.h>
+#import <RsaSignner/Base64.h>
+#import <RsaSignner/Base64Transcoder.h>
+#import <RsaSignner/EncryptBase64.h>
+#import <RsaSignner/EncryptBase64.h>
+#import <RsaSignner/NSData-AES.h>
+#import <RsaSignner/NSFileManager-AES.h>
+#import <RsaSignner/rijndael.h>
+#import <RsaSignner/NSString+Base64.h>

@@ -10,11 +10,11 @@
 		2E28633C274E2B590006F4F0 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28633B274E2B590006F4F0 /* String+.swift */; };
 		2E28634A274E36BB0006F4F0 /* APIParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E286349274E36BB0006F4F0 /* APIParams.swift */; };
 		2E28634C274E37D20006F4F0 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28634B274E37D20006F4F0 /* Date+.swift */; };
-		2E286361274E4CFA0006F4F0 /* RsaSignner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E28635F274E4CF40006F4F0 /* RsaSignner.framework */; };
-		2E286362274E4CFA0006F4F0 /* RsaSignner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E28635F274E4CF40006F4F0 /* RsaSignner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E348D5D274B994900F76E20 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E348D5C274B994900F76E20 /* Constant.swift */; };
 		2E5F81AF274C9D1F00357CDC /* Error+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F81AE274C9D1F00357CDC /* Error+.swift */; };
 		2E85E3082743B32700FF9412 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85E3072743B32700FF9412 /* UIView+.swift */; };
+		2E8D76D1274F7A140050CB8D /* RsaSignner.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */; };
+		2E8D76D2274F7A140050CB8D /* RsaSignner.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2ED08C68273E0648009B4068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C67273E0648009B4068 /* AppDelegate.swift */; };
 		2ED08C6A273E0648009B4068 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08C69273E0648009B4068 /* Podfile */; };
 		2ED08C6C273E0648009B4068 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08C6B273E0648009B4068 /* .swiftlint.yml */; };
@@ -113,7 +113,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2E286362274E4CFA0006F4F0 /* RsaSignner.framework in Embed Frameworks */,
+				2E8D76D2274F7A140050CB8D /* RsaSignner.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,10 +126,10 @@
 		2E28633B274E2B590006F4F0 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		2E286349274E36BB0006F4F0 /* APIParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParams.swift; sourceTree = "<group>"; };
 		2E28634B274E37D20006F4F0 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
-		2E28635F274E4CF40006F4F0 /* RsaSignner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RsaSignner.framework; sourceTree = "<group>"; };
 		2E348D5C274B994900F76E20 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		2E5F81AE274C9D1F00357CDC /* Error+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+.swift"; sourceTree = "<group>"; };
 		2E85E3072743B32700FF9412 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = RsaSignner.xcframework; sourceTree = "<group>"; };
 		2ED08C64273E0648009B4068 /* VOfficeiPhoneNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOfficeiPhoneNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED08C67273E0648009B4068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ED08C69273E0648009B4068 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -218,8 +218,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E286361274E4CFA0006F4F0 /* RsaSignner.framework in Frameworks */,
 				50D67E175AA224FEC42CD717 /* Pods_VOfficeiPhoneNew.framework in Frameworks */,
+				2E8D76D1274F7A140050CB8D /* RsaSignner.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +552,7 @@
 		3E776D0257FEAFB85AAEAFF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2E28635F274E4CF40006F4F0 /* RsaSignner.framework */,
+				2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */,
 				32EE20DBD60044F6806E0276 /* Pods_VOfficeiPhoneNew.framework */,
 				08693761741B2E9C00085763 /* Pods_VOfficeiPhoneNewTests.framework */,
 			);

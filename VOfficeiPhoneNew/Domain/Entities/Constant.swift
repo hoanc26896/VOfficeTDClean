@@ -8,8 +8,10 @@
 import Foundation
 
 public class Constant {
+    private static let constant = Constant()
+    
     static func share() -> Constant{
-        return Constant()
+        return constant
     }
     
     var rsaKey: RSAKey?

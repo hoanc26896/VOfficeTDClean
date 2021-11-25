@@ -249,23 +249,18 @@ extension LoginViewController {
     
     var messageApiErrorBinder: Binder<Error> {
         return Binder(self) { vc, error in
-            
-            guard let error = error as? CommonError else {
-                vc.showError(title: L10n.coreCommonAlert, message: error.localizedDescription, okTitle: L10n.coreCommonTryAgain, cancelTitle: L10n.coreCommonClose) {
+            switch error {
+            case let commonError as CommonError:
+                vc.showError(title: L10n.coreCommonAlert, message: commonError.getMessage(), okTitle: L10n.coreCommonTryAgain, cancelTitle: L10n.coreCommonClose) {
                     print("try again")
                     vc.viewModel.tryAgainLogin.onNext(())
+    
                 } cancelCompletion: {
                     print("cancel")
                 }
-
-                return
-            }
-            vc.showError(title: L10n.coreCommonAlert, message: error.getMessage(), okTitle: L10n.coreCommonTryAgain, cancelTitle: L10n.coreCommonClose) {
-                print("try again")
-                vc.viewModel.tryAgainLogin.onNext(())
-                
-            } cancelCompletion: {
-                print("cancel")
+                break
+            default:
+                print("unknown")
             }
         }
     }

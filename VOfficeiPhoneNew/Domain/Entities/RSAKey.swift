@@ -8,6 +8,7 @@
 import ObjectMapper
 import Then
 import RsaSignner
+import Foundation
 
 struct RSAKey {
     var strPublicKeyRsa: String = ""
@@ -40,16 +41,18 @@ extension RSAKey: Then, Equatable { }
 
 extension RSAKey: Mappable {
     init?(map: Map) {
-        self.init(strPublicKey: "", strAesKey: "")
+        guard let strPublicKey = map.JSON["strPublicKey"] as? String, let strAesKey = map.JSON["strAesKey"] as?String, !strPublicKey.isEmpty && !strAesKey.isEmpty else {
+            self.init(strPublicKey: "", strAesKey: "")
+            return }
+        self.init(strPublicKey: strPublicKey, strAesKey: strAesKey)
     }
 
     mutating func mapping(map: Map) {
-        print("map[strPublicKey]", map["strPublicKey"])
         strPublicKeySSO <- map["strPublicKey"]
         strAesKeySSO <- map["strAesKey"]
         if !strPublicKeySSO.isEmpty{
             let hexData: Data = X509Util.string(toHex: strPublicKeySSO)
-            strPublicKeyRsa = hexData.base64EncodedString()
+            strPublicKeyRsa = NSString.base64String(from: hexData, length: UInt(hexData.count))
             strAesKeyRsa = X509Util.randomBitAESKey(withLength: 16)
             strKeyIvAes = X509Util.randomBitAESKey(withLength: 8)
             

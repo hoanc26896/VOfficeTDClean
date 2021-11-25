@@ -23,6 +23,7 @@ final class API: APIBase {
         if (networkStatus == .notReachable){
             throw CommonError.apiNotConnectToNetwork
         }else{
+            
 //            if error._code == NSURLErrorTimedOut {
 //                throw
 //            }
@@ -42,6 +43,7 @@ final class API: APIBase {
            let errorCode = mess["errorCode"] as? Int, let message = mess["message"] as? String {
             return APIResponseError(statusCode: errorCode, message: message)
         }else{
+            
             return APIResponseError(statusCode: 999, message: L10n.coreCommonCannotConnectToInternet)
         }
         
@@ -60,7 +62,7 @@ final class API: APIBase {
         let statusCode = urlResponse.statusCode
         
         switch statusCode {
-        case 200..<300:
+        case 200:
             if logOptions.contains(.responseStatus) {
                 print("👍 [\(statusCode)] " + (urlResponse.url?.absoluteString ?? ""))
             }
