@@ -12,7 +12,7 @@ import ValidatedPropertyKit
 import Dto
 
 protocol LoggingIn {
-    var rsaGateway: RSAGatewayType {get}
+    var rsaGateway: LoginGatewayType {get}
 }
 
 extension LoggingIn {

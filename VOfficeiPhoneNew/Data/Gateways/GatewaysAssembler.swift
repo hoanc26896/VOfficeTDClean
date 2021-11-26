@@ -8,11 +8,11 @@
 import UIKit
 
 protocol GatewaysAssembler {
-    func resolve() -> RSAGatewayType
+    func resolve() -> LoginGatewayType
 }
 
 extension GatewaysAssembler where Self: DefaultAssembler {
-    func resolve() -> RSAGatewayType {
-        return RSAGateway()
+    func resolve() -> LoginGatewayType {
+        return LoginGateway()
     }
 }

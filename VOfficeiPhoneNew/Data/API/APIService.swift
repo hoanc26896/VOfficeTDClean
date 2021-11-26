@@ -23,10 +23,6 @@ final class API: APIBase {
         if (networkStatus == .notReachable){
             throw CommonError.apiNotConnectToNetwork
         }else{
-            
-//            if error._code == NSURLErrorTimedOut {
-//                throw
-//            }
             throw CommonError.apiNotConnectToInternet
         }
       

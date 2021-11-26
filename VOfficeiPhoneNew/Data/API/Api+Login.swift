@@ -94,12 +94,22 @@ extension API{
     
     
     final class PostAPILoginOutput: APIOutput, Equatable{
-        private(set) var result: Any?
+        private(set) var data:String?
+        private(set) var userConfig: UserConfig?
         
         override func mapping(map: Map) {
             super.mapping(map: map)
-            result <- map["result"]
-            print("result")
+            data <- map["result.data"]
+            guard let data = data, !data.isEmpty,
+                  let aesKey = Constant.share().rsaKey?.strAesKeyRsa,
+                  let ivKey = Constant.share().rsaKey?.strKeyIvAes,
+                  let decryptData = Util.decryptAES256HexString(toDictionary: data, withKey: aesKey, andIV: ivKey) as? [String: Any] else {
+                      data = nil
+                      return
+                  }
+           
+            userConfig = Mapper<UserConfig>().map(JSON: decryptData)
+            print("PostAPILoginOutput - mapping - userConfig", userConfig)
         }
         
         static func == (lhs: API.PostAPILoginOutput, rhs: API.PostAPILoginOutput) -> Bool {

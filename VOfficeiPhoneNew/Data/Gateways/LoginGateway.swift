@@ -10,12 +10,12 @@ import RxSwift
 import MGArchitecture
 import Then
 
-protocol RSAGatewayType{
+protocol LoginGatewayType{
     func postRSAKeyPublicGateway() -> Observable<RSAKey>
     func postApiLoginGateway(username: String, password: String) -> Observable<Void>
 }
 
-struct RSAGateway: RSAGatewayType {
+struct LoginGateway: LoginGatewayType {
     func postApiLoginGateway(username: String, password: String) -> Observable<Void> {
         let params = API.PostAPILoginInputParams(username, password)
         let input = API.PostAPILoginInput(params: params)

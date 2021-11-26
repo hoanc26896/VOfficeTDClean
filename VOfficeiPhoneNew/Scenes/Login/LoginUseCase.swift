@@ -17,7 +17,7 @@ protocol LoginUseCaseType {
 }
 
 struct LoginUseCase: LoginUseCaseType, LoggingIn {
-    var rsaGateway: RSAGatewayType
+    var rsaGateway: LoginGatewayType
     
     func changeLanguage(lang: String) {
         AppSettings.language = lang

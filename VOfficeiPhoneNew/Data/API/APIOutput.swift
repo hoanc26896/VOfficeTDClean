@@ -9,12 +9,21 @@ import ObjectMapper
 import MGAPIService
 
 class APIOutput: APIOutputBase {  // swiftlint:disable:this final_class
-    var message: String?
-    var statusCode: Int?
-
+    var mess: Mess?
   
     override func mapping(map: Map) {
-        message <- map["result.mess.message"]
-        statusCode <- map["result.mess.errorCode"]
+        mess <- map["result.mess"]
     }
 }
+
+class Mess: APIOutputBase{
+    var message: String?
+    var statusCode: Int?
+    
+    override func mapping(map: Map) {
+        message <- map["message"]
+        statusCode <- map["errorCode"]
+    }
+}
+
+
