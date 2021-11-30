@@ -25,7 +25,7 @@ struct LoginViewModel {
 
 // MARK: - ViewModel
 extension LoginViewModel: ViewModel {
-   
+    
     
     struct Input {
         let onLoad: Driver<Void>
@@ -121,16 +121,29 @@ extension LoginViewModel: ViewModel {
         let onCallLogin = onCallRSA
             .filter{$0}
             .withLatestFrom(Driver.combineLatest(input.onChangeUser, input.onChangePass))
-            .flatMapLatest { username, password -> Driver<Void> in
+            .flatMapLatest { username, password -> Driver<Bool> in
                 print("onCallLogin - username", username)
                 print("onCallLogin - password", password)
                 return self.useCase.login(dto: LoginDto(username: username, password: password))
                     .trackError(errorTracker).trackActivity(activityIndicator).asDriverOnErrorJustComplete()
                 
-            }.drive()
-            .disposed(by: disposeBag)
-        
-        
+            }.map { result in
+                return result
+            }
+            .filter{$0}
+            .drive { _ in
+                let collection = [
+                    self.useCase.postGetUserInfo().asDriver(onErrorJustReturn: false),
+                ]
+                let zipped = Driver.zip(collection)
+                    .drive(onNext: {_ in
+                        print("navigation")
+                        
+                    })
+                    .disposed(by: disposeBag)
+                    
+               
+            }.disposed(by: disposeBag)
         return output
     }
 }

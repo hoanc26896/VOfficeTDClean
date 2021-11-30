@@ -32,6 +32,8 @@ internal enum RxL10n {
   internal static let coreCommonYes = RxL10n.tr("Localizable", "core.common.yes")
   /// Username
   internal static let coreLoginAccount = RxL10n.tr("Localizable", "core.login.account")
+  /// Change password
+  internal static let coreLoginChangePassword = RxL10n.tr("Localizable", "core.login.change_password")
   /// Connecting ...
   internal static let coreLoginConnecting = RxL10n.tr("Localizable", "core.login.connecting")
   /// You do not enter password
@@ -42,6 +44,22 @@ internal enum RxL10n {
   internal static let coreLoginEnglish = RxL10n.tr("Localizable", "core.login.english")
   /// You must enter at least 8 characters
   internal static let coreLoginEnterMin8Number = RxL10n.tr("Localizable", "core.login.enter_min_8_number")
+  /// Because of entering the wrong information so many times, the account is locked.
+  internal static let coreLoginErrorAccountLockedDueEnterWrongManyTime = RxL10n.tr("Localizable", "core.login.error_account_locked_due_enter_wrong_many_time")
+  /// Because of entering the wrong information so many times, the account is locked. You must change your password to unlock it.
+  internal static let coreLoginErrorAccountLockedDueEnterWrongManyTimeYouShouldChangePasswordToUnlock = RxL10n.tr("Localizable", "core.login.error_account_locked_due_enter_wrong_many_time_you_should_change_password_to_unlock")
+  /// Your account is not correct
+  internal static let coreLoginErrorEnterWrong = RxL10n.tr("Localizable", "core.login.error_enter_wrong")
+  /// The account is locked because the password is expired
+  internal static let coreLoginErrorLockedDueExpiredPassword = RxL10n.tr("Localizable", "core.login.error_locked_due_expired_password")
+  /// The account is locked because the password is expired. You must change your password to unlock it.
+  internal static let coreLoginErrorLockedDueExpiredPasswordYouShouldChangePasswordToUnlock = RxL10n.tr("Localizable", "core.login.error_locked_due_expired_password_you_should_change_password_to_unlock")
+  /// Account has not been activated or locked
+  internal static let coreLoginErrorNotActiveOrLocked = RxL10n.tr("Localizable", "core.login.error_not_active_or_locked")
+  /// Account has not been activated or locked. You must change your password to unlock or  activate it.
+  internal static let coreLoginErrorNotActiveOrLockedYouShouldChangePasswordToUnlockOrActive = RxL10n.tr("Localizable", "core.login.error_not_active_or_locked_you_should_change_password_to_unlock_or_active")
+  /// Forgot password
+  internal static let coreLoginForgotPassword = RxL10n.tr("Localizable", "core.login.forgot_password")
   /// Login
   internal static let coreLoginLogin = RxL10n.tr("Localizable", "core.login.login")
   /// Password

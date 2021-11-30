@@ -16,16 +16,20 @@ protocol LoggingIn {
 }
 
 extension LoggingIn {
-    func login(dto: LoginDto) -> Observable<Void> {
+    func login(dto: LoginDto) -> Observable<Bool> {
 //        if let error = dto.validationError {
 //            return Observable.error(error)
 //        }
         guard let username = dto.username, let password = dto.password else { return Observable.empty() }
-        return rsaGateway.postApiLoginGateway(username: username, password: password).mapToVoid()
+        return rsaGateway.postApiLoginGateway(username: username, password: password)
     }
     
     func postRSAKeyPublic() -> Observable<RSAKey> {
         return rsaGateway.postRSAKeyPublicGateway()
+    }
+    
+    func postGetUserInfo() -> Single<Bool> {
+        return rsaGateway.postGetUserInfoGateway()
     }
     
     

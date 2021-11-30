@@ -18,8 +18,13 @@ extension API{
     func postApiLogin(_ input: PostAPILoginInput) -> Observable<PostAPILoginOutput>{
         return request(input)
     }
+    
+    func postGetUserInfoInput(_ input: PostGetUserInfoInput) -> Observable<PostGetUserInfoOutput>{
+        return request(input)
+    }
 }
 
+/// CALL RSA
 extension API{
     final class PostRSAKeyPublicInput: APIInput {
         init(){
@@ -41,6 +46,7 @@ extension API{
     }
 }
 
+/// CALL LOGIN
 extension API{
     class PostAPILoginInputParams: CommonParams{
         var password: String = ""
@@ -95,7 +101,48 @@ extension API{
     
     final class PostAPILoginOutput: APIOutput, Equatable{
         private(set) var data:String?
+        private(set) var errCode: Int?
+        private(set) var detailErr: String?
         private(set) var userConfig: UserConfig?
+        
+        override func mapping(map: Map) {
+            super.mapping(map: map)
+            if mess?.statusCode == 200 {
+                data <- map["result.data"]
+                guard let data = data, !data.isEmpty,
+                      let aesKey = Constant.share().rsaKey?.strAesKeyRsa,
+                      let ivKey = Constant.share().rsaKey?.strKeyIvAes,
+                      let decryptData = Util.decryptAES256HexString(toDictionary: data, withKey: aesKey, andIV: ivKey) as? [String: Any] else {
+                          data = nil
+                          return
+                      }
+               
+                userConfig = Mapper<UserConfig>().map(JSON: decryptData)
+                print("PostAPILoginOutput - mapping - userConfig", userConfig)
+            }else{
+                errCode <- map["result.data.errCode"]
+                detailErr <- map["result.data.detailErr"]
+            }
+        }
+        
+        static func == (lhs: API.PostAPILoginOutput, rhs: API.PostAPILoginOutput) -> Bool {
+            return lhs.data == rhs.data
+        }
+    }
+}
+
+/// CALL GET INFO USER
+extension API{
+    final class PostGetUserInfoInput: APIInput{
+        init(){
+            super.init(urlString: API.Urls.postGetUserInfo, parameters: nil, method: .post, requireAccessToken: false)
+        }
+    }
+    
+    final class PostGetUserInfoOutput: APIOutput, Equatable{
+       
+        private(set) var data: String?
+        private(set) var user: User?
         
         override func mapping(map: Map) {
             super.mapping(map: map)
@@ -107,15 +154,14 @@ extension API{
                       data = nil
                       return
                   }
-           
-            userConfig = Mapper<UserConfig>().map(JSON: decryptData)
-            print("PostAPILoginOutput - mapping - userConfig", userConfig)
+            print("PostAPILoginOutput - mapping - decryptData", decryptData)
+            user = Mapper<User>().map(JSON: decryptData)
+            print("PostAPILoginOutput - mapping - user", user)
         }
         
-        static func == (lhs: API.PostAPILoginOutput, rhs: API.PostAPILoginOutput) -> Bool {
-            return true
+        static func == (lhs: API.PostGetUserInfoOutput, rhs: API.PostGetUserInfoOutput) -> Bool {
+            return lhs.data == rhs.data
         }
-        
-        
     }
 }
+

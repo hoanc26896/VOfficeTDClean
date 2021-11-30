@@ -28,7 +28,7 @@ final class LoginViewController: BaseViewController,Bindable  {
     
     lazy var languageSegment: UISegmentedControl = {
         let control = UISegmentedControl(items: [L10n.coreLoginVietnammese, L10n.coreLoginEnglish])
-//        control.selectedSegmentIndex = AppSettings.language == "vi" ? 0 : 1
+        //        control.selectedSegmentIndex = AppSettings.language == "vi" ? 0 : 1
         control.tintColor = LAsset.button.color
         self.view.addSubview(control)
         return control
@@ -115,7 +115,7 @@ final class LoginViewController: BaseViewController,Bindable  {
     // MARK: - Properties
     
     var viewModel: LoginViewModel!
-   
+    
     
     
     // MARK: - Life Cycle
@@ -211,8 +211,6 @@ final class LoginViewController: BaseViewController,Bindable  {
     }
     
     func bindViewModel() {
-       
-        
         let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
             .mapToVoid()
             .asDriverOnErrorJustComplete()
@@ -250,13 +248,55 @@ extension LoginViewController {
     var messageApiErrorBinder: Binder<Error> {
         return Binder(self) { vc, error in
             switch error {
-            case let commonError as CommonError:
+            case let commonError as CommonApiError:
                 vc.showError(title: L10n.coreCommonAlert, message: commonError.getMessage(), okTitle: L10n.coreCommonTryAgain, cancelTitle: L10n.coreCommonClose) {
                     print("try again")
                     vc.viewModel.tryAgainLogin.onNext(())
-    
+                    
                 } cancelCompletion: {
                     print("cancel")
+                }
+                break
+                
+            case let api801LoginError as LoginApiError.ErrorCode801:
+                switch api801LoginError {
+                case LoginApiError.ErrorCode801.accountLockedDueExpiredPassword,
+                    LoginApiError.ErrorCode801.accountLockedDueManyTimesIncorrect,
+                    LoginApiError.ErrorCode801.accountNotActivatedOrLocked,
+                    LoginApiError.ErrorCode801.accountIsWrong:
+                    
+                    let actions: [AlertAction] = [
+                        AlertAction(title: L10n.coreLoginChangePassword, style: .default),
+                        AlertAction(title: L10n.coreLoginForgotPassword, style: .default),
+                        AlertAction(title: L10n.coreCommonClose, style: .cancel)
+                    ]
+                    vc.showAlert(title: L10n.coreCommonAlert, message: api801LoginError.getMessage(), style: .alert, actions: actions)
+                        .subscribe(onNext: { buttonIndex in
+                            switch buttonIndex {
+                            case 0:
+                                UIApplication.openUrl(urlStr: API.Urls.changePasswordUrl)
+                                break
+                            case 1:
+                                UIApplication.openUrl(urlStr: API.Urls.forgotPasswordUrl)
+                                break
+                            default:
+                                break
+                            }
+                        })
+                    break
+                case LoginApiError.ErrorCode801.unknowError(let error):
+                    vc.showError(message: error)
+                    break
+                default:
+                    break;
+                }
+                break
+            case let apiLoginError as LoginApiError:
+                switch apiLoginError {
+                case LoginApiError.accountNotActivatedOrLocked, LoginApiError.accountLockedDueExpiredPassword, LoginApiError.accountLockedDueManyTimesIncorrect:
+                    vc.showError(message: apiLoginError.getMessage())
+                default:
+                    vc.showError(message: apiLoginError.getMessage(), okTitle: L10n.coreCommonInputAgain, completion: nil)
                 }
                 break
             default:

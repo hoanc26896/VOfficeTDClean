@@ -15,5 +15,6 @@ public class Constant {
     }
     
     var rsaKey: RSAKey?
-    
+    var userConfig: UserConfig?
+    var user: User?
 }

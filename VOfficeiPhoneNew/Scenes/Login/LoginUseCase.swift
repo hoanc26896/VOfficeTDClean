@@ -13,7 +13,8 @@ protocol LoginUseCaseType {
     func validateUserName(_ username: String) -> ValidationResult
     func validatePassword(_ password: String) -> ValidationResult
     func postRSAKeyPublic() -> Observable<RSAKey>
-    func login(dto: LoginDto) -> Observable<Void>
+    func login(dto: LoginDto) -> Observable<Bool>
+    func postGetUserInfo() -> Single<Bool>
 }
 
 struct LoginUseCase: LoginUseCaseType, LoggingIn {

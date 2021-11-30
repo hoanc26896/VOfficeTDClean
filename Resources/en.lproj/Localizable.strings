@@ -18,6 +18,8 @@
 
 "core.login.account" = "Username";
 
+"core.login.change_password" = "Change password";
+
 "core.login.connecting" = "Connecting ...";
 
 "core.login.do_not_enter_password" = "You do not enter password";
@@ -27,6 +29,22 @@
 "core.login.english" = "English";
 
 "core.login.enter_min_8_number" = "You must enter at least 8 characters";
+
+"core.login.error_account_locked_due_enter_wrong_many_time" = "Because of entering the wrong information so many times, the account is locked.";
+
+"core.login.error_account_locked_due_enter_wrong_many_time_you_should_change_password_to_unlock" = "Because of entering the wrong information so many times, the account is locked. You must change your password to unlock it.";
+
+"core.login.error_enter_wrong" = "Your account is not correct";
+
+"core.login.error_locked_due_expired_password" = "The account is locked because the password is expired";
+
+"core.login.error_locked_due_expired_password_you_should_change_password_to_unlock" = "The account is locked because the password is expired. You must change your password to unlock it.";
+
+"core.login.error_not_active_or_locked" = "Account has not been activated or locked";
+
+"core.login.error_not_active_or_locked_you_should_change_password_to_unlock_or_active" = "Account has not been activated or locked. You must change your password to unlock or  activate it.";
+
+"core.login.forgot_password" = "Forgot password";
 
 "core.login.login" = "Login";
 

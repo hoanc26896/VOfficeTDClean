@@ -13,7 +13,7 @@ import RxCocoa
 extension Reactive where Base: BaseViewController {
     var error: Binder<Error> {
         return Binder(base) { viewController, error in
-            guard let error = error as? CommonError else {
+            guard let error = error as? CommonApiError else {
                 viewController.showError(message: error.localizedDescription)
                 return 
             }

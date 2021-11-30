@@ -23,8 +23,10 @@ struct UserConfig{
     var strSessionId: String?
 }
 
-extension UserConfig: Then{
-    
+extension UserConfig: Then, Equatable{
+    static func == (lhs: UserConfig, rhs: UserConfig) -> Bool {
+        return lhs.strSessionId == rhs.strSessionId
+    }
 }
 
 extension UserConfig: Mappable {
@@ -249,6 +251,20 @@ extension VhrOrg: Mappable{
         name <- map["name"]
         path <- map["path"]
         sysOrganizationId <- map["sysOrganizationId"]
+    }
+}
+
+struct User{
+    
+}
+
+extension User: Mappable {
+    mutating func mapping(map: Map) {
+        
+    }
+    
+    init?(map: Map) {
+        
     }
     
     

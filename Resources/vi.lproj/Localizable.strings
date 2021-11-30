@@ -18,6 +18,8 @@
 
 "core.login.account" = "Tài khoản";
 
+"core.login.change_password" = "Đổi mật khẩu";
+
 "core.login.connecting" = "Đang kết nối ...";
 
 "core.login.do_not_enter_password" = "Đồng chí chưa nhập mật khẩu";
@@ -27,6 +29,22 @@
 "core.login.english" = "English";
 
 "core.login.enter_min_8_number" = "Đồng chí phải nhập tối thiểu 8 kí tự";
+
+"core.login.error_account_locked_due_enter_wrong_many_time" = "Tài khoản bị khóa do nhập sai quá số lần cho phép";
+
+"core.login.error_account_locked_due_enter_wrong_many_time_you_should_change_password_to_unlock" = "Tài khoản bị khóa do nhập thông tin không chính xác nhiều lần. Đề nghị đồng chí đổi mật khẩu để mở khóa tài khoản.";
+
+"core.login.error_enter_wrong" = "Đ/c nhập sai tài khoản.";
+
+"core.login.error_locked_due_expired_password" = "Tài khoản bị khóa do mật khẩu hết hiệu lực";
+
+"core.login.error_locked_due_expired_password_you_should_change_password_to_unlock" = "Tài khoản bị khóa do mật khẩu hết hiệu lực. Đề nghị đồng chí đổi mật khẩu để mở khóa tài khoản.";
+
+"core.login.error_not_active_or_locked" = "Tài khoản chưa kích hoạt hoặc đang bị khóa";
+
+"core.login.error_not_active_or_locked_you_should_change_password_to_unlock_or_active" = "Tài khoản chưa kích hoạt hoặc đang bị khóa. Đề nghị đồng chí đổi mật khẩu để mở khóa hoặc kích hoạt tài khoản.";
+
+"core.login.forgot_password" = "Quên mật khẩu";
 
 "core.login.login" = "Đăng nhập";
 

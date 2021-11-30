@@ -12,8 +12,13 @@ extension API {
     static let ApplicationContext = "ServiceMobile_V02/resources"
 
     enum Urls {
+        // URL
+        static let forgotPasswordUrl = "https://sso2.viettel.vn/forgotpassword"
+        static let changePasswordUrl = "https://sso2.viettel.vn/password/update"
+        // API
         static let postRSAKeyPublic = "\(BaseUrl)/\(ApplicationContext)/Authenticate/getRsaKeyPublic"
         static let postApiLogin = "\(BaseUrl)/\(ApplicationContext)/Authenticate/login"
+        static let postGetUserInfo = "\(BaseUrl)/\(ApplicationContext)/staffAction/getUserInfor"
     }
     
     enum CommonDataParamKey{

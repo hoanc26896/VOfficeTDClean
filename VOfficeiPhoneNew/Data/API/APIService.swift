@@ -21,9 +21,9 @@ final class API: APIBase {
     override func handleRequestError<U>(_ error: Error, input: APIInputBase) throws -> Observable<APIResponse<U>> where U : JSONData {
         let networkStatus = NetworkReachabilityManager.default?.status
         if (networkStatus == .notReachable){
-            throw CommonError.apiNotConnectToNetwork
+            throw CommonApiError.apiNotConnectToNetwork
         }else{
-            throw CommonError.apiNotConnectToInternet
+            throw CommonApiError.apiNotConnectToInternet
         }
       
     }
