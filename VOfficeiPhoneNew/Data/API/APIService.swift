@@ -15,7 +15,7 @@ final class API: APIBase {
     
     public override init(configuration: URLSessionConfiguration) {
         super.init(configuration: configuration)
-        logOptions = LogOptions.all
+        logOptions = LogOptions.default
     }
     
     override func handleRequestError<U>(_ error: Error, input: APIInputBase) throws -> Observable<APIResponse<U>> where U : JSONData {

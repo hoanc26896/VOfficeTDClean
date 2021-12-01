@@ -17,10 +17,11 @@ protocol LoginGatewayType{
 }
 
 struct LoginGateway: LoginGatewayType {
+    private var bag = DisposeBag()
     func postGetUserInfoGateway() -> Single<Bool> {
         let input = API.PostGetUserInfoInput()
         return Single.create { single in
-            API.shared.postGetUserInfoInput(input)
+            let callApi = API.shared.postGetUserInfoInput(input)
                 .subscribe(onNext: {result in
                     if (result.mess?.statusCode == 200){
                         Constant.share().user = result.user
@@ -31,7 +32,9 @@ struct LoginGateway: LoginGatewayType {
                 }, onError: { error in
                     single(.error(error))
                 })
-           return Disposables.create()
+            return Disposables.create{
+                callApi.disposed(by: bag)
+            }
         }
     }
     
@@ -40,8 +43,7 @@ struct LoginGateway: LoginGatewayType {
         let input = API.PostAPILoginInput(params: params)
         
         return Observable.create { observer in
-            
-            API.shared.postApiLogin(input)
+           let callApi = API.shared.postApiLogin(input)
                 .subscribe(onNext: { result in
                 print("LoginGatewayType - result", result)
                 if (result.mess?.statusCode == 200){
@@ -97,7 +99,9 @@ struct LoginGateway: LoginGatewayType {
                 observer.onNext(false)
                 observer.onCompleted()
             })
-            return Disposables.create()
+            return Disposables.create{
+                callApi.disposed(by: bag)
+            }
         }
     }
     

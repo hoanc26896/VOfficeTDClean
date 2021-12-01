@@ -65,42 +65,24 @@ extension API{
     
     final class PostAPILoginInput: APIInput{
         init(params: PostAPILoginInputParams) {
-            print("PostAPILoginInput - params", params)
-            if let publicRsaKey = Constant.share().rsaKey?.strPublicKeyPost, let strDataPost = Constant.share().rsaKey?.strDataPost, !publicRsaKey.isEmpty && !strDataPost.isEmpty, let aesKey = Constant.share().rsaKey?.strAesKeyRsa, let ivKey = Constant.share().rsaKey?.strKeyIvAes {
-                let dict: [String : Any] = [
-                    API.CommonParamKey.deviceName: params.deviceName,
-                    API.CommonParamKey.transactionTime: params.transactionTime,
-                    API.CommonParamKey.tempTime: params.tempTime,
-                    
-                    API.LoginParamKey.passWord: params.password,
-                    API.LoginParamKey.vof2Key: params.vof2Key,
-                    API.LoginParamKey.loginName: params.loginName,
-                    API.LoginParamKey.isTask: params.isTask,
-                    API.LoginParamKey.language: params.language
-                ]
-                print("PostAPILoginInput - dict", dict)
+            let dict: [String : Any] = [
+                API.CommonParamKey.deviceName: params.deviceName,
+                API.CommonParamKey.transactionTime: params.transactionTime,
+                API.CommonParamKey.tempTime: params.tempTime,
                 
-                let data:String = Util.encryptAES256Dictionary(toHexString: dict, withKey: aesKey, andIV: ivKey)
-                let jsonParams: [String : Any] = [
-                    API.CommonDataParamKey.data: data,
-                    API.CommonDataParamKey.publicRsaKey: publicRsaKey,
-                    API.CommonDataParamKey.aesKey: strDataPost,
-                    API.CommonDataParamKey.isIos: "1"
-                ]
-                print("PostAPILoginInput - jsonParams", jsonParams)
-                super.init(urlString: API.Urls.postApiLogin, parameters: jsonParams, method: .post, requireAccessToken: false)
-            } else {
-                
-                super.init(urlString: API.Urls.postApiLogin, parameters: nil, method: .post, requireAccessToken: false)
-            }
-            
+                API.LoginParamKey.passWord: params.password,
+                API.LoginParamKey.vof2Key: params.vof2Key,
+                API.LoginParamKey.loginName: params.loginName,
+                API.LoginParamKey.isTask: params.isTask,
+                API.LoginParamKey.language: params.language
+            ]
+            super.init(urlString: API.Urls.postApiLogin, parameters: dict, method: .post, requireAccessToken: false)
         }
     }
     
     
     
     final class PostAPILoginOutput: APIOutput, Equatable{
-        private(set) var data:String?
         private(set) var errCode: Int?
         private(set) var detailErr: String?
         private(set) var userConfig: UserConfig?
@@ -108,16 +90,9 @@ extension API{
         override func mapping(map: Map) {
             super.mapping(map: map)
             if mess?.statusCode == 200 {
-                data <- map["result.data"]
-                guard let data = data, !data.isEmpty,
-                      let aesKey = Constant.share().rsaKey?.strAesKeyRsa,
-                      let ivKey = Constant.share().rsaKey?.strKeyIvAes,
-                      let decryptData = Util.decryptAES256HexString(toDictionary: data, withKey: aesKey, andIV: ivKey) as? [String: Any] else {
-                          data = nil
-                          return
-                      }
-               
-                userConfig = Mapper<UserConfig>().map(JSON: decryptData)
+                guard let descryptData = descryptData else { return }
+                print("PostAPILoginOutput - mapping - descryptData", descryptData)
+                userConfig = Mapper<UserConfig>().map(JSON: descryptData)
                 print("PostAPILoginOutput - mapping - userConfig", userConfig)
             }else{
                 errCode <- map["result.data.errCode"]
@@ -140,23 +115,14 @@ extension API{
     }
     
     final class PostGetUserInfoOutput: APIOutput, Equatable{
-       
-        private(set) var data: String?
         private(set) var user: User?
         
         override func mapping(map: Map) {
             super.mapping(map: map)
-            data <- map["result.data"]
-            guard let data = data, !data.isEmpty,
-                  let aesKey = Constant.share().rsaKey?.strAesKeyRsa,
-                  let ivKey = Constant.share().rsaKey?.strKeyIvAes,
-                  let decryptData = Util.decryptAES256HexString(toDictionary: data, withKey: aesKey, andIV: ivKey) as? [String: Any] else {
-                      data = nil
-                      return
-                  }
-            print("PostAPILoginOutput - mapping - decryptData", decryptData)
-            user = Mapper<User>().map(JSON: decryptData)
-            print("PostAPILoginOutput - mapping - user", user)
+            guard let descryptData = descryptData else { return }
+            print("PostAPILoginOutput - mapping - descryptData", descryptData)
+            user = Mapper<User>().map(JSON: descryptData)
+            print("PostGetUserInfoOutput - user", user)
         }
         
         static func == (lhs: API.PostGetUserInfoOutput, rhs: API.PostGetUserInfoOutput) -> Bool {
