@@ -80,22 +80,34 @@ extension UIViewController {
     }
     
     func showAlert(title: String?, message: String?, style: UIAlertController.Style, actions: [AlertAction]) -> Observable<Int>
-        {
-            return Observable.create { observer in
-                let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
-                
-                actions.enumerated().forEach { index, action in
-                    let action = UIAlertAction(title: action.title, style: action.style) { _ in
-                        observer.onNext(index)
-                        observer.onCompleted()
-                    }
-                    alertController.addAction(action)
+    {
+        return Observable.create { observer in
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+            
+            actions.enumerated().forEach { index, action in
+                let action = UIAlertAction(title: action.title, style: action.style) { _ in
+                    observer.onNext(index)
+                    observer.onCompleted()
                 }
-                
-                self.present(alertController, animated: true, completion: nil)
-                
-                return Disposables.create { alertController.dismiss(animated: true, completion: nil) }
+                alertController.addAction(action)
             }
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return Disposables.create { alertController.dismiss(animated: true, completion: nil) }
         }
+    }
+    
+    func showLoading(){
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.bezelView.style = .solidColor
+        hud.bezelView.color = UIColor (red: 0, green: 0, blue: 0, alpha: 0.6)
+        hud.backgroundColor = UIColor (red: 0, green: 0, blue: 0, alpha: 0.4)
+        hud.offset.y = -30
+    }
+    
+    func hiddenLoading(){
+        MBProgressHUD.hide(for: self.view, animated: true)
+    }
     
 }

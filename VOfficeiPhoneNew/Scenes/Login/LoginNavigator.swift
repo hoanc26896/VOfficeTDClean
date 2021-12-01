@@ -8,10 +8,15 @@
 import UIKit
 
 protocol LoginNavigatorType {
-    
+    func toMain()
 }
 
 struct LoginNavigator: LoginNavigatorType {
+    func toMain() {
+        let vc: MainViewController = assembler.resolve(navigationController: navigationController)
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
     unowned let assembler: Assembler
     unowned let navigationController: UINavigationController
 }

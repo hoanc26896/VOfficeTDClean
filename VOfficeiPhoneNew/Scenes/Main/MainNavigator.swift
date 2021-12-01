@@ -8,11 +8,18 @@
 import UIKit
 
 protocol MainNavigatorType {
-
+    func toReview() -> ReviewViewController
 }
 
 struct MainNavigator: MainNavigatorType {
+  
+    
     unowned let assembler: Assembler
     unowned let navigationController: UINavigationController
+    
+    func toReview() -> ReviewViewController {
+        let vc: ReviewViewController = assembler.resolve(navigationController: navigationController)
+        return vc
+    }
 }
 

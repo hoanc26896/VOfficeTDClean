@@ -18,6 +18,11 @@
 		2E8D76D2274F7A140050CB8D /* RsaSignner.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E8E1C5B27560EB900BE04EC /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E1C5A27560EB900BE04EC /* UIApplication+.swift */; };
 		2EBC03D627572EDD00149374 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC03D527572EDC00149374 /* Config.swift */; };
+		2EBC03E12757830700149374 /* ReviewAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC03DC2757830700149374 /* ReviewAssembler.swift */; };
+		2EBC03E22757830700149374 /* ReviewNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC03DD2757830700149374 /* ReviewNavigator.swift */; };
+		2EBC03E32757830700149374 /* ReviewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC03DE2757830700149374 /* ReviewUseCase.swift */; };
+		2EBC03E42757830700149374 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC03DF2757830700149374 /* ReviewViewController.swift */; };
+		2EBC03E52757830700149374 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC03E02757830700149374 /* ReviewViewModel.swift */; };
 		2ED08C68273E0648009B4068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C67273E0648009B4068 /* AppDelegate.swift */; };
 		2ED08C6A273E0648009B4068 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08C69273E0648009B4068 /* Podfile */; };
 		2ED08C6C273E0648009B4068 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08C6B273E0648009B4068 /* .swiftlint.yml */; };
@@ -136,6 +141,11 @@
 		2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = RsaSignner.xcframework; sourceTree = "<group>"; };
 		2E8E1C5A27560EB900BE04EC /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		2EBC03D527572EDC00149374 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		2EBC03DC2757830700149374 /* ReviewAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAssembler.swift; sourceTree = "<group>"; };
+		2EBC03DD2757830700149374 /* ReviewNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewNavigator.swift; sourceTree = "<group>"; };
+		2EBC03DE2757830700149374 /* ReviewUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewUseCase.swift; sourceTree = "<group>"; };
+		2EBC03DF2757830700149374 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		2EBC03E02757830700149374 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
 		2ED08C64273E0648009B4068 /* VOfficeiPhoneNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOfficeiPhoneNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED08C67273E0648009B4068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ED08C69273E0648009B4068 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -267,6 +277,26 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		2EBC03DA2757829200149374 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				2EBC03DB275782A000149374 /* Review */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		2EBC03DB275782A000149374 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				2EBC03DC2757830700149374 /* ReviewAssembler.swift */,
+				2EBC03DD2757830700149374 /* ReviewNavigator.swift */,
+				2EBC03DE2757830700149374 /* ReviewUseCase.swift */,
+				2EBC03DF2757830700149374 /* ReviewViewController.swift */,
+				2EBC03E02757830700149374 /* ReviewViewModel.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
 		2ED08C5B273E0648009B4068 = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +414,7 @@
 		2ED08C88273E0648009B4068 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2EBC03DA2757829200149374 /* Tabbar */,
 				2ED08C89273E0648009B4068 /* Storyboards.swift */,
 				2ED08C8B273E0648009B4068 /* App */,
 				2ED08D09273E1F3F009B4068 /* Base */,
@@ -838,12 +869,15 @@
 			files = (
 				2ED08D20273E21C1009B4068 /* UINavigationBar+Ext.swift in Sources */,
 				2ED08C73273E0648009B4068 /* APIUrls.swift in Sources */,
+				2EBC03E42757830700149374 /* ReviewViewController.swift in Sources */,
+				2EBC03E12757830700149374 /* ReviewAssembler.swift in Sources */,
 				2ED08CDC273E0B1B009B4068 /* Assets.swift in Sources */,
 				2EE891DC2745FB3E00196114 /* Validation+String.swift in Sources */,
 				2ED08C9A273E0648009B4068 /* MainAssembler.swift in Sources */,
 				2E8B80552750C31300897DB9 /* User.swift in Sources */,
 				2E85E3082743B32700FF9412 /* UIView+.swift in Sources */,
 				2ED08C80273E0648009B4068 /* APIInput.swift in Sources */,
+				2EBC03E32757830700149374 /* ReviewUseCase.swift in Sources */,
 				2EE891DD2745FB3E00196114 /* Validation+Collection.swift in Sources */,
 				2ED08D15273E20BC009B4068 /* BaseViewController.swift in Sources */,
 				2ED08C93273E0648009B4068 /* AppViewModel.swift in Sources */,
@@ -856,6 +890,7 @@
 				2E28634A274E36BB0006F4F0 /* APIParams.swift in Sources */,
 				2ED08D08273E1854009B4068 /* LoginViewModel.swift in Sources */,
 				2EFA86CB2744FB57000B1569 /* Storage.swift in Sources */,
+				2EBC03E22757830700149374 /* ReviewNavigator.swift in Sources */,
 				2E8E1C5B27560EB900BE04EC /* UIApplication+.swift in Sources */,
 				2EE891E72746327D00196114 /* RSAKey.swift in Sources */,
 				2ED08D23273E21C1009B4068 /* BaseComponent.swift in Sources */,
@@ -884,6 +919,7 @@
 				2ED08C82273E0648009B4068 /* APIOutput.swift in Sources */,
 				2EE891DE2745FB3E00196114 /* Validation+Comparable.swift in Sources */,
 				2ED08CA5273E0648009B4068 /* UIViewController+.swift in Sources */,
+				2EBC03E52757830700149374 /* ReviewViewModel.swift in Sources */,
 				2ED08CDE273E0B29009B4068 /* Fonts.swift in Sources */,
 				2ED08C8D273E0648009B4068 /* AppAssembler.swift in Sources */,
 				2EFA86C92744FB37000B1569 /* CacheStorage.swift in Sources */,

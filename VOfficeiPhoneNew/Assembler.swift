@@ -9,7 +9,9 @@ protocol Assembler: AnyObject,
                     MainAssembler,
                     LoginAssembler,
                     AppAssembler,
-                    GatewaysAssembler {
+                    GatewaysAssembler,
+                    ReviewAssembler
+{
     
 }
 

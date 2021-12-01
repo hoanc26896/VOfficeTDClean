@@ -143,7 +143,7 @@ extension LoginViewModel: ViewModel {
                     .asDriver(onErrorJustReturn: false)
                     .filter{$0}
                     .drive(onNext: { _ in
-                        print("navigation")
+                        self.navigator.toMain()
                     }).disposed(by: disposeBag)
                 
             }.disposed(by: disposeBag)

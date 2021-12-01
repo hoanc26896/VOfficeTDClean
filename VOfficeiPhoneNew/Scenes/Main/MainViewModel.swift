@@ -21,12 +21,12 @@ extension MainViewModel: ViewModel {
     }
     
     struct Output {
-
+        @Property var onLoadOutput: Driver<Void> = Driver.just(())
     }
 
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
         let output = Output()
-
+        input.load.drive(output.$onLoadOutput).disposed(by: disposeBag)
         return output
     }
 }

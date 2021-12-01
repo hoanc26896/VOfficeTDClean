@@ -250,11 +250,9 @@ extension LoginViewController {
             switch error {
             case let commonError as CommonApiError:
                 vc.showError(title: L10n.coreCommonAlert, message: commonError.getMessage(), okTitle: L10n.coreCommonTryAgain, cancelTitle: L10n.coreCommonClose) {
-                    print("try again")
                     vc.viewModel.tryAgainLogin.onNext(())
-                    
                 } cancelCompletion: {
-                    print("cancel")
+                    
                 }
                 break
                 
@@ -282,7 +280,7 @@ extension LoginViewController {
                             default:
                                 break
                             }
-                        })
+                        }).disposed(by: vc.disposeBag)
                     break
                 case LoginApiError.ErrorCode801.unknowError(let error):
                     vc.showError(message: error)
@@ -315,15 +313,10 @@ extension LoginViewController {
         return Binder(self) { vc, isLoading in
             if isLoading {
                 vc.loginBtn.isEnabled = false
-                
-                let hud = MBProgressHUD.showAdded(to: vc.view, animated: true)
-                hud.bezelView.style = .solidColor
-                hud.bezelView.color = UIColor (red: 0, green: 0, blue: 0, alpha: 0.6)
-                hud.backgroundColor = UIColor (red: 0, green: 0, blue: 0, alpha: 0.4)
-                hud.offset.y = -30
+                vc.showLoading()
             } else {
                 vc.loginBtn.isEnabled = true
-                MBProgressHUD.hide(for: vc.view, animated: true)
+                vc.hiddenLoading()
             }
         }
     }
