@@ -25,6 +25,7 @@ enum CommonApiError: CommonApiErrorProtocol{
     case apiNotConnectToNetwork
     case apiNotConnectToInternet
     case timeout
+    case unknown(String)
     
     func getMessage() -> String {
         var result = ""
@@ -34,6 +35,9 @@ enum CommonApiError: CommonApiErrorProtocol{
             break
         case .apiNotConnectToNetwork:
             result = L10n.coreCommonCannotConnectToNetwork
+            break
+        case .unknown(let error):
+            result = error
             break
         default:
             result = self.localizedDescription

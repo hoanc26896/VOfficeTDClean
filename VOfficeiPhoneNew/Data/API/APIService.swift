@@ -68,7 +68,6 @@ final class API: APIBase {
             }
             
             if logOptions.contains(.responseData) {
-                print("[RESPONSE DATA]")
                 print(json ?? data)
             }
             
@@ -86,7 +85,6 @@ final class API: APIBase {
             }
             
             if logOptions.contains(.error) || logOptions.contains(.responseData) {
-                print("[RESPONSE DATA]")
                 print(json ?? data)
             }
         }

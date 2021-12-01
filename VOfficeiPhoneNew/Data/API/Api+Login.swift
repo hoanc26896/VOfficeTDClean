@@ -11,7 +11,7 @@ import MGAPIService
 import RsaSignner
 
 extension API{
-    func postRSAKeyPublic(_ input: PostRSAKeyPublicInput) -> Observable<PostRSAKeyPublicOutput>{
+    func postRSAKeyPublicApi(_ input: PostRSAKeyPublicInput) -> Observable<PostRSAKeyPublicOutput>{
         return request(input)
     }
     
@@ -19,7 +19,15 @@ extension API{
         return request(input)
     }
     
-    func postGetUserInfoInput(_ input: PostGetUserInfoInput) -> Observable<PostGetUserInfoOutput>{
+    func postGetUserInfoApi(_ input: PostGetUserInfoInput) -> Observable<PostGetUserInfoOutput>{
+        return request(input)
+    }
+    
+    func postGetCountHomeApi(_ input: PostGetCountHomeInput) -> Observable<PostGetCountHomeOutput>{
+        return request(input)
+    }
+    
+    func postGetSupportCustomerInfoApi(_ input: PostGetSupportCustomerInfoInput) -> Observable<PostGetSupportCustomerInfoOutput>{
         return request(input)
     }
 }
@@ -66,10 +74,6 @@ extension API{
     final class PostAPILoginInput: APIInput{
         init(params: PostAPILoginInputParams) {
             let dict: [String : Any] = [
-                API.CommonParamKey.deviceName: params.deviceName,
-                API.CommonParamKey.transactionTime: params.transactionTime,
-                API.CommonParamKey.tempTime: params.tempTime,
-                
                 API.LoginParamKey.passWord: params.password,
                 API.LoginParamKey.vof2Key: params.vof2Key,
                 API.LoginParamKey.loginName: params.loginName,
@@ -91,9 +95,9 @@ extension API{
             super.mapping(map: map)
             if mess?.statusCode == 200 {
                 guard let descryptData = descryptData else { return }
-                print("PostAPILoginOutput - mapping - descryptData", descryptData)
+                
                 userConfig = Mapper<UserConfig>().map(JSON: descryptData)
-                print("PostAPILoginOutput - mapping - userConfig", userConfig)
+                
             }else{
                 errCode <- map["result.data.errCode"]
                 detailErr <- map["result.data.detailErr"]
@@ -110,7 +114,7 @@ extension API{
 extension API{
     final class PostGetUserInfoInput: APIInput{
         init(){
-            super.init(urlString: API.Urls.postGetUserInfo, parameters: nil, method: .post, requireAccessToken: false)
+            super.init(urlString: API.Urls.postGetUserInfo, parameters: nil, method: .post, requireAccessToken: true)
         }
     }
     
@@ -120,9 +124,7 @@ extension API{
         override func mapping(map: Map) {
             super.mapping(map: map)
             guard let descryptData = descryptData else { return }
-            print("PostAPILoginOutput - mapping - descryptData", descryptData)
             user = Mapper<User>().map(JSON: descryptData)
-            print("PostGetUserInfoOutput - user", user)
         }
         
         static func == (lhs: API.PostGetUserInfoOutput, rhs: API.PostGetUserInfoOutput) -> Bool {
@@ -131,3 +133,51 @@ extension API{
     }
 }
 
+/// Call get Count Home
+extension API{
+    final class PostGetCountHomeInput: APIInput{
+        init(){
+            super.init(urlString: API.Urls.postGetCountHome, parameters: nil,method: .post, requireAccessToken: true)
+        }
+    }
+    
+    final class PostGetCountHomeOutput: APIOutput, Equatable{
+        static func == (lhs: API.PostGetCountHomeOutput, rhs: API.PostGetCountHomeOutput) -> Bool {
+            return lhs.data == rhs.data
+        }
+        
+        private(set) var countHome: CountHomeConfig?
+        
+        override func mapping(map: Map) {
+            super.mapping(map: map)
+            guard let descryptData = descryptData else { return }
+            countHome = Mapper<CountHomeConfig>().map(JSON: descryptData)
+        }
+    }
+}
+
+/// CALL CSKH
+extension API{
+    final class PostGetSupportCustomerInfoInput: APIInput{
+        init(){
+            super.init(urlString: API.Urls.postGetCSKH, parameters: nil, requireAccessToken: true)
+        }
+    }
+    
+    final class PostGetSupportCustomerInfoOutput: APIOutput, Equatable{
+        static func == (lhs: API.PostGetSupportCustomerInfoOutput, rhs: API.PostGetSupportCustomerInfoOutput) -> Bool {
+            return lhs.data == rhs.data
+        }
+        
+        private(set) var supportCustomerInfoConfig: SupportCustomerInfoConfig?
+        
+        override func mapping(map: Map) {
+            super.mapping(map: map)
+           
+            supportCustomerInfoConfig <- map["result.data"]
+        }
+        
+        
+        
+    }
+}

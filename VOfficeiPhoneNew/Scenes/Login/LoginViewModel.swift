@@ -118,7 +118,7 @@ extension LoginViewModel: ViewModel {
                 return !rsaKey.strAesKeySSO.isEmpty && !rsaKey.strPublicKeySSO.isEmpty
             })
         
-        let onCallLogin = onCallRSA
+        let _ = onCallRSA
             .filter{$0}
             .withLatestFrom(Driver.combineLatest(input.onChangeUser, input.onChangePass))
             .flatMapLatest { username, password -> Driver<Bool> in
@@ -132,17 +132,20 @@ extension LoginViewModel: ViewModel {
             }
             .filter{$0}
             .drive { _ in
-                let collection = [
-                    self.useCase.postGetUserInfo().asDriver(onErrorJustReturn: false),
-                ]
-                let zipped = Driver.zip(collection)
-                    .drive(onNext: {_ in
+                let _ = Single.zip(self.useCase.postGetUserInfo(), self.useCase.postGetCountHome(), self.useCase.postGetSupportCustomerInfo()) {
+                    return ($0, $1, $2)
+                }
+                    .compactMap { (isGetInfoSuccess, isGetCountHomeSuccess, isGetSupportCustomer) in
+                        return isGetInfoSuccess && isGetCountHomeSuccess && isGetSupportCustomer
+                    }
+                    .trackError(errorTracker)
+                    .trackActivity(activityIndicator)
+                    .asDriver(onErrorJustReturn: false)
+                    .filter{$0}
+                    .drive(onNext: { _ in
                         print("navigation")
-                        
-                    })
-                    .disposed(by: disposeBag)
-                    
-               
+                    }).disposed(by: disposeBag)
+                
             }.disposed(by: disposeBag)
         return output
     }

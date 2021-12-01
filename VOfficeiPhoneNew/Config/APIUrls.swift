@@ -19,6 +19,8 @@ extension API {
         static let postRSAKeyPublic = "\(BaseUrl)/\(ApplicationContext)/Authenticate/getRsaKeyPublic"
         static let postApiLogin = "\(BaseUrl)/\(ApplicationContext)/Authenticate/login"
         static let postGetUserInfo = "\(BaseUrl)/\(ApplicationContext)/staffAction/getUserInfor"
+        static let postGetCountHome = "\(BaseUrl)/\(ApplicationContext)/textAction/getCountHome"
+        static let postGetCSKH = "\(BaseUrl)/\(ApplicationContext)/commonAction/getSupportCustomerInfo"
     }
     
     enum CommonDataParamKey{
@@ -26,6 +28,9 @@ extension API {
         static let publicRsaKey = "publicRsaKey"
         static let aesKey = "aesKey"
         static let isIos = "isIos"
+        static let isSecurity = "isSecurity"
+        static let tempTime = "tempTime"
+        static let deviceName = "deviceName"
     }
     
     enum CommonParamKey{

@@ -32,6 +32,13 @@ extension LoggingIn {
         return rsaGateway.postGetUserInfoGateway()
     }
     
+    func postGetCountHome() -> Single<Bool>{
+        return rsaGateway.postGetCountHomeGateway()
+    }
+    
+    func postGetSupportCustomerInfo() -> Single<Bool>{
+        return rsaGateway.postGetSupportCustomerInfoGateway()
+    }
     
     func validateUserName(_ username: String) -> ValidationResult {
         return LoginDto.validateUserName(username).mapToVoid()

@@ -63,32 +63,6 @@ enum isMeetingManagerEnum: Int{
     case no = 0
 }
 
-struct UserConfig{
-    var vof2_ItemEntityUser:Vof2_ItemEntityUser?
-    var strBlackListPass: String?
-    var loginBySSo: LoginBySSOEnum?
-    var strSessionId: String?
-}
-
-extension UserConfig: Then, Equatable{
-    static func == (lhs: UserConfig, rhs: UserConfig) -> Bool {
-        return lhs.strSessionId == rhs.strSessionId
-    }
-}
-
-extension UserConfig: Mappable {
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        vof2_ItemEntityUser <- map["vof2_ItemEntityUser"]
-        strBlackListPass <- map["strBlackListPass"]
-        loginBySSo <- map["loginBySSo"]
-        strSessionId <- map["strSessionId"]
-    }
-}
-
 struct Vof2_ItemEntityUser {
     var adOrgId: Int?
     var adOrgName: String?
@@ -432,6 +406,4 @@ extension User: Mappable {
     init?(map: Map) {
         
     }
-    
-    
 }

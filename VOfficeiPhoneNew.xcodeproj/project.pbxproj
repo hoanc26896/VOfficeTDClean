@@ -17,6 +17,7 @@
 		2E8D76D1274F7A140050CB8D /* RsaSignner.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */; };
 		2E8D76D2274F7A140050CB8D /* RsaSignner.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E8E1C5B27560EB900BE04EC /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E1C5A27560EB900BE04EC /* UIApplication+.swift */; };
+		2EBC03D627572EDD00149374 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC03D527572EDC00149374 /* Config.swift */; };
 		2ED08C68273E0648009B4068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C67273E0648009B4068 /* AppDelegate.swift */; };
 		2ED08C6A273E0648009B4068 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08C69273E0648009B4068 /* Podfile */; };
 		2ED08C6C273E0648009B4068 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08C6B273E0648009B4068 /* .swiftlint.yml */; };
@@ -134,6 +135,7 @@
 		2E8B80542750C31300897DB9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = RsaSignner.xcframework; sourceTree = "<group>"; };
 		2E8E1C5A27560EB900BE04EC /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		2EBC03D527572EDC00149374 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		2ED08C64273E0648009B4068 /* VOfficeiPhoneNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOfficeiPhoneNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED08C67273E0648009B4068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ED08C69273E0648009B4068 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -332,6 +334,7 @@
 				2EE891E62746327D00196114 /* RSAKey.swift */,
 				2E348D5C274B994900F76E20 /* Constant.swift */,
 				2E8B80542750C31300897DB9 /* User.swift */,
+				2EBC03D527572EDC00149374 /* Config.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				2ED08D21273E21C1009B4068 /* DefaultDesign.swift in Sources */,
 				2E5F81AF274C9D1F00357CDC /* Error+.swift in Sources */,
 				2EFA86BA27448F8A000B1569 /* UIImage+.swift in Sources */,
+				2EBC03D627572EDD00149374 /* Config.swift in Sources */,
 				2EE891E527460DB300196114 /* Api+Login.swift in Sources */,
 				2ED08C82273E0648009B4068 /* APIOutput.swift in Sources */,
 				2EE891DE2745FB3E00196114 /* Validation+Comparable.swift in Sources */,

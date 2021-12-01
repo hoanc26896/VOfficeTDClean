@@ -17,10 +17,22 @@ class APIInput: APIInputBase {
                   parameters: [String: Any]?,
                   method: HTTPMethod = .post,
                   requireAccessToken: Bool) {
+        let transactionTime = "\(Date().timeIntervalSince1970 * 1000)"
         if let publicRsaKey = Constant.share().rsaKey?.strPublicKeyPost, let strDataPost = Constant.share().rsaKey?.strDataPost, !publicRsaKey.isEmpty && !strDataPost.isEmpty, let aesKey = Constant.share().rsaKey?.strAesKeyRsa, let ivKey = Constant.share().rsaKey?.strKeyIvAes {
-            let data:String = Util.encryptAES256Dictionary(toHexString: parameters ?? [:], withKey: aesKey, andIV: ivKey)
+            let commonParams = CommonParams()
+            var dict = parameters ?? [String: Any]()
+            dict.updateValue(commonParams.deviceName, forKey: API.CommonParamKey.deviceName)
+            dict.updateValue(transactionTime, forKey: API.CommonParamKey.transactionTime)
+            dict.updateValue(commonParams.tempTime, forKey: API.CommonParamKey.tempTime)
+           
+            let data:String = Util.encryptAES256Dictionary(toHexString: dict, withKey: aesKey, andIV: ivKey)
             
-            let jsonParams: [String : Any] = [
+            let jsonParams: [String : Any] = requireAccessToken ? [
+                API.CommonDataParamKey.data: data,
+                API.CommonDataParamKey.isSecurity: "1",
+                API.CommonDataParamKey.tempTime: Date.getDate(),
+                API.CommonDataParamKey.deviceName: commonParams.deviceName
+            ] : [
                 API.CommonDataParamKey.data: data,
                 API.CommonDataParamKey.publicRsaKey: publicRsaKey,
                 API.CommonDataParamKey.aesKey: strDataPost,
@@ -36,7 +48,7 @@ class APIInput: APIInputBase {
                        method: method,
                        requireAccessToken: requireAccessToken)
         }
-        let transactionTime = "\(Date().timeIntervalSince1970 * 1000)"
+        
         self.encoding = URLEncoding.httpBody
         self.user = nil
         self.password = nil
@@ -46,7 +58,7 @@ class APIInput: APIInputBase {
         ]
         guard let userConfig = Constant.share().userConfig, let sessionId = userConfig.strSessionId, !sessionId.isEmpty else { return }
         self.headers?.add(name: "session_id", value: sessionId)
-        print("self.headers", self.headers)
+        print("urlString - self.headers",urlString, self.headers)
         
     }
 }

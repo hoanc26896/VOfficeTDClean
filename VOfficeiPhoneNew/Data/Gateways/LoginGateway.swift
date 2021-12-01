@@ -14,20 +14,75 @@ protocol LoginGatewayType{
     func postRSAKeyPublicGateway() -> Observable<RSAKey>
     func postApiLoginGateway(username: String, password: String) -> Observable<Bool>
     func postGetUserInfoGateway() -> Single<Bool>
+    func postGetCountHomeGateway() -> Single<Bool>
+    func postGetSupportCustomerInfoGateway() -> Single<Bool>
 }
 
 struct LoginGateway: LoginGatewayType {
     private var bag = DisposeBag()
+    func postGetSupportCustomerInfoGateway() -> Single<Bool> {
+        let input = API.PostGetSupportCustomerInfoInput()
+        return Single.create { single in
+            let callApi = API.shared.postGetSupportCustomerInfoApi(input)
+                .subscribe(onNext: {result in
+                    if (result.mess?.statusCode == 200){
+                        Constant.share().supportCustomerInfoConfig = result.supportCustomerInfoConfig
+                        single(.success(true))
+                    }else{
+                        guard let message = result.mess?.message, !message.isEmpty else {
+                            single(.error(CommonApiError.apiNotConnectToInternet))
+                            return  }
+                        
+                        single(.error(CommonApiError.unknown(message)))
+                    }
+                }, onError: { error in
+                    single(.error(error))
+                })
+            return Disposables.create{
+                callApi.disposed(by: bag)
+            }
+        }
+    }
+    
+    func postGetCountHomeGateway() -> Single<Bool> {
+        let input = API.PostGetCountHomeInput()
+        return Single.create { single in
+            let callApi = API.shared.postGetCountHomeApi(input)
+                .subscribe(onNext: {result in
+                    if (result.mess?.statusCode == 200){
+                        Constant.share().countHomeConfig = result.countHome
+                        single(.success(true))
+                    }else{
+                        guard let message = result.mess?.message, !message.isEmpty else {
+                            single(.error(CommonApiError.apiNotConnectToInternet))
+                            return  }
+                        
+                        single(.error(CommonApiError.unknown(message)))
+                    }
+                }, onError: { error in
+                    single(.error(error))
+                })
+            return Disposables.create{
+                callApi.disposed(by: bag)
+            }
+        }
+    }
+    
+   
     func postGetUserInfoGateway() -> Single<Bool> {
         let input = API.PostGetUserInfoInput()
         return Single.create { single in
-            let callApi = API.shared.postGetUserInfoInput(input)
+            let callApi = API.shared.postGetUserInfoApi(input)
                 .subscribe(onNext: {result in
                     if (result.mess?.statusCode == 200){
                         Constant.share().user = result.user
                         single(.success(true))
                     }else{
-                        single(.error(CommonApiError.apiNotConnectToInternet))
+                        guard let message = result.mess?.message, !message.isEmpty else {
+                            single(.error(CommonApiError.apiNotConnectToInternet))
+                            return  }
+                        
+                        single(.error(CommonApiError.unknown(message)))
                     }
                 }, onError: { error in
                     single(.error(error))
@@ -88,7 +143,10 @@ struct LoginGateway: LoginGatewayType {
                         observer.onError(LoginApiError.accountLockedDueExpiredPassword)
                         break
                     default:
-                        observer.onError(CommonApiError.apiNotConnectToInternet)
+                        guard let message = result.mess?.message, !message.isEmpty else {
+                            observer.onError(CommonApiError.apiNotConnectToInternet)
+                            return  }
+                        observer.onError(CommonApiError.unknown(message))
                         break
                     }
                     observer.onNext(false)
@@ -107,7 +165,7 @@ struct LoginGateway: LoginGatewayType {
     
     func postRSAKeyPublicGateway() -> Observable<RSAKey> {
         let input = API.PostRSAKeyPublicInput()
-        return API.shared.postRSAKeyPublic(input)
+        return API.shared.postRSAKeyPublicApi(input)
             .map{$0.rsaKey}
             .unwrap()
             .distinctUntilChanged{$0 == $1}

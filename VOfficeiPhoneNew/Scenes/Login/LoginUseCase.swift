@@ -15,6 +15,8 @@ protocol LoginUseCaseType {
     func postRSAKeyPublic() -> Observable<RSAKey>
     func login(dto: LoginDto) -> Observable<Bool>
     func postGetUserInfo() -> Single<Bool>
+    func postGetCountHome() -> Single<Bool>
+    func postGetSupportCustomerInfo() -> Single<Bool>
 }
 
 struct LoginUseCase: LoginUseCaseType, LoggingIn {
