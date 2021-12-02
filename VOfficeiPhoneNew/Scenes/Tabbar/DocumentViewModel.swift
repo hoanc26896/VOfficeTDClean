@@ -1,21 +1,21 @@
 //
-//  ReviewViewModel.swift
+//  DocumentViewModel.swift
 //  VOfficeiPhoneNew
 //
-//  Created by Hoa Nguyen on 12/1/21.
+//  Created by Hoa Nguyen on 12/2/21.
 //
 
 import MGArchitecture
 import RxSwift
 import RxCocoa
 
-struct ReviewViewModel {
-    let navigator: ReviewNavigatorType
-    let useCase: ReviewUseCaseType
+struct DocumentViewModel {
+    let navigator: DocumentNavigatorType
+    let useCase: DocumentUseCaseType
 }
 
 // MARK: - ViewModel
-extension ReviewViewModel: ViewModel {
+extension DocumentViewModel: ViewModel {
     struct Input {
         
     }

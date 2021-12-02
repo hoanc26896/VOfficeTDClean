@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainNavigatorType {
-    func toReview() -> ReviewViewController
+    func toDocument() -> DocumentViewController
 }
 
 struct MainNavigator: MainNavigatorType {
@@ -17,8 +17,8 @@ struct MainNavigator: MainNavigatorType {
     unowned let assembler: Assembler
     unowned let navigationController: UINavigationController
     
-    func toReview() -> ReviewViewController {
-        let vc: ReviewViewController = assembler.resolve(navigationController: navigationController)
+    func toDocument() -> DocumentViewController {
+        let vc: DocumentViewController = assembler.resolve(navigationController: navigationController)
         return vc
     }
 }

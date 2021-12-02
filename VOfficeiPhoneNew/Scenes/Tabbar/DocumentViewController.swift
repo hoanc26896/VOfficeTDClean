@@ -1,8 +1,8 @@
 //
-//  ReviewViewController.swift
+//  DocumentViewController.swift
 //  VOfficeiPhoneNew
 //
-//  Created by Hoa Nguyen on 12/1/21.
+//  Created by Hoa Nguyen on 12/2/21.
 //
 
 import UIKit
@@ -12,13 +12,13 @@ import RxCocoa
 import Reusable
 import Then
 
-final class ReviewViewController: UIViewController, Bindable {
+final class DocumentViewController: UIViewController, Bindable {
     
     // MARK: - IBOutlets
     
     // MARK: - Properties
     
-    var viewModel: ReviewViewModel!
+    var viewModel: DocumentViewModel!
     var disposeBag = DisposeBag()
     
     // MARK: - Life Cycle
@@ -39,17 +39,17 @@ final class ReviewViewController: UIViewController, Bindable {
     }
     
     func bindViewModel() {
-        let input = ReviewViewModel.Input()
+        let input = DocumentViewModel.Input()
         let output = viewModel.transform(input, disposeBag: disposeBag)
     }
 }
 
 // MARK: - Binders
-extension ReviewViewController {
+extension DocumentViewController {
     
 }
 
 // MARK: - StoryboardSceneBased
-extension ReviewViewController: StoryboardSceneBased {
+extension DocumentViewController: StoryboardSceneBased {
     static var sceneStoryboard = UIStoryboard()
 }

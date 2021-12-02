@@ -12,88 +12,14 @@ import RxSwift
 import RxCocoa
 import MGArchitecture
 
-private enum TabBarItem{
-    case review
-    case sign
-    case documentary
-    case calendar
-    case more
-    
-    var title: String{
-        switch self {
-        case .review:
-            return "Xet duyet"
-        case .sign:
-            return "Ky dien tu"
-        case .documentary:
-            return "Cong van"
-        case .calendar:
-            return "Lich hop"
-        case .more:
-            return "Them"
-        default:
-            return ""
-        }
-    }
-    
-    var icon: UIImage?{
-        switch self {
-        case .review:
-            return LAsset.lgBgImg
-        case .sign:
-            return LAsset.lgBgImg
-        case .documentary:
-            return LAsset.lgBgImg
-        case .calendar:
-            return LAsset.lgBgImg
-        case .more:
-            return LAsset.lgBgImg
-        default:
-            return LAsset.lgBgImg
-        }
-    }
-    
-    var selectedIcon: UIImage?{
-        switch self {
-        case .review:
-            return LAsset.lgBgImg
-        case .sign:
-            return LAsset.lgBgImg
-        case .documentary:
-            return LAsset.lgBgImg
-        case .calendar:
-            return LAsset.lgBgImg
-        case .more:
-            return LAsset.lgBgImg
-        default:
-            return LAsset.lgBgImg
-        }
-    }
-    
-    func getJourneyRoot(_ vc: MainViewController) -> UINavigationController{
-        let rootVC: UIViewController?
-        switch self {
-        case .review,.sign, .documentary,.calendar,.more :
-            rootVC =  vc.viewModel.navigator.toReview()
-            break
-        default:
-            break
-        }
-        guard let rootVC = rootVC else {
-            return UINavigationController() }
-        let navigationController = UINavigationController(rootViewController: rootVC)
-        return navigationController
-    }
-}
 
-final class MainViewController: UITabBarController, Bindable {
+final class MainViewController: BaseTabBarController, Bindable {
     
     // MARK: - IBOutlets
     
     // MARK: - Properties
-    let disposeBag = DisposeBag()
     var viewModel: MainViewModel!
-    private var items: [TabBarItem] = [.review, .sign, .documentary, .calendar, .more]
+    
   
     
     // MARK: - Life Cycle
@@ -116,29 +42,23 @@ final class MainViewController: UITabBarController, Bindable {
     
     func bindViewModel() {
         let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
-            .mapToVoid()
+            .mapToVoid().take(1)
             .asDriverOnErrorJustComplete()
         let input = MainViewModel.Input(
             load: viewWillAppear
         )
         
         let output = viewModel.transform(input, disposeBag: disposeBag)
-        output.$onLoadOutput.asDriver().drive(onLoadBinder).disposed(by: disposeBag)
+        output.$rootViewControllers.asDriver().drive(rootViewControllersBinder).disposed(by: disposeBag)
     }
 }
 
 extension MainViewController{
-    var onLoadBinder: Binder<Void> {
-        return Binder(self) { vc, _ in
-            var controllers: [UIViewController] = []
-            for item in vc.items {
-                let root = item.getJourneyRoot(vc)
-                root.tabBarItem = UITabBarItem(title: item.title,
-                                               image: item.icon,
-                                               selectedImage: item.selectedIcon)
-                controllers.append(root)
-            }
+    var rootViewControllersBinder: Binder<[UIViewController]> {
+        return Binder(self) { vc, controllers in
+            print("rootViewControllersBinder - controllers", controllers)
             vc.viewControllers = controllers
+            vc.tabBar.tintColor = .red
         }
     }
 }

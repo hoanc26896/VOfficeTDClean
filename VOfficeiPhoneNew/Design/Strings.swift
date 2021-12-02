@@ -63,6 +63,16 @@ internal enum L10n {
   internal static let coreLoginPassword = L10n.tr("Localizable", "core.login.password")
   /// Tiếng Việt
   internal static let coreLoginVietnammese = L10n.tr("Localizable", "core.login.vietnammese")
+  /// Approve docs
+  internal static let coreTabbarApproveDocs = L10n.tr("Localizable", "core.tabbar.approve_docs")
+  /// Calendar
+  internal static let coreTabbarCalendar = L10n.tr("Localizable", "core.tabbar.calendar")
+  /// Document
+  internal static let coreTabbarDocuments = L10n.tr("Localizable", "core.tabbar.documents")
+  /// More
+  internal static let coreTabbarMore = L10n.tr("Localizable", "core.tabbar.more")
+  /// Sign
+  internal static let coreTabbarSign = L10n.tr("Localizable", "core.tabbar.sign")
 }
 // swiftlint:enable function_parameter_count identifier_name line_length type_body_length
 

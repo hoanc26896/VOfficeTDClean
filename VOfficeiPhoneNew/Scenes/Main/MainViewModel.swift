@@ -8,6 +8,12 @@
 import RxSwift
 import RxCocoa
 import MGArchitecture
+import UIKit
+
+protocol MainViewModelProtocol{
+    func getJourneyRoot(item: TabBarItem) -> UIViewController
+    func getRootViewcontrollers() -> [UIViewController]
+}
 
 struct MainViewModel {
     let navigator: MainNavigatorType
@@ -21,12 +27,47 @@ extension MainViewModel: ViewModel {
     }
     
     struct Output {
-        @Property var onLoadOutput: Driver<Void> = Driver.just(())
+        @Property var rootViewControllers: [UIViewController] = []
     }
 
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
         let output = Output()
-        input.load.drive(output.$onLoadOutput).disposed(by: disposeBag)
+        let onLoad = input.load.map { _ in
+            self.getRootViewcontrollers()
+        }.asDriver()
+        onLoad.drive(output.$rootViewControllers).disposed(by: disposeBag)
         return output
     }
 }
+
+extension MainViewModel: MainViewModelProtocol{
+    func getRootViewcontrollers() -> [UIViewController] {
+        let items: [TabBarItem] = [.review, .sign, .documentary, .calendar, .more]
+        var controllers: [UIViewController] = []
+        for item in items {
+            let root = self.getJourneyRoot(item: item)
+            root.tabBarItem = UITabBarItem(title: item.title,
+                                           image: item.icon,
+                                           selectedImage: item.selectedIcon)
+            controllers.append(root)
+        }
+        print("getRootViewcontrollers - controllers", controllers)
+        return controllers
+    }
+    
+    func getJourneyRoot(item: TabBarItem) -> UIViewController{
+        var rootVC: UIViewController?
+        switch item {
+        case .review,.sign, .documentary,.calendar,.more :
+            rootVC =  navigator.toDocument()
+            break
+        }
+        guard let rootVC = rootVC else {
+            return UINavigationController() }
+        let navigationController = UINavigationController(rootViewController: rootVC)
+        navigationController.viewControllers.first?.title = item.title
+        
+        return navigationController
+    }
+}
+

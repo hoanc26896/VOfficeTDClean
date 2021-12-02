@@ -118,7 +118,7 @@ extension LoginViewModel: ViewModel {
                 return !rsaKey.strAesKeySSO.isEmpty && !rsaKey.strPublicKeySSO.isEmpty
             })
         
-        let _ = onCallRSA
+        let onCallLogin = onCallRSA
             .filter{$0}
             .withLatestFrom(Driver.combineLatest(input.onChangeUser, input.onChangePass))
             .flatMapLatest { username, password -> Driver<Bool> in
@@ -130,23 +130,24 @@ extension LoginViewModel: ViewModel {
             }.map { result in
                 return result
             }
+        
+        
+        let  _ = onCallLogin
             .filter{$0}
-            .drive { _ in
-                let _ = Single.zip(self.useCase.postGetUserInfo(), self.useCase.postGetCountHome(), self.useCase.postGetSupportCustomerInfo()) {
+            .flatMap { _ -> Driver<Bool> in
+                return (Single.zip(self.useCase.postGetUserInfo(), self.useCase.postGetCountHome(), self.useCase.postGetSupportCustomerInfo()) {
                     return ($0, $1, $2)
                 }
-                    .compactMap { (isGetInfoSuccess, isGetCountHomeSuccess, isGetSupportCustomer) in
-                        return isGetInfoSuccess && isGetCountHomeSuccess && isGetSupportCustomer
-                    }
-                    .trackError(errorTracker)
-                    .trackActivity(activityIndicator)
-                    .asDriver(onErrorJustReturn: false)
-                    .filter{$0}
-                    .drive(onNext: { _ in
-                        self.navigator.toMain()
-                    }).disposed(by: disposeBag)
-                
-            }.disposed(by: disposeBag)
+                            .trackError(errorTracker)
+                            .trackActivity(activityIndicator)
+                            .compactMap { (isGetInfoSuccess, isGetCountHomeSuccess, isGetSupportCustomer) in
+                    return isGetInfoSuccess && isGetCountHomeSuccess && isGetSupportCustomer
+                }.asDriver(onErrorJustReturn: false))
+            }.filter{$0}
+            .mapToVoid()
+            .drive(onNext: self.navigator.toMain)
+            .disposed(by: disposeBag)
+        
         return output
     }
 }

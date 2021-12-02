@@ -25,12 +25,28 @@ public enum LAsset {
   public static let background = ColorAsset(name: "background")
   public static let button = ColorAsset(name: "button")
   public static let input = ColorAsset(name: "input")
+  public static let main = ColorAsset(name: "main")
   public static let lgBgColor = ColorAsset(name: "lgBgColor")
   public static let lgBgImg = ImageAsset(name: "lgBgImg").image
   public static let lgIconColor = ColorAsset(name: "lgIconColor")
   public static let lgLogoImg = ImageAsset(name: "lgLogoImg").image
   public static let lgPassIc = ImageAsset(name: "lgPassIc").image
   public static let lgUserIc = ImageAsset(name: "lgUserIc").image
+  public static let menuBusinessStatistic = ImageAsset(name: "menuBusinessStatistic").image
+  public static let menuCalendar = ImageAsset(name: "menuCalendar").image
+  public static let menuChangePass = ImageAsset(name: "menuChangePass").image
+  public static let menuCustomBar = ImageAsset(name: "menuCustomBar").image
+  public static let menuDanhBa = ImageAsset(name: "menuDanhBa").image
+  public static let menuDocument = ImageAsset(name: "menuDocument").image
+  public static let menuHelp = ImageAsset(name: "menuHelp").image
+  public static let menuIncomeStatistic = ImageAsset(name: "menuIncomeStatistic").image
+  public static let menuJob = ImageAsset(name: "menuJob").image
+  public static let menuMore = ImageAsset(name: "menuMore").image
+  public static let menuPersonalJob = ImageAsset(name: "menuPersonalJob").image
+  public static let menuPrivateSave = ImageAsset(name: "menuPrivateSave").image
+  public static let menuSettings = ImageAsset(name: "menuSettings").image
+  public static let menuSign = ImageAsset(name: "menuSign").image
+  public static let menuStatistic = ImageAsset(name: "menuStatistic").image
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

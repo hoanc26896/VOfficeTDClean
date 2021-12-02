@@ -212,7 +212,7 @@ final class LoginViewController: BaseViewController,Bindable  {
     
     func bindViewModel() {
         let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
-            .mapToVoid()
+            .mapToVoid().take(1)
             .asDriverOnErrorJustComplete()
         let onChangeLanguage = languageSegment.rx.selectedSegmentIndex.asDriver()
         

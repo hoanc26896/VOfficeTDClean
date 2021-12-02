@@ -1,17 +1,17 @@
 //
-//  ReviewNavigator.swift
+//  DocumentNavigator.swift
 //  VOfficeiPhoneNew
 //
-//  Created by Hoa Nguyen on 12/1/21.
+//  Created by Hoa Nguyen on 12/2/21.
 //
 
 import UIKit
 
-protocol ReviewNavigatorType {
+protocol DocumentNavigatorType {
     
 }
 
-struct ReviewNavigator: ReviewNavigatorType {
+struct DocumentNavigator: DocumentNavigatorType {
     unowned let assembler: Assembler
     unowned let navigationController: UINavigationController
 }

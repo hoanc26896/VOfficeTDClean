@@ -66,6 +66,16 @@ internal enum RxL10n {
   internal static let coreLoginPassword = RxL10n.tr("Localizable", "core.login.password")
   /// Tiếng Việt
   internal static let coreLoginVietnammese = RxL10n.tr("Localizable", "core.login.vietnammese")
+  /// Approve docs
+  internal static let coreTabbarApproveDocs = RxL10n.tr("Localizable", "core.tabbar.approve_docs")
+  /// Calendar
+  internal static let coreTabbarCalendar = RxL10n.tr("Localizable", "core.tabbar.calendar")
+  /// Document
+  internal static let coreTabbarDocuments = RxL10n.tr("Localizable", "core.tabbar.documents")
+  /// More
+  internal static let coreTabbarMore = RxL10n.tr("Localizable", "core.tabbar.more")
+  /// Sign
+  internal static let coreTabbarSign = RxL10n.tr("Localizable", "core.tabbar.sign")
 }
 // swiftlint:enable function_parameter_count identifier_name line_length type_body_length
 

@@ -51,3 +51,13 @@
 "core.login.password" = "Mật khẩu";
 
 "core.login.vietnammese" = "Tiếng Việt";
+
+"core.tabbar.approve_docs" = "Xét duyệt văn bản";
+
+"core.tabbar.calendar" = "Lịch họp";
+
+"core.tabbar.documents" = "Công văn";
+
+"core.tabbar.more" = "Thêm";
+
+"core.tabbar.sign" = "Ký điện tử";

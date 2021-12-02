@@ -51,3 +51,13 @@
 "core.login.password" = "Password";
 
 "core.login.vietnammese" = "Tiếng Việt";
+
+"core.tabbar.approve_docs" = "Approve docs";
+
+"core.tabbar.calendar" = "Calendar";
+
+"core.tabbar.documents" = "Document";
+
+"core.tabbar.more" = "More";
+
+"core.tabbar.sign" = "Sign";

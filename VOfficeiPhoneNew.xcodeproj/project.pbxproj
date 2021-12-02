@@ -12,17 +12,19 @@
 		2E28634C274E37D20006F4F0 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28634B274E37D20006F4F0 /* Date+.swift */; };
 		2E348D5D274B994900F76E20 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E348D5C274B994900F76E20 /* Constant.swift */; };
 		2E5F81AF274C9D1F00357CDC /* Error+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F81AE274C9D1F00357CDC /* Error+.swift */; };
+		2E730F1D2758709000AF6FA4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F1C2758709000AF6FA4 /* BaseTabBarController.swift */; };
+		2E730F23275873B900AF6FA4 /* DocumentAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F1E275873B900AF6FA4 /* DocumentAssembler.swift */; };
+		2E730F24275873B900AF6FA4 /* DocumentNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F1F275873B900AF6FA4 /* DocumentNavigator.swift */; };
+		2E730F25275873B900AF6FA4 /* DocumentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F20275873B900AF6FA4 /* DocumentUseCase.swift */; };
+		2E730F26275873B900AF6FA4 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F21275873B900AF6FA4 /* DocumentViewController.swift */; };
+		2E730F27275873B900AF6FA4 /* DocumentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F22275873B900AF6FA4 /* DocumentViewModel.swift */; };
+		2E730F292758789700AF6FA4 /* Tabbar+Pageview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F282758789700AF6FA4 /* Tabbar+Pageview.swift */; };
 		2E85E3082743B32700FF9412 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E85E3072743B32700FF9412 /* UIView+.swift */; };
 		2E8B80552750C31300897DB9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B80542750C31300897DB9 /* User.swift */; };
 		2E8D76D1274F7A140050CB8D /* RsaSignner.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */; };
 		2E8D76D2274F7A140050CB8D /* RsaSignner.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E8E1C5B27560EB900BE04EC /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E1C5A27560EB900BE04EC /* UIApplication+.swift */; };
 		2EBC03D627572EDD00149374 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC03D527572EDC00149374 /* Config.swift */; };
-		2EBC03E12757830700149374 /* ReviewAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC03DC2757830700149374 /* ReviewAssembler.swift */; };
-		2EBC03E22757830700149374 /* ReviewNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC03DD2757830700149374 /* ReviewNavigator.swift */; };
-		2EBC03E32757830700149374 /* ReviewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC03DE2757830700149374 /* ReviewUseCase.swift */; };
-		2EBC03E42757830700149374 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC03DF2757830700149374 /* ReviewViewController.swift */; };
-		2EBC03E52757830700149374 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC03E02757830700149374 /* ReviewViewModel.swift */; };
 		2ED08C68273E0648009B4068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C67273E0648009B4068 /* AppDelegate.swift */; };
 		2ED08C6A273E0648009B4068 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08C69273E0648009B4068 /* Podfile */; };
 		2ED08C6C273E0648009B4068 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08C6B273E0648009B4068 /* .swiftlint.yml */; };
@@ -136,16 +138,18 @@
 		2E28634B274E37D20006F4F0 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		2E348D5C274B994900F76E20 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		2E5F81AE274C9D1F00357CDC /* Error+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+.swift"; sourceTree = "<group>"; };
+		2E730F1C2758709000AF6FA4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		2E730F1E275873B900AF6FA4 /* DocumentAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentAssembler.swift; sourceTree = "<group>"; };
+		2E730F1F275873B900AF6FA4 /* DocumentNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentNavigator.swift; sourceTree = "<group>"; };
+		2E730F20275873B900AF6FA4 /* DocumentUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentUseCase.swift; sourceTree = "<group>"; };
+		2E730F21275873B900AF6FA4 /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
+		2E730F22275873B900AF6FA4 /* DocumentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewModel.swift; sourceTree = "<group>"; };
+		2E730F282758789700AF6FA4 /* Tabbar+Pageview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tabbar+Pageview.swift"; sourceTree = "<group>"; };
 		2E85E3072743B32700FF9412 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2E8B80542750C31300897DB9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = RsaSignner.xcframework; sourceTree = "<group>"; };
 		2E8E1C5A27560EB900BE04EC /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		2EBC03D527572EDC00149374 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		2EBC03DC2757830700149374 /* ReviewAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAssembler.swift; sourceTree = "<group>"; };
-		2EBC03DD2757830700149374 /* ReviewNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewNavigator.swift; sourceTree = "<group>"; };
-		2EBC03DE2757830700149374 /* ReviewUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewUseCase.swift; sourceTree = "<group>"; };
-		2EBC03DF2757830700149374 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
-		2EBC03E02757830700149374 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
 		2ED08C64273E0648009B4068 /* VOfficeiPhoneNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOfficeiPhoneNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED08C67273E0648009B4068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ED08C69273E0648009B4068 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -280,21 +284,13 @@
 		2EBC03DA2757829200149374 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				2EBC03DB275782A000149374 /* Review */,
+				2E730F1E275873B900AF6FA4 /* DocumentAssembler.swift */,
+				2E730F1F275873B900AF6FA4 /* DocumentNavigator.swift */,
+				2E730F20275873B900AF6FA4 /* DocumentUseCase.swift */,
+				2E730F21275873B900AF6FA4 /* DocumentViewController.swift */,
+				2E730F22275873B900AF6FA4 /* DocumentViewModel.swift */,
 			);
 			path = Tabbar;
-			sourceTree = "<group>";
-		};
-		2EBC03DB275782A000149374 /* Review */ = {
-			isa = PBXGroup;
-			children = (
-				2EBC03DC2757830700149374 /* ReviewAssembler.swift */,
-				2EBC03DD2757830700149374 /* ReviewNavigator.swift */,
-				2EBC03DE2757830700149374 /* ReviewUseCase.swift */,
-				2EBC03DF2757830700149374 /* ReviewViewController.swift */,
-				2EBC03E02757830700149374 /* ReviewViewModel.swift */,
-			);
-			path = Review;
 			sourceTree = "<group>";
 		};
 		2ED08C5B273E0648009B4068 = {
@@ -365,6 +361,7 @@
 				2E348D5C274B994900F76E20 /* Constant.swift */,
 				2E8B80542750C31300897DB9 /* User.swift */,
 				2EBC03D527572EDC00149374 /* Config.swift */,
+				2E730F282758789700AF6FA4 /* Tabbar+Pageview.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -547,6 +544,7 @@
 			isa = PBXGroup;
 			children = (
 				2ED08D14273E20BC009B4068 /* BaseViewController.swift */,
+				2E730F1C2758709000AF6FA4 /* BaseTabBarController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -869,15 +867,12 @@
 			files = (
 				2ED08D20273E21C1009B4068 /* UINavigationBar+Ext.swift in Sources */,
 				2ED08C73273E0648009B4068 /* APIUrls.swift in Sources */,
-				2EBC03E42757830700149374 /* ReviewViewController.swift in Sources */,
-				2EBC03E12757830700149374 /* ReviewAssembler.swift in Sources */,
 				2ED08CDC273E0B1B009B4068 /* Assets.swift in Sources */,
 				2EE891DC2745FB3E00196114 /* Validation+String.swift in Sources */,
 				2ED08C9A273E0648009B4068 /* MainAssembler.swift in Sources */,
 				2E8B80552750C31300897DB9 /* User.swift in Sources */,
 				2E85E3082743B32700FF9412 /* UIView+.swift in Sources */,
 				2ED08C80273E0648009B4068 /* APIInput.swift in Sources */,
-				2EBC03E32757830700149374 /* ReviewUseCase.swift in Sources */,
 				2EE891DD2745FB3E00196114 /* Validation+Collection.swift in Sources */,
 				2ED08D15273E20BC009B4068 /* BaseViewController.swift in Sources */,
 				2ED08C93273E0648009B4068 /* AppViewModel.swift in Sources */,
@@ -885,12 +880,12 @@
 				2ED08CA0273E0648009B4068 /* MainViewController.swift in Sources */,
 				2ED08CEE273E0FF5009B4068 /* Localization.swift in Sources */,
 				2EE891E22745FB5D00196114 /* LoggingIn.swift in Sources */,
+				2E730F26275873B900AF6FA4 /* DocumentViewController.swift in Sources */,
 				2ED08D24273E21C1009B4068 /* UIColor+Ext.swift in Sources */,
 				2ED08D1F273E21C1009B4068 /* UIImage+Ext.swift in Sources */,
 				2E28634A274E36BB0006F4F0 /* APIParams.swift in Sources */,
 				2ED08D08273E1854009B4068 /* LoginViewModel.swift in Sources */,
 				2EFA86CB2744FB57000B1569 /* Storage.swift in Sources */,
-				2EBC03E22757830700149374 /* ReviewNavigator.swift in Sources */,
 				2E8E1C5B27560EB900BE04EC /* UIApplication+.swift in Sources */,
 				2EE891E72746327D00196114 /* RSAKey.swift in Sources */,
 				2ED08D23273E21C1009B4068 /* BaseComponent.swift in Sources */,
@@ -898,7 +893,10 @@
 				2ED08C70273E0648009B4068 /* UnitTestViewController.swift in Sources */,
 				2ED08D25273E21C1009B4068 /* UITableView+Extensions.swift in Sources */,
 				2ED08D22273E21C1009B4068 /* ViewModelType.swift in Sources */,
+				2E730F1D2758709000AF6FA4 /* BaseTabBarController.swift in Sources */,
+				2E730F24275873B900AF6FA4 /* DocumentNavigator.swift in Sources */,
 				2ED08C91273E0648009B4068 /* AppUseCase.swift in Sources */,
+				2E730F292758789700AF6FA4 /* Tabbar+Pageview.swift in Sources */,
 				2ED08C6E273E0648009B4068 /* Assembler.swift in Sources */,
 				2ED08D04273E1854009B4068 /* LoginAssembler.swift in Sources */,
 				2E28633C274E2B590006F4F0 /* String+.swift in Sources */,
@@ -910,6 +908,7 @@
 				2ED08C8F273E0648009B4068 /* AppNavigator.swift in Sources */,
 				2ED08C9C273E0648009B4068 /* MainNavigator.swift in Sources */,
 				2EE891E32745FB5D00196114 /* LoginDto.swift in Sources */,
+				2E730F23275873B900AF6FA4 /* DocumentAssembler.swift in Sources */,
 				2ED08CDA273E0AFD009B4068 /* Strings.swift in Sources */,
 				2ED08D21273E21C1009B4068 /* DefaultDesign.swift in Sources */,
 				2E5F81AF274C9D1F00357CDC /* Error+.swift in Sources */,
@@ -919,9 +918,10 @@
 				2ED08C82273E0648009B4068 /* APIOutput.swift in Sources */,
 				2EE891DE2745FB3E00196114 /* Validation+Comparable.swift in Sources */,
 				2ED08CA5273E0648009B4068 /* UIViewController+.swift in Sources */,
-				2EBC03E52757830700149374 /* ReviewViewModel.swift in Sources */,
 				2ED08CDE273E0B29009B4068 /* Fonts.swift in Sources */,
+				2E730F25275873B900AF6FA4 /* DocumentUseCase.swift in Sources */,
 				2ED08C8D273E0648009B4068 /* AppAssembler.swift in Sources */,
+				2E730F27275873B900AF6FA4 /* DocumentViewModel.swift in Sources */,
 				2EFA86C92744FB37000B1569 /* CacheStorage.swift in Sources */,
 				2ED08CA2273E0648009B4068 /* MainViewModel.swift in Sources */,
 				2ED08C8A273E0648009B4068 /* Storyboards.swift in Sources */,
