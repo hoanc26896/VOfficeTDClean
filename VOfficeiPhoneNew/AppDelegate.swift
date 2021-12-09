@@ -18,13 +18,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     var disposeBag = DisposeBag()
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
-        if #available(iOS 15, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            UINavigationBar.appearance().standardAppearance = appearance
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        }
-        UIActivityIndicatorView.appearance(whenContainedInInstancesOf:[MBProgressHUD.self]).color = .white
+        
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         
@@ -34,6 +28,19 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             bindViewModel(window: window)
         }
+        
+        configView()
+    }
+    
+    private func configView(){
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
+        UIActivityIndicatorView.appearance(whenContainedInInstancesOf:[MBProgressHUD.self]).color = .white
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = L10n.coreCommonCancel
     }
 
     private func bindViewModel(window: UIWindow) {

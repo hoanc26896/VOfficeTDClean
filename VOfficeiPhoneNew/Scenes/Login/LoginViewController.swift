@@ -73,6 +73,7 @@ final class LoginViewController: BaseViewController,Bindable  {
         view.backgroundColor = LAsset.input.color
         view.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0)
         loginUsernameSv.addArrangedSubview(view)
+        
         return view
     }()
     
@@ -133,7 +134,7 @@ final class LoginViewController: BaseViewController,Bindable  {
     
     private func configView() {
         title = "Login"
-        
+        navigationController?.setNavigationBarHidden(false, animated: false)
         loginBgImg.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -214,6 +215,10 @@ final class LoginViewController: BaseViewController,Bindable  {
         let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
             .mapToVoid().take(1)
             .asDriverOnErrorJustComplete()
+        
+        let onPressDoneUsername = loginUsernameTf.rx.controlEvent(.editingDidEndOnExit).mapToVoid().asDriverOnErrorJustComplete()
+        let onPressDonePassword = loginPassTf.rx.controlEvent(.editingDidEndOnExit).mapToVoid().asDriverOnErrorJustComplete()
+        
         let onChangeLanguage = languageSegment.rx.selectedSegmentIndex.asDriver()
         
         let onChangeUser = loginUsernameTf.rx.text.orEmpty.asDriver()
@@ -226,7 +231,7 @@ final class LoginViewController: BaseViewController,Bindable  {
             onChangeLanguage: onChangeLanguage,
             onChangeUser: onChangeUser,
             onChangePass: onChangePass,
-            onLogin: onLogin
+            onLogin: Driver.merge(onLogin, onPressDonePassword)
         )
         let output = viewModel.transform(input, disposeBag: disposeBag)
         output.$selectedSegmentIndex.asDriver().drive(languageSegment.rx.selectedSegmentIndex).disposed(by: disposeBag)
@@ -234,11 +239,25 @@ final class LoginViewController: BaseViewController,Bindable  {
         output.$error.asDriver().unwrap().drive(messageApiErrorBinder).disposed(by: disposeBag)
         output.$isAllowLogin.asDriver().drive(isAllowLoginBinder).disposed(by: disposeBag)
         output.$isLoading.asDriver().drive(isLoading).disposed(by: disposeBag)
+        viewWillAppear.drive(viewWillAppearBinder).disposed(by: disposeBag)
+        onPressDoneUsername.drive(doneUserNameBinder).disposed(by: disposeBag)
     }
 }
 
 // MARK: - Binders
 extension LoginViewController {
+    var viewWillAppearBinder: Binder<Void>{
+        return Binder(self) { vc, _ in
+            vc.navigationController?.setNavigationBarHidden(true, animated: false)
+        }
+    }
+    
+    var doneUserNameBinder: Binder<Void>{
+        return Binder(self){vc, _ in
+            vc.loginPassTf.becomeFirstResponder()
+        }
+    }
+    
     var messageInvalidErrorBinder: Binder<String> {
         return Binder(self) { vc, message in
             vc.showError(message: message, okTitle: L10n.coreCommonInputAgain, completion: nil)

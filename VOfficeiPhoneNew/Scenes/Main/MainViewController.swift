@@ -57,8 +57,9 @@ extension MainViewController{
     var rootViewControllersBinder: Binder<[UIViewController]> {
         return Binder(self) { vc, controllers in
             print("rootViewControllersBinder - controllers", controllers)
+            
             vc.viewControllers = controllers
-            vc.tabBar.tintColor = .red
+           
         }
     }
 }

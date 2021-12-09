@@ -12,29 +12,30 @@ import SnapKit
 class BaseViewController: UIViewController {
     let disposeBag = DisposeBag()
     
-    var backgroundImageName: String = "bg_default"
-    lazy var backgroundImageView: UIImageView = {
-        let view = UIImageView()
-        view.contentMode = .scaleAspectFill
-        view.alpha = 0.8
-        self.view.addSubview(view)
-        view.snp.makeConstraints { $0.edges.equalToSuperview() }
-        return view
-    }()
+//    var backgroundImageName: String = "bg_default"
+//    lazy var backgroundImageView: UIImageView = {
+//        let view = UIImageView()
+//        view.contentMode = .scaleAspectFill
+//        view.alpha = 0.8
+//        self.view.addSubview(view)
+//        view.snp.makeConstraints { $0.edges.equalToSuperview() }
+//        return view
+//    }()
 
     override func viewDidLoad() {
         navigationController?.addAutoDetectIndicator(animated: true)
-        navigationController?.clearNavigationBar(with: .white)
+        navigationController?.clearNavigationBar(with: LAsset.tabbarBg.color)
         super.viewDidLoad()
         configureViews()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        
     }
 
     func configureViews() {
         view.backgroundColor = LAsset.background.color
-        
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }

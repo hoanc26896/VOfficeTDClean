@@ -1,5 +1,7 @@
 "core.common.alert" = "Alert";
 
+"core.common.cancel" = "Cancel";
+
 "core.common.cannot_connect_to_internet" = "Can not connect to internet, please try again";
 
 "core.common.cannot_connect_to_network" = "Can not connect to network, please check and try again";

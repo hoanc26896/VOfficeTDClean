@@ -14,6 +14,8 @@ import RxCocoa
 internal enum RxL10n {
   /// Alert
   internal static let coreCommonAlert = RxL10n.tr("Localizable", "core.common.alert")
+  /// Cancel
+  internal static let coreCommonCancel = RxL10n.tr("Localizable", "core.common.cancel")
   /// Can not connect to internet, please try again
   internal static let coreCommonCannotConnectToInternet = RxL10n.tr("Localizable", "core.common.cannot_connect_to_internet")
   /// Can not connect to network, please check and try again

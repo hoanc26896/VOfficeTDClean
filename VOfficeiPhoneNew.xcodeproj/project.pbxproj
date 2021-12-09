@@ -11,6 +11,8 @@
 		2E28634A274E36BB0006F4F0 /* APIParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E286349274E36BB0006F4F0 /* APIParams.swift */; };
 		2E28634C274E37D20006F4F0 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28634B274E37D20006F4F0 /* Date+.swift */; };
 		2E348D5D274B994900F76E20 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E348D5C274B994900F76E20 /* Constant.swift */; };
+		2E4706AC2761DD1C008B5B6B /* BasePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4706AB2761DD1C008B5B6B /* BasePageViewController.swift */; };
+		2E4706AF2761E67A008B5B6B /* UIPageViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4706AE2761E67A008B5B6B /* UIPageViewController+Rx.swift */; };
 		2E5F81AF274C9D1F00357CDC /* Error+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F81AE274C9D1F00357CDC /* Error+.swift */; };
 		2E730F1D2758709000AF6FA4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F1C2758709000AF6FA4 /* BaseTabBarController.swift */; };
 		2E730F23275873B900AF6FA4 /* DocumentAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F1E275873B900AF6FA4 /* DocumentAssembler.swift */; };
@@ -137,6 +139,8 @@
 		2E286349274E36BB0006F4F0 /* APIParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParams.swift; sourceTree = "<group>"; };
 		2E28634B274E37D20006F4F0 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		2E348D5C274B994900F76E20 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		2E4706AB2761DD1C008B5B6B /* BasePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageViewController.swift; sourceTree = "<group>"; };
+		2E4706AE2761E67A008B5B6B /* UIPageViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Rx.swift"; sourceTree = "<group>"; };
 		2E5F81AE274C9D1F00357CDC /* Error+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+.swift"; sourceTree = "<group>"; };
 		2E730F1C2758709000AF6FA4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		2E730F1E275873B900AF6FA4 /* DocumentAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentAssembler.swift; sourceTree = "<group>"; };
@@ -460,6 +464,7 @@
 				2E28633B274E2B590006F4F0 /* String+.swift */,
 				2E28634B274E37D20006F4F0 /* Date+.swift */,
 				2E8E1C5A27560EB900BE04EC /* UIApplication+.swift */,
+				2E4706AE2761E67A008B5B6B /* UIPageViewController+Rx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -545,6 +550,7 @@
 			children = (
 				2ED08D14273E20BC009B4068 /* BaseViewController.swift */,
 				2E730F1C2758709000AF6FA4 /* BaseTabBarController.swift */,
+				2E4706AB2761DD1C008B5B6B /* BasePageViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -879,6 +885,7 @@
 				2ED08D07273E1854009B4068 /* LoginViewController.swift in Sources */,
 				2ED08CA0273E0648009B4068 /* MainViewController.swift in Sources */,
 				2ED08CEE273E0FF5009B4068 /* Localization.swift in Sources */,
+				2E4706AC2761DD1C008B5B6B /* BasePageViewController.swift in Sources */,
 				2EE891E22745FB5D00196114 /* LoggingIn.swift in Sources */,
 				2E730F26275873B900AF6FA4 /* DocumentViewController.swift in Sources */,
 				2ED08D24273E21C1009B4068 /* UIColor+Ext.swift in Sources */,
@@ -909,6 +916,7 @@
 				2ED08C9C273E0648009B4068 /* MainNavigator.swift in Sources */,
 				2EE891E32745FB5D00196114 /* LoginDto.swift in Sources */,
 				2E730F23275873B900AF6FA4 /* DocumentAssembler.swift in Sources */,
+				2E4706AF2761E67A008B5B6B /* UIPageViewController+Rx.swift in Sources */,
 				2ED08CDA273E0AFD009B4068 /* Strings.swift in Sources */,
 				2ED08D21273E21C1009B4068 /* DefaultDesign.swift in Sources */,
 				2E5F81AF274C9D1F00357CDC /* Error+.swift in Sources */,

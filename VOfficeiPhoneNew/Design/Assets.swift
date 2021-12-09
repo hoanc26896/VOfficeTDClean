@@ -26,6 +26,7 @@ public enum LAsset {
   public static let button = ColorAsset(name: "button")
   public static let input = ColorAsset(name: "input")
   public static let main = ColorAsset(name: "main")
+  public static let tabbarBg = ColorAsset(name: "tabbarBg")
   public static let lgBgColor = ColorAsset(name: "lgBgColor")
   public static let lgBgImg = ImageAsset(name: "lgBgImg").image
   public static let lgIconColor = ColorAsset(name: "lgIconColor")

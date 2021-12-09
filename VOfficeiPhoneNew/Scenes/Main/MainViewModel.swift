@@ -65,8 +65,6 @@ extension MainViewModel: MainViewModelProtocol{
         guard let rootVC = rootVC else {
             return UINavigationController() }
         let navigationController = UINavigationController(rootViewController: rootVC)
-        navigationController.viewControllers.first?.title = item.title
-        
         return navigationController
     }
 }

@@ -12,14 +12,31 @@ import RxCocoa
 import Reusable
 import Then
 
-final class DocumentViewController: UIViewController, Bindable {
-    
+final class DocumentViewController: BaseViewController, Bindable {
+    let screenSize: CGRect = UIScreen.main.bounds
     // MARK: - IBOutlets
+   
+    lazy var searchBar: UISearchBar = {
+        let view = UISearchBar(frame:CGRect(x: 0, y: 0, width: screenSize.width - 40, height: 44))
+        view.isTranslucent = false
+        return view
+    }()
+    
+    lazy var leftBarButtonItem: UIBarButtonItem = {
+        let view = UIBarButtonItem(customView: UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 32)))
+        return view
+    }()
+    
+    lazy var rightBarButtonItem: UIBarButtonItem = {
+        let view = UIBarButtonItem(customView: searchBar)
+        searchBar.center = CGPoint(x: self.view.center.x, y: searchBar.center.y)
+        return view
+    }()
     
     // MARK: - Properties
     
     var viewModel: DocumentViewModel!
-    var disposeBag = DisposeBag()
+   
     
     // MARK: - Life Cycle
     
@@ -35,7 +52,9 @@ final class DocumentViewController: UIViewController, Bindable {
     // MARK: - Methods
     
     private func configView() {
-        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.navigationBar.isTranslucent = false
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
     func bindViewModel() {

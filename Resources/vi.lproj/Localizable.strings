@@ -1,5 +1,7 @@
 "core.common.alert" = "Thông báo";
 
+"core.common.cancel" = "Huỷ";
+
 "core.common.cannot_connect_to_internet" = "Không kết nối được đến máy chủ, vui lòng thử lại";
 
 "core.common.cannot_connect_to_network" = "Không có kết nối mạng, vui lòng kiểm tra và thử lại";
