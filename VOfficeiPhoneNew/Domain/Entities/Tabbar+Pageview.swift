@@ -65,5 +65,157 @@ public enum TabBarItem{
             return LAsset.lgUserIc
         }
     }
+    
+    var pageView: [PageView]? {
+        switch self {
+        case .review:
+            return [PageView.reviewPage(.awaitingApproval),
+                    PageView.reviewPage(.approved),
+                    PageView.reviewPage(.rejected),
+                    PageView.reviewPage(.promulgate),
+                    PageView.reviewPage(.all)]
+        case .sign:
+            return [PageView.signPage(.awaitingApproval),
+                    PageView.signPage(.awaitingInitial),
+                    PageView.signPage(.approved),
+                    PageView.signPage(.signInitial),
+                    PageView.signPage(.rejected),
+                    PageView.signPage(.rejectedInitial),
+                    PageView.signPage(.rejectedApprovalEarlier),
+                    PageView.signPage(.all)
+            ]
+        case .documentary:
+            return [
+                PageView.documentaryPage(.unprocessed),
+                PageView.documentaryPage(.processed),
+                PageView.documentaryPage(.unread),
+                PageView.documentaryPage(.myDoc),
+                PageView.documentaryPage(.all),
+            ]
+        case .calendar:
+            return [
+                PageView.documentaryPage(.unprocessed),
+                PageView.documentaryPage(.processed),
+                PageView.documentaryPage(.unread),
+                PageView.documentaryPage(.myDoc),
+                PageView.documentaryPage(.all),
+            ]
+        default:
+            return [
+                PageView.documentaryPage(.unprocessed),
+                PageView.documentaryPage(.processed),
+                PageView.documentaryPage(.unread),
+                PageView.documentaryPage(.myDoc),
+                PageView.documentaryPage(.all),
+            ]
+        }
+    }
+    
+   
+}
+
+public enum PageView : Equatable{
+    case reviewPage(ReviewPageViewEnum)
+    case signPage(SignPageViewEnum)
+    case documentaryPage(DocumentPageViewEnum)
+}
+
+public enum ReviewPageViewEnum{
+    case awaitingApproval // Chờ xét duyệt
+    case approved // Đã xét duyệt
+    case rejected // Đã từ chối
+    case promulgate // Ban hành văn bản
+    case all // Tất cả văn bản
+    
+    var title: String{
+        switch self {
+        case .awaitingApproval, .approved, .rejected, .promulgate, .all:
+            return "Test"
+        default:
+            return ""
+        }
+    }
+    
+    var backgroundColor: UIColor{
+        switch self {
+        case .awaitingApproval:
+            return .red
+        case .approved:
+            return .blue
+        case .rejected:
+            return .brown
+        case .promulgate:
+            return .black
+        default:
+            return .white
+        }
+    }
+}
+
+public enum SignPageViewEnum{
+    case awaitingApproval // Chờ ký duyệt
+    case awaitingInitial // Chờ ký nháy
+    case approved // Đã ký duyệt
+    case signInitial // Đã ký nháy
+    case rejected // Từ chối xét duyệt
+    case rejectedInitial // Từ chối ký nháy
+    case rejectedApprovalEarlier // Văn bản người ký sau từ chối
+    case all // Tất cả văn bản
+    
+    var title: String{
+        switch self {
+        case .awaitingApproval, .awaitingInitial, .approved, .signInitial,.rejected,.rejectedInitial, .rejectedApprovalEarlier, .all:
+            return "Test"
+        default:
+            return ""
+        }
+    }
+    
+    var backgroundColor: UIColor{
+        switch self {
+        case .awaitingApproval:
+            return .red
+        case .awaitingInitial:
+            return .blue
+        case .approved:
+            return .brown
+        case .signInitial:
+            return .black
+        default:
+            return .white
+        }
+    }
+}
+
+public enum DocumentPageViewEnum{
+    case unprocessed // Chua xu ly
+    case processed // Da xu ly
+    case unread // Chua doc
+    case myDoc // Toi tao
+    case all // Tat ca cong van
+    
+    var title: String{
+        switch self {
+        case .unprocessed, .processed, .unread, .myDoc,.all:
+            return "Test"
+        default:
+            return ""
+        }
+    }
+    
+    var backgroundColor: UIColor{
+        switch self {
+        case .unprocessed:
+            return .red
+        case .processed:
+            return .blue
+        case .unread:
+            return .brown
+        case .myDoc:
+            return .black
+        default:
+            return .white
+        }
+    }
 }
 

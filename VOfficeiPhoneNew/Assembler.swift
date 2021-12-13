@@ -10,7 +10,8 @@ protocol Assembler: AnyObject,
                     LoginAssembler,
                     AppAssembler,
                     GatewaysAssembler,
-                    DocumentAssembler
+                    DocumentAssembler,
+                    DocumentPageAssembler
 {
     
 }

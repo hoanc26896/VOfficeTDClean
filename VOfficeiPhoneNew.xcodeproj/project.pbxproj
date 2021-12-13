@@ -7,12 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E02F69B27633C1300DD6793 /* UIPageViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E02F69A27633C1200DD6793 /* UIPageViewController+.swift */; };
+		2E02F69D27635ADD00DD6793 /* BasePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E02F69C27635ADD00DD6793 /* BasePageViewController.swift */; };
 		2E28633C274E2B590006F4F0 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28633B274E2B590006F4F0 /* String+.swift */; };
 		2E28634A274E36BB0006F4F0 /* APIParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E286349274E36BB0006F4F0 /* APIParams.swift */; };
 		2E28634C274E37D20006F4F0 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E28634B274E37D20006F4F0 /* Date+.swift */; };
 		2E348D5D274B994900F76E20 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E348D5C274B994900F76E20 /* Constant.swift */; };
-		2E4706AC2761DD1C008B5B6B /* BasePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4706AB2761DD1C008B5B6B /* BasePageViewController.swift */; };
 		2E4706AF2761E67A008B5B6B /* UIPageViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4706AE2761E67A008B5B6B /* UIPageViewController+Rx.swift */; };
+		2E571A6E2766DADF00FCE6BB /* DocumentPageAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E571A692766DADF00FCE6BB /* DocumentPageAssembler.swift */; };
+		2E571A6F2766DADF00FCE6BB /* DocumentPageNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E571A6A2766DADF00FCE6BB /* DocumentPageNavigator.swift */; };
+		2E571A702766DADF00FCE6BB /* DocumentPageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E571A6B2766DADF00FCE6BB /* DocumentPageUseCase.swift */; };
+		2E571A712766DADF00FCE6BB /* DocumentPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E571A6C2766DADF00FCE6BB /* DocumentPageViewController.swift */; };
+		2E571A722766DADF00FCE6BB /* DocumentPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E571A6D2766DADF00FCE6BB /* DocumentPageViewModel.swift */; };
+		2E571A7527672E1500FCE6BB /* SegmentControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E571A7427672E1400FCE6BB /* SegmentControlView.swift */; };
+		2E571A7727672E4D00FCE6BB /* SegmentControlItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E571A7627672E4D00FCE6BB /* SegmentControlItem.swift */; };
 		2E5F81AF274C9D1F00357CDC /* Error+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F81AE274C9D1F00357CDC /* Error+.swift */; };
 		2E730F1D2758709000AF6FA4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F1C2758709000AF6FA4 /* BaseTabBarController.swift */; };
 		2E730F23275873B900AF6FA4 /* DocumentAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F1E275873B900AF6FA4 /* DocumentAssembler.swift */; };
@@ -135,12 +143,20 @@
 /* Begin PBXFileReference section */
 		08693761741B2E9C00085763 /* Pods_VOfficeiPhoneNewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VOfficeiPhoneNewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BB51A61CDB2718B73647D4 /* Pods-VOfficeiPhoneNewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VOfficeiPhoneNewTests.debug.xcconfig"; path = "Target Support Files/Pods-VOfficeiPhoneNewTests/Pods-VOfficeiPhoneNewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2E02F69A27633C1200DD6793 /* UIPageViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+.swift"; sourceTree = "<group>"; };
+		2E02F69C27635ADD00DD6793 /* BasePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageViewController.swift; sourceTree = "<group>"; };
 		2E28633B274E2B590006F4F0 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		2E286349274E36BB0006F4F0 /* APIParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParams.swift; sourceTree = "<group>"; };
 		2E28634B274E37D20006F4F0 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		2E348D5C274B994900F76E20 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		2E4706AB2761DD1C008B5B6B /* BasePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageViewController.swift; sourceTree = "<group>"; };
 		2E4706AE2761E67A008B5B6B /* UIPageViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Rx.swift"; sourceTree = "<group>"; };
+		2E571A692766DADF00FCE6BB /* DocumentPageAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPageAssembler.swift; sourceTree = "<group>"; };
+		2E571A6A2766DADF00FCE6BB /* DocumentPageNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPageNavigator.swift; sourceTree = "<group>"; };
+		2E571A6B2766DADF00FCE6BB /* DocumentPageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPageUseCase.swift; sourceTree = "<group>"; };
+		2E571A6C2766DADF00FCE6BB /* DocumentPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPageViewController.swift; sourceTree = "<group>"; };
+		2E571A6D2766DADF00FCE6BB /* DocumentPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPageViewModel.swift; sourceTree = "<group>"; };
+		2E571A7427672E1400FCE6BB /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
+		2E571A7627672E4D00FCE6BB /* SegmentControlItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlItem.swift; sourceTree = "<group>"; };
 		2E5F81AE274C9D1F00357CDC /* Error+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+.swift"; sourceTree = "<group>"; };
 		2E730F1C2758709000AF6FA4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		2E730F1E275873B900AF6FA4 /* DocumentAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentAssembler.swift; sourceTree = "<group>"; };
@@ -278,14 +294,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		2E28630F274DE8830006F4F0 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		2EBC03DA2757829200149374 /* Tabbar */ = {
+		2E02F6822762EB1100DD6793 /* Document */ = {
 			isa = PBXGroup;
 			children = (
 				2E730F1E275873B900AF6FA4 /* DocumentAssembler.swift */,
@@ -293,6 +302,51 @@
 				2E730F20275873B900AF6FA4 /* DocumentUseCase.swift */,
 				2E730F21275873B900AF6FA4 /* DocumentViewController.swift */,
 				2E730F22275873B900AF6FA4 /* DocumentViewModel.swift */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
+		2E02F68F2762EFB800DD6793 /* DocumentPage */ = {
+			isa = PBXGroup;
+			children = (
+				2E571A692766DADF00FCE6BB /* DocumentPageAssembler.swift */,
+				2E571A6A2766DADF00FCE6BB /* DocumentPageNavigator.swift */,
+				2E571A6B2766DADF00FCE6BB /* DocumentPageUseCase.swift */,
+				2E571A6C2766DADF00FCE6BB /* DocumentPageViewController.swift */,
+				2E571A6D2766DADF00FCE6BB /* DocumentPageViewModel.swift */,
+			);
+			path = DocumentPage;
+			sourceTree = "<group>";
+		};
+		2E28630F274DE8830006F4F0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		2E571A7327672DE100FCE6BB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2E571A78276734C600FCE6BB /* SegmentControl */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2E571A78276734C600FCE6BB /* SegmentControl */ = {
+			isa = PBXGroup;
+			children = (
+				2E571A7427672E1400FCE6BB /* SegmentControlView.swift */,
+				2E571A7627672E4D00FCE6BB /* SegmentControlItem.swift */,
+			);
+			path = SegmentControl;
+			sourceTree = "<group>";
+		};
+		2EBC03DA2757829200149374 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				2E02F6822762EB1100DD6793 /* Document */,
+				2E02F68F2762EFB800DD6793 /* DocumentPage */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -465,6 +519,7 @@
 				2E28634B274E37D20006F4F0 /* Date+.swift */,
 				2E8E1C5A27560EB900BE04EC /* UIApplication+.swift */,
 				2E4706AE2761E67A008B5B6B /* UIPageViewController+Rx.swift */,
+				2E02F69A27633C1200DD6793 /* UIPageViewController+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -548,9 +603,10 @@
 		2ED08D09273E1F3F009B4068 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				2E571A7327672DE100FCE6BB /* Components */,
 				2ED08D14273E20BC009B4068 /* BaseViewController.swift */,
 				2E730F1C2758709000AF6FA4 /* BaseTabBarController.swift */,
-				2E4706AB2761DD1C008B5B6B /* BasePageViewController.swift */,
+				2E02F69C27635ADD00DD6793 /* BasePageViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -876,6 +932,7 @@
 				2ED08CDC273E0B1B009B4068 /* Assets.swift in Sources */,
 				2EE891DC2745FB3E00196114 /* Validation+String.swift in Sources */,
 				2ED08C9A273E0648009B4068 /* MainAssembler.swift in Sources */,
+				2E02F69D27635ADD00DD6793 /* BasePageViewController.swift in Sources */,
 				2E8B80552750C31300897DB9 /* User.swift in Sources */,
 				2E85E3082743B32700FF9412 /* UIView+.swift in Sources */,
 				2ED08C80273E0648009B4068 /* APIInput.swift in Sources */,
@@ -884,8 +941,8 @@
 				2ED08C93273E0648009B4068 /* AppViewModel.swift in Sources */,
 				2ED08D07273E1854009B4068 /* LoginViewController.swift in Sources */,
 				2ED08CA0273E0648009B4068 /* MainViewController.swift in Sources */,
+				2E571A722766DADF00FCE6BB /* DocumentPageViewModel.swift in Sources */,
 				2ED08CEE273E0FF5009B4068 /* Localization.swift in Sources */,
-				2E4706AC2761DD1C008B5B6B /* BasePageViewController.swift in Sources */,
 				2EE891E22745FB5D00196114 /* LoggingIn.swift in Sources */,
 				2E730F26275873B900AF6FA4 /* DocumentViewController.swift in Sources */,
 				2ED08D24273E21C1009B4068 /* UIColor+Ext.swift in Sources */,
@@ -902,10 +959,12 @@
 				2ED08D22273E21C1009B4068 /* ViewModelType.swift in Sources */,
 				2E730F1D2758709000AF6FA4 /* BaseTabBarController.swift in Sources */,
 				2E730F24275873B900AF6FA4 /* DocumentNavigator.swift in Sources */,
+				2E571A7527672E1500FCE6BB /* SegmentControlView.swift in Sources */,
 				2ED08C91273E0648009B4068 /* AppUseCase.swift in Sources */,
 				2E730F292758789700AF6FA4 /* Tabbar+Pageview.swift in Sources */,
 				2ED08C6E273E0648009B4068 /* Assembler.swift in Sources */,
 				2ED08D04273E1854009B4068 /* LoginAssembler.swift in Sources */,
+				2E571A702766DADF00FCE6BB /* DocumentPageUseCase.swift in Sources */,
 				2E28633C274E2B590006F4F0 /* String+.swift in Sources */,
 				2ED08D06273E1854009B4068 /* LoginUseCase.swift in Sources */,
 				2EE891E9274635DD00196114 /* LoginGateway.swift in Sources */,
@@ -914,18 +973,23 @@
 				2ED08C87273E0648009B4068 /* GatewaysAssembler.swift in Sources */,
 				2ED08C8F273E0648009B4068 /* AppNavigator.swift in Sources */,
 				2ED08C9C273E0648009B4068 /* MainNavigator.swift in Sources */,
+				2E571A6F2766DADF00FCE6BB /* DocumentPageNavigator.swift in Sources */,
 				2EE891E32745FB5D00196114 /* LoginDto.swift in Sources */,
+				2E571A712766DADF00FCE6BB /* DocumentPageViewController.swift in Sources */,
 				2E730F23275873B900AF6FA4 /* DocumentAssembler.swift in Sources */,
 				2E4706AF2761E67A008B5B6B /* UIPageViewController+Rx.swift in Sources */,
 				2ED08CDA273E0AFD009B4068 /* Strings.swift in Sources */,
 				2ED08D21273E21C1009B4068 /* DefaultDesign.swift in Sources */,
+				2E571A6E2766DADF00FCE6BB /* DocumentPageAssembler.swift in Sources */,
 				2E5F81AF274C9D1F00357CDC /* Error+.swift in Sources */,
 				2EFA86BA27448F8A000B1569 /* UIImage+.swift in Sources */,
 				2EBC03D627572EDD00149374 /* Config.swift in Sources */,
 				2EE891E527460DB300196114 /* Api+Login.swift in Sources */,
+				2E571A7727672E4D00FCE6BB /* SegmentControlItem.swift in Sources */,
 				2ED08C82273E0648009B4068 /* APIOutput.swift in Sources */,
 				2EE891DE2745FB3E00196114 /* Validation+Comparable.swift in Sources */,
 				2ED08CA5273E0648009B4068 /* UIViewController+.swift in Sources */,
+				2E02F69B27633C1300DD6793 /* UIPageViewController+.swift in Sources */,
 				2ED08CDE273E0B29009B4068 /* Fonts.swift in Sources */,
 				2E730F25275873B900AF6FA4 /* DocumentUseCase.swift in Sources */,
 				2ED08C8D273E0648009B4068 /* AppAssembler.swift in Sources */,

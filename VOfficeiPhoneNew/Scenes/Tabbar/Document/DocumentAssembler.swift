@@ -9,24 +9,25 @@ import UIKit
 import Reusable
 
 protocol DocumentAssembler {
-    func resolve(navigationController: UINavigationController) -> DocumentViewController
-    func resolve(navigationController: UINavigationController) -> DocumentViewModel
+    func resolve(navigationController: UINavigationController, type: PageView) -> DocumentViewController
+    func resolve(navigationController: UINavigationController, type: PageView) -> DocumentViewModel
     func resolve(navigationController: UINavigationController) -> DocumentNavigatorType
     func resolve() -> DocumentUseCaseType
 }
 
 extension DocumentAssembler {
-    func resolve(navigationController: UINavigationController) -> DocumentViewController {
+    func resolve(navigationController: UINavigationController, type: PageView) -> DocumentViewController {
         let vc = DocumentViewController()
-        let vm: DocumentViewModel = resolve(navigationController: navigationController)
+        let vm: DocumentViewModel = resolve(navigationController: navigationController, type: type)
         vc.bindViewModel(to: vm)
         return vc
     }
     
-    func resolve(navigationController: UINavigationController) -> DocumentViewModel {
+    func resolve(navigationController: UINavigationController, type: PageView) -> DocumentViewModel {
         return DocumentViewModel(
             navigator: resolve(navigationController: navigationController),
-            useCase: resolve()
+            useCase: resolve(),
+            type: type
         )
     }
 }

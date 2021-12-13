@@ -59,7 +59,7 @@ extension MainViewModel: MainViewModelProtocol{
         var rootVC: UIViewController?
         switch item {
         case .review,.sign, .documentary,.calendar,.more :
-            rootVC =  navigator.toDocument()
+            rootVC =  navigator.toDocumentPage(tabbarItem: item)
             break
         }
         guard let rootVC = rootVC else {

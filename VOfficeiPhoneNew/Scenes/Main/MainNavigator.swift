@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainNavigatorType {
-    func toDocument() -> DocumentViewController
+    func toDocumentPage(tabbarItem: TabBarItem) -> DocumentPageViewController
 }
 
 struct MainNavigator: MainNavigatorType {
@@ -17,8 +17,8 @@ struct MainNavigator: MainNavigatorType {
     unowned let assembler: Assembler
     unowned let navigationController: UINavigationController
     
-    func toDocument() -> DocumentViewController {
-        let vc: DocumentViewController = assembler.resolve(navigationController: navigationController)
+    func toDocumentPage(tabbarItem: TabBarItem) -> DocumentPageViewController {
+        let vc: DocumentPageViewController = assembler.resolve(navigationController: navigationController, tabbarItem: tabbarItem)
         return vc
     }
 }
