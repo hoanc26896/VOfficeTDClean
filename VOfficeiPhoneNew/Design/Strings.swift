@@ -65,6 +65,58 @@ internal enum L10n {
   internal static let coreLoginPassword = L10n.tr("Localizable", "core.login.password")
   /// Tiếng Việt
   internal static let coreLoginVietnammese = L10n.tr("Localizable", "core.login.vietnammese")
+  /// All
+  internal static let corePageDocumentsAll = L10n.tr("Localizable", "core.page.documents.all")
+  /// My Document
+  internal static let corePageDocumentsMyDoc = L10n.tr("Localizable", "core.page.documents.myDoc")
+  /// Processsed
+  internal static let corePageDocumentsProcessed = L10n.tr("Localizable", "core.page.documents.processed")
+  /// Saved
+  internal static let corePageDocumentsSaved = L10n.tr("Localizable", "core.page.documents.saved")
+  /// Unprocessed
+  internal static let corePageDocumentsUnprocessed = L10n.tr("Localizable", "core.page.documents.unprocessed")
+  /// Unread
+  internal static let corePageDocumentsUnread = L10n.tr("Localizable", "core.page.documents.unread")
+  /// Calendar approve
+  internal static let corePageMeetingCalendarApprove = L10n.tr("Localizable", "core.page.meeting.calendar_approve")
+  /// Meeting in the progress
+  internal static let corePageMeetingInProgress = L10n.tr("Localizable", "core.page.meeting.in_progress")
+  /// Week
+  internal static let corePageMeetingWeek = L10n.tr("Localizable", "core.page.meeting.week")
+  /// Weekly business schedule of the BOGD
+  internal static let corePageMeetingWeeklyBussinessCeo = L10n.tr("Localizable", "core.page.meeting.weekly_bussiness_ceo")
+  /// Weekly business schedule of the BOD
+  internal static let corePageMeetingWeeklyBussinessDirector = L10n.tr("Localizable", "core.page.meeting.weekly_bussiness_director")
+  /// Weekly schedule of the BOGD
+  internal static let corePageMeetingWeeklyCeo = L10n.tr("Localizable", "core.page.meeting.weekly_ceo")
+  /// Weekly schedule of the BOD
+  internal static let corePageMeetingWeeklyDirector = L10n.tr("Localizable", "core.page.meeting.weekly_director")
+  /// All
+  internal static let corePageReviewAll = L10n.tr("Localizable", "core.page.review.all")
+  /// Approved
+  internal static let corePageReviewApproved = L10n.tr("Localizable", "core.page.review.approved")
+  /// Awaiting approval
+  internal static let corePageReviewAwaitingApproval = L10n.tr("Localizable", "core.page.review.awaiting_approval")
+  /// Promulgate documents
+  internal static let corePageReviewPromulgateDocuments = L10n.tr("Localizable", "core.page.review.promulgate_documents")
+  /// Rejected
+  internal static let corePageReviewRejected = L10n.tr("Localizable", "core.page.review.rejected")
+  /// All
+  internal static let corePageSignAll = L10n.tr("Localizable", "core.page.sign.all")
+  /// Approved
+  internal static let corePageSignApproved = L10n.tr("Localizable", "core.page.sign.approved")
+  /// Awaiting approval
+  internal static let corePageSignAwaitingApproval = L10n.tr("Localizable", "core.page.sign.awaiting_approval")
+  /// Awaiting initial
+  internal static let corePageSignAwaitingInitial = L10n.tr("Localizable", "core.page.sign.awaiting_initial")
+  /// Initial rejected
+  internal static let corePageSignInitialRejected = L10n.tr("Localizable", "core.page.sign.initial_rejected")
+  /// Rejected
+  internal static let corePageSignRejected = L10n.tr("Localizable", "core.page.sign.rejected")
+  /// Rejected (approved earlier)
+  internal static let corePageSignRejectedApprovedEarlier = L10n.tr("Localizable", "core.page.sign.rejected_approved_earlier")
+  /// Signed with initial
+  internal static let corePageSignSignInitial = L10n.tr("Localizable", "core.page.sign.sign_initial")
   /// Approve docs
   internal static let coreTabbarApproveDocs = L10n.tr("Localizable", "core.tabbar.approve_docs")
   /// Calendar

@@ -129,8 +129,16 @@ public enum ReviewPageViewEnum{
     
     var title: String{
         switch self {
-        case .awaitingApproval, .approved, .rejected, .promulgate, .all:
-            return "Test"
+        case .awaitingApproval:
+            return L10n.corePageReviewAwaitingApproval
+        case .approved:
+            return L10n.corePageReviewApproved
+        case .rejected:
+            return L10n.corePageReviewRejected
+        case .promulgate:
+            return L10n.corePageReviewPromulgateDocuments
+        case .all:
+            return L10n.corePageReviewAll
         default:
             return ""
         }
@@ -164,8 +172,22 @@ public enum SignPageViewEnum{
     
     var title: String{
         switch self {
-        case .awaitingApproval, .awaitingInitial, .approved, .signInitial,.rejected,.rejectedInitial, .rejectedApprovalEarlier, .all:
-            return "Test"
+        case .awaitingApproval:
+            return L10n.corePageSignAwaitingApproval
+        case .awaitingInitial:
+            return L10n.corePageSignAwaitingInitial
+        case .approved:
+            return L10n.corePageSignApproved
+        case .signInitial:
+            return L10n.corePageSignSignInitial
+        case .rejected:
+            return L10n.corePageSignRejected
+        case .rejectedInitial:
+            return L10n.corePageSignInitialRejected
+        case .rejectedApprovalEarlier:
+            return L10n.corePageSignRejectedApprovedEarlier
+        case .all:
+            return L10n.corePageSignAll
         default:
             return ""
         }
@@ -196,8 +218,16 @@ public enum DocumentPageViewEnum{
     
     var title: String{
         switch self {
-        case .unprocessed, .processed, .unread, .myDoc,.all:
-            return "Test"
+        case .unprocessed:
+            return L10n.corePageDocumentsUnprocessed
+        case .processed:
+            return L10n.corePageDocumentsProcessed
+        case .unread:
+            return L10n.corePageDocumentsUnread
+        case .myDoc:
+            return L10n.corePageDocumentsMyDoc
+        case .all:
+            return L10n.corePageDocumentsAll
         default:
             return ""
         }

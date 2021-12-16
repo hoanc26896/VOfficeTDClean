@@ -48,51 +48,24 @@ extension DocumentPageViewModel: DocumentPageViewModelProtocol{
         for i in 0..<pageViews.count{
             let pageView = pageViews[i]
             let vc = navigator.toDocument(pageView: pageView)
-            switch pageView {
-            case .reviewPage(let type):
-                switch type {
-                case .awaitingApproval:
-                    vc.view.backgroundColor = .red
-                case .approved:
-                    vc.view.backgroundColor = .blue
-                case .rejected:
-                    vc.view.backgroundColor = .brown
-                case .promulgate:
-                    vc.view.backgroundColor = .gray
-                case .all:
-                    vc.view.backgroundColor = .green
-                default:
-                    vc.view.backgroundColor = .white
-                }
-               
-                break
-            case .signPage(let type):
-                vc.view.backgroundColor = .red
-                break
-            case .documentaryPage(let type):
-                vc.view.backgroundColor = .red
-                break
-            default:
-                break
-            }
-            
             vcs.append(vc)
             
             let sm = SegmentControlItem()
             switch pageView {
             case .reviewPage(let type):
-                sm.segmentItemButton.setTitle(type.title, for: .normal)
+                sm.title = type.title
                 break
             case .signPage(let type):
-                sm.segmentItemButton.setTitle(type.title, for: .normal)
+                sm.title = type.title
                 break
             case .documentaryPage(let type):
-                sm.segmentItemButton.setTitle(type.title, for: .normal)
+                sm.title = type.title
                 break
             default:
                 break
             }
             sm.segmentItemButton.setTitleColor( LAsset.header.color, for: .normal)
+
             sms.append(sm)
         }
         return (vcs, sms)

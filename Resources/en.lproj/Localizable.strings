@@ -54,6 +54,58 @@
 
 "core.login.vietnammese" = "Tiếng Việt";
 
+"core.page.documents.all" = "All";
+
+"core.page.documents.myDoc" = "My Document";
+
+"core.page.documents.processed" = "Processsed";
+
+"core.page.documents.saved" = "Saved";
+
+"core.page.documents.unprocessed" = "Unprocessed";
+
+"core.page.documents.unread" = "Unread";
+
+"core.page.meeting.calendar_approve" = "Calendar approve";
+
+"core.page.meeting.in_progress" = "Meeting in the progress";
+
+"core.page.meeting.week" = "Week";
+
+"core.page.meeting.weekly_bussiness_ceo" = "Weekly business schedule of the BOGD";
+
+"core.page.meeting.weekly_bussiness_director" = "Weekly business schedule of the BOD";
+
+"core.page.meeting.weekly_ceo" = "Weekly schedule of the BOGD";
+
+"core.page.meeting.weekly_director" = "Weekly schedule of the BOD";
+
+"core.page.review.all" = "All";
+
+"core.page.review.approved" = "Approved";
+
+"core.page.review.awaiting_approval" = "Awaiting approval";
+
+"core.page.review.promulgate_documents" = "Promulgate documents";
+
+"core.page.review.rejected" = "Rejected";
+
+"core.page.sign.all" = "All";
+
+"core.page.sign.approved" = "Approved";
+
+"core.page.sign.awaiting_approval" = "Awaiting approval";
+
+"core.page.sign.awaiting_initial" = "Awaiting initial";
+
+"core.page.sign.initial_rejected" = "Initial rejected";
+
+"core.page.sign.rejected" = "Rejected";
+
+"core.page.sign.rejected_approved_earlier" = "Rejected (approved earlier)";
+
+"core.page.sign.sign_initial" = "Signed with initial";
+
 "core.tabbar.approve_docs" = "Approve docs";
 
 "core.tabbar.calendar" = "Calendar";

@@ -82,6 +82,7 @@ class BasePageViewController: UIViewController {
     private func configView() {
         navigationItem.rightBarButtonItem = rightBarButtonItem
         view.backgroundColor = LAsset.background.color
+        
         segmentControlView.snp.makeConstraints { make in
             make.top.equalTo(66)
             make.left.equalToSuperview()
@@ -91,8 +92,8 @@ class BasePageViewController: UIViewController {
         
         pageViewController.view.snp.makeConstraints { make in
             make.top.equalTo(segmentControlView.snp.bottom)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
             make.bottom.equalToSuperview()
         }
     }
@@ -130,10 +131,10 @@ extension BasePageViewController: UIPageViewControllerDataSource{
         
         let previousIndex = viewControllerIndex - 1
         
-        guard previousIndex >= 0 else { return pages.last }
+        guard previousIndex >= 0 else { return nil }
         
         guard pages.count > previousIndex else { return nil }
-        
+        currentIndex.accept(previousIndex)
         return pages[previousIndex]
     }
     
@@ -143,10 +144,10 @@ extension BasePageViewController: UIPageViewControllerDataSource{
         
         let nextIndex = viewControllerIndex + 1
         
-        guard nextIndex < pages.count else { return pages.first }
+        guard nextIndex < pages.count else { return nil }
         
         guard pages.count > nextIndex else { return nil }
-        
+        currentIndex.accept(nextIndex)
         return pages[nextIndex]
     }
     

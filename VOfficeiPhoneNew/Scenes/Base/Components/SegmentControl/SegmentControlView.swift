@@ -14,13 +14,13 @@ class SegmentControlView: UIView {
     lazy var segmentScoll: UIScrollView = {
         let view = UIScrollView()
         view.showsHorizontalScrollIndicator = false
+        
         self.addSubview(view)
         return view
     }()
-    lazy var segmentControlSv: UIStackView = {
-        let view = UIStackView()
-        view.axis = .horizontal
-        segmentScoll.addSubview(view)
+    lazy var segmentControlSv: UIView = {
+        let view = UIView()
+//        segmentScoll.addSubview(view)
         return view
     }()
     
@@ -39,15 +39,7 @@ class SegmentControlView: UIView {
     }
     
     private func configView(){
-        
-        
-        segmentScoll.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalToSuperview()
-        }
-        
-        segmentControlSv.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalToSuperview()
-        }
+
     }
     
     private func bindViewModel(){
@@ -60,28 +52,31 @@ class SegmentControlView: UIView {
     private func commonInit(items: [SegmentControlItem]){
         guard items.count > 0 else { return }
        
-        let widthItem = 100.0
        
+        var widthScroll = 0.0
         for (index, item) in items.enumerated(){
-            
-            segmentControlSv.addSubview(item)
-            item.snp.makeConstraints { make in
+            let widthItem = item.title.widthOfString(usingFont: Design.DefaultFont.title) + 40
+            print("widthItem", widthItem)
+//            segmentControlSv.addSubview(item)
+            segmentScoll.addSubview(item)
+            item.snp.remakeConstraints { make in
                 make.top.equalToSuperview()
-                
-                make.left.equalTo(CGFloat(index) * widthItem)
+                make.left.equalTo(widthScroll)
                 make.width.equalTo(widthItem)
                 make.height.equalTo(44)
             }
+            widthScroll += widthItem
         }
-        
+        print("widthScroll", widthScroll)
         segmentScoll.snp.remakeConstraints { make in
-            make.top.leading.trailing.bottom.equalToSuperview()
-            make.width.equalTo(CGFloat(items.count) * (widthItem + 10))
+            make.top.left.right.bottom.equalToSuperview()
         }
         
-        segmentControlSv.snp.remakeConstraints { make in
-            make.top.leading.trailing.bottom.equalToSuperview()
-            make.width.equalTo(CGFloat(items.count) * widthItem)
-        }
+//        segmentControlSv.snp.remakeConstraints { make in
+//            make.top.left.right.bottom.equalToSuperview()
+//
+//        }
+        
+        segmentScoll.contentSize = CGSize(width: (widthScroll + CGFloat(items.count) * 10.0), height: segmentScoll.frame.height)
     }
 }

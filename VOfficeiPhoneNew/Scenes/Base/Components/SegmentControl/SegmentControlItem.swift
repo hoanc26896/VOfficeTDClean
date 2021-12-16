@@ -9,6 +9,15 @@ import UIKit
 
 class SegmentControlItem: UIView {
     
+    var title: String = "" {
+        didSet{
+            if !title.isEmpty{
+                segmentItemButton.setTitle(title, for: .normal)
+            }
+            
+        }
+    }
+    
     lazy var segmentItemSv: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
