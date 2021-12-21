@@ -25,6 +25,6 @@ class BaseTabBarController: UITabBarController {
     
     func configureViews() {
         view.backgroundColor = LAsset.tabbarBg.color
-        tabBar.tintColor = LAsset.main.color
+        tabBar.tintColor = LAsset.tabbarSelTitle.color
     }
 }

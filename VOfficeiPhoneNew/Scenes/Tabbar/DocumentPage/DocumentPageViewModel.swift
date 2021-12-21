@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 protocol DocumentPageViewModelProtocol{
-    func getPage(pageViews: [PageView]) -> ([DocumentViewController], [SegmentControlItem])
+    func getPage(pageViews: [PageViewEnum]) -> [PageModel]
     
 }
 
@@ -27,12 +27,12 @@ extension DocumentPageViewModel: ViewModel {
     }
     
     struct Output {
-        @Property var pages: ([DocumentViewController], [SegmentControlItem]) = ([], [])
+        @Property var pages: [PageModel] = []
     }
     
     func transform(_ input: Input, disposeBag: DisposeBag) -> Output {
         let output = Output()
-        input.onLoad.map { _ -> ([DocumentViewController], [SegmentControlItem]) in
+        input.onLoad.map { _ -> [PageModel] in
             self.getPage(pageViews: tabbarItem.pageView ?? [])
         }.drive(output.$pages)
         .disposed(by: disposeBag)
@@ -42,34 +42,31 @@ extension DocumentPageViewModel: ViewModel {
 }
 
 extension DocumentPageViewModel: DocumentPageViewModelProtocol{
-    func getPage(pageViews: [PageView]) -> ([DocumentViewController], [SegmentControlItem]) {
-        var vcs: [DocumentViewController] = []
-        var sms: [SegmentControlItem] = []
+    func getPage(pageViews: [PageViewEnum]) -> [PageModel] {
+        var pages: [PageModel] = []
         for i in 0..<pageViews.count{
             let pageView = pageViews[i]
+            var title = ""
             let vc = navigator.toDocument(pageView: pageView)
-            vcs.append(vc)
-            
-            let sm = SegmentControlItem()
+           
+           
             switch pageView {
             case .reviewPage(let type):
-                sm.title = type.title
+                title = type.title
                 break
             case .signPage(let type):
-                sm.title = type.title
+                title = type.title
                 break
             case .documentaryPage(let type):
-                sm.title = type.title
+                title = type.title
                 break
             default:
                 break
             }
-            sm.segmentItemButton.setTitleColor( LAsset.header.color, for: .normal)
-
-            sms.append(sm)
+            
+            let page = PageModel(index: i, type: pageView, title: title, count: 0,viewController: vc)
+            pages.append(page)
         }
-        return (vcs, sms)
+        return  pages
     }
-    
-    
 }

@@ -66,47 +66,47 @@ public enum TabBarItem{
         }
     }
     
-    var pageView: [PageView]? {
+    var pageView: [PageViewEnum]? {
         switch self {
         case .review:
-            return [PageView.reviewPage(.awaitingApproval),
-                    PageView.reviewPage(.approved),
-                    PageView.reviewPage(.rejected),
-                    PageView.reviewPage(.promulgate),
-                    PageView.reviewPage(.all)]
+            return [PageViewEnum.reviewPage(.awaitingApproval),
+                    PageViewEnum.reviewPage(.approved),
+                    PageViewEnum.reviewPage(.rejected),
+                    PageViewEnum.reviewPage(.promulgate),
+                    PageViewEnum.reviewPage(.all)]
         case .sign:
-            return [PageView.signPage(.awaitingApproval),
-                    PageView.signPage(.awaitingInitial),
-                    PageView.signPage(.approved),
-                    PageView.signPage(.signInitial),
-                    PageView.signPage(.rejected),
-                    PageView.signPage(.rejectedInitial),
-                    PageView.signPage(.rejectedApprovalEarlier),
-                    PageView.signPage(.all)
+            return [PageViewEnum.signPage(.awaitingApproval),
+                    PageViewEnum.signPage(.awaitingInitial),
+                    PageViewEnum.signPage(.approved),
+                    PageViewEnum.signPage(.signInitial),
+                    PageViewEnum.signPage(.rejected),
+                    PageViewEnum.signPage(.rejectedInitial),
+                    PageViewEnum.signPage(.rejectedApprovalEarlier),
+                    PageViewEnum.signPage(.all)
             ]
         case .documentary:
             return [
-                PageView.documentaryPage(.unprocessed),
-                PageView.documentaryPage(.processed),
-                PageView.documentaryPage(.unread),
-                PageView.documentaryPage(.myDoc),
-                PageView.documentaryPage(.all),
+                PageViewEnum.documentaryPage(.unprocessed),
+                PageViewEnum.documentaryPage(.processed),
+                PageViewEnum.documentaryPage(.unread),
+                PageViewEnum.documentaryPage(.myDoc),
+                PageViewEnum.documentaryPage(.all),
             ]
         case .calendar:
             return [
-                PageView.documentaryPage(.unprocessed),
-                PageView.documentaryPage(.processed),
-                PageView.documentaryPage(.unread),
-                PageView.documentaryPage(.myDoc),
-                PageView.documentaryPage(.all),
+                PageViewEnum.documentaryPage(.unprocessed),
+                PageViewEnum.documentaryPage(.processed),
+                PageViewEnum.documentaryPage(.unread),
+                PageViewEnum.documentaryPage(.myDoc),
+                PageViewEnum.documentaryPage(.all),
             ]
         default:
             return [
-                PageView.documentaryPage(.unprocessed),
-                PageView.documentaryPage(.processed),
-                PageView.documentaryPage(.unread),
-                PageView.documentaryPage(.myDoc),
-                PageView.documentaryPage(.all),
+                PageViewEnum.documentaryPage(.unprocessed),
+                PageViewEnum.documentaryPage(.processed),
+                PageViewEnum.documentaryPage(.unread),
+                PageViewEnum.documentaryPage(.myDoc),
+                PageViewEnum.documentaryPage(.all),
             ]
         }
     }
@@ -114,7 +114,7 @@ public enum TabBarItem{
    
 }
 
-public enum PageView : Equatable{
+public enum PageViewEnum : Equatable{
     case reviewPage(ReviewPageViewEnum)
     case signPage(SignPageViewEnum)
     case documentaryPage(DocumentPageViewEnum)
@@ -246,6 +246,29 @@ public enum DocumentPageViewEnum{
         default:
             return .white
         }
+    }
+}
+
+enum PageModelStatus{
+    case enable
+    case disable
+}
+
+public struct PageModel {
+    var index: Int
+    var type: PageViewEnum
+    var tilte: String
+    var count: Int
+    var viewController: UIViewController
+    var status: PageModelStatus
+    
+    init(index: Int, type: PageViewEnum, title: String, count: Int, viewController: UIViewController, status: PageModelStatus = PageModelStatus.enable) {
+        self.index = index
+        self.type = type
+        self.tilte = title
+        self.count = count
+        self.viewController = viewController
+        self.status = status  
     }
 }
 

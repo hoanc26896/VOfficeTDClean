@@ -12,7 +12,7 @@ import RxCocoa
 struct DocumentViewModel {
     let navigator: DocumentNavigatorType
     let useCase: DocumentUseCaseType
-    let type: PageView
+    let type: PageViewEnum
 }
 
 // MARK: - ViewModel

@@ -18,7 +18,7 @@ final class DocumentPageViewController: BasePageViewController, Bindable {
     // MARK: - Properties
     
     var viewModel: DocumentPageViewModel!
-    var disposeBag = DisposeBag()
+ 
     
     // MARK: - Life Cycle
     
@@ -52,16 +52,10 @@ final class DocumentPageViewController: BasePageViewController, Bindable {
 
 // MARK: - Binders
 extension DocumentPageViewController {
-    var pagesBinder: Binder<([DocumentViewController], [SegmentControlItem])>{
-        return Binder(self){ vc, result in
-            let pageVCs = result.0
-            let segmentControlItems = result.1
-            if pageVCs.count > 0 {
-                print("pagesBinder - pages", pageVCs)
-                vc.setPages(pages: pageVCs)
-            }
-            if (segmentControlItems.count > 0){
-                vc.setSegments(segmentControlItems: segmentControlItems)
+    var pagesBinder: Binder<([PageModel])>{
+        return Binder(self){ vc, pages in
+            if !pages.isEmpty{
+                vc.pages = pages
             }
             
         }

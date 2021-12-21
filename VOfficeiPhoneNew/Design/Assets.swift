@@ -50,6 +50,9 @@ public enum LAsset {
   public static let menuSettings = ImageAsset(name: "menuSettings").image
   public static let menuSign = ImageAsset(name: "menuSign").image
   public static let menuStatistic = ImageAsset(name: "menuStatistic").image
+  public static let tabIndicator = ColorAsset(name: "tabIndicator")
+  public static let tabbarSelTitle = ColorAsset(name: "tabbarSelTitle")
+  public static let tabbarTitle = ColorAsset(name: "tabbarTitle")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

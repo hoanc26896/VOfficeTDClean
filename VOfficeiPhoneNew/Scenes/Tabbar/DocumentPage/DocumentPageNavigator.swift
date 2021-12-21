@@ -8,11 +8,11 @@
 import UIKit
 
 protocol DocumentPageNavigatorType {
-    func toDocument(pageView: PageView) -> DocumentViewController
+    func toDocument(pageView: PageViewEnum) -> DocumentViewController
 }
 
 struct DocumentPageNavigator: DocumentPageNavigatorType {
-    func toDocument(pageView: PageView) -> DocumentViewController {
+    func toDocument(pageView: PageViewEnum) -> DocumentViewController {
         return assembler.resolve(navigationController: navigationController, type: pageView)
     }
     

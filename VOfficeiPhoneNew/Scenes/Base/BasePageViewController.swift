@@ -17,6 +17,8 @@ protocol ChildPageProtocol: Equatable {
 }
 
 class BasePageViewController: UIViewController {
+    var disposeBag = DisposeBag()
+    
     let screenSize: CGRect = UIScreen.main.bounds
     // MARK: - IBOutlets
     
@@ -56,10 +58,16 @@ class BasePageViewController: UIViewController {
     }()
     
     // MARK: - Propertise
-    var pages: [UIViewController] = []
-    var currentIndex = BehaviorRelay<Int>(value: 0)
+    var pages: [PageModel] = []{
+        didSet{
+            self.didSetPages(pages: pages)
+        }
+    }
+    private var pageViews: [UIViewController] = []
+    private var segmentItems: [SegmentControlItem] = []
+    private var currentIndex = BehaviorRelay<Int>(value: 0)
     
-    public init(pages: [UIViewController]? = []){
+    public init(pages: [PageModel]? = []){
         super.init(nibName: nil, bundle: nil)
         guard let pages = pages, pages.count > 0 else { return }
         self.pages = pages
@@ -81,7 +89,7 @@ class BasePageViewController: UIViewController {
     
     private func configView() {
         navigationItem.rightBarButtonItem = rightBarButtonItem
-        view.backgroundColor = LAsset.background.color
+        view.backgroundColor = LAsset.tabbarBg.color
         
         segmentControlView.snp.makeConstraints { make in
             make.top.equalTo(66)
@@ -99,27 +107,66 @@ class BasePageViewController: UIViewController {
     }
     
     private func configData(){
-        setPages(pages: self.pages)
+        
     }
     
-    public func setPages(pages: [UIViewController] = []){
-        self.pages = pages
+    public func didSetPages(pages: [PageModel]){
+        if pages.isEmpty {return}
+        let enablePages = pages.filter { item in
+            item.status == PageModelStatus.enable
+        }
+        let segments = enablePages.enumerated().map { (index, item) -> SegmentControlItem in
+            let sg = SegmentControlItem()
+            sg.title = item.tilte
+            sg.isSelect = currentIndex.value == index
+            sg.segmentItemButton.rx.tap.subscribe { [weak self] _ in
+                guard let currentIndex = self?.currentIndex.value else { return }
+                self?.setSelected(index, direction: index > currentIndex ? .forward: .reverse, animate: true)
+            }.disposed(by: disposeBag)
+            
+            return sg
+        }
+        setSegments(segmentControlItems: segments)
+        
+        let pageViews = enablePages.map { item in
+            item.viewController
+        }
+        setPageViews(pageViews: pageViews)
+    }
+    
+    private func setPageViews(pageViews: [UIViewController] = []){
+        self.pageViews = pageViews
         if (currentIndex.value < pages.count){
-            pageViewController.setViewControllers([pages[currentIndex.value]], direction: .forward, animated: true, completion: nil)
+            pageViewController.setViewControllers([pageViews[currentIndex.value]], direction: .forward, animated: true, completion: nil)
         }
     }
     
-    public func setSegments(segmentControlItems: [SegmentControlItem] = []){
+    private func setSegments(segmentControlItems: [SegmentControlItem] = []){
+        self.segmentItems = segmentControlItems
         if (currentIndex.value < segmentControlItems.count){
             segmentControlView.items.onNext(segmentControlItems)
         }
     }
     
     public func setSelected(_ pageIndex: Int, direction: UIPageViewController.NavigationDirection = .forward, animate: Bool = true) {
-        if pageIndex < pages.count{
-            guard let page = pages[pageIndex] as? UIViewController else { return }
-            self.pageViewController.setViewControllers([page], direction: direction, animated: animate, completion: nil)
-            currentIndex.accept(pageIndex)
+        if pageIndex < pageViews.count{
+            UIView.animate(withDuration: 1,
+                           delay: 0,
+                           options: .curveEaseIn,
+                           animations: {[weak self] () -> Void in
+                self?.view.layoutIfNeeded()
+            }, completion: { [weak self] (finished) -> Void in
+                guard let page = self?.pageViews[pageIndex] as? UIViewController else { return }
+                self?.pageViewController.setViewControllers([page], direction: direction, animated: animate, completion: nil)
+                self?.currentIndex.accept(pageIndex)
+                
+                let segmentControlItems = self?.segmentItems.enumerated().map { (index, item) -> SegmentControlItem in
+                        item.isSelect = pageIndex == index
+                    return item
+                }
+                guard let segmentControlItems = segmentControlItems else { return  }
+                self?.setSegments(segmentControlItems: segmentControlItems)
+            })
         }
     }
 }
@@ -127,28 +174,28 @@ class BasePageViewController: UIViewController {
 extension BasePageViewController: UIPageViewControllerDataSource{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         print("viewControllerBefore")
-        guard let viewControllerIndex = pages.firstIndex(of: viewController) else { return nil }
+        guard let viewControllerIndex = pageViews.firstIndex(of: viewController) else { return nil }
         
         let previousIndex = viewControllerIndex - 1
         
         guard previousIndex >= 0 else { return nil }
         
-        guard pages.count > previousIndex else { return nil }
+        guard pageViews.count > previousIndex else { return nil }
         currentIndex.accept(previousIndex)
-        return pages[previousIndex]
+        return pageViews[previousIndex]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         print("viewControllerAfter")
-        guard let viewControllerIndex = pages.firstIndex(of: viewController) else { return nil }
+        guard let viewControllerIndex = pageViews.firstIndex(of: viewController) else { return nil }
         
         let nextIndex = viewControllerIndex + 1
         
-        guard nextIndex < pages.count else { return nil }
+        guard nextIndex < pageViews.count else { return nil }
         
-        guard pages.count > nextIndex else { return nil }
+        guard pageViews.count > nextIndex else { return nil }
         currentIndex.accept(nextIndex)
-        return pages[nextIndex]
+        return pageViews[nextIndex]
     }
     
     
@@ -156,8 +203,8 @@ extension BasePageViewController: UIPageViewControllerDataSource{
 
 extension BasePageViewController: UIPageViewControllerDelegate{
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        print("presentationCount ",pages.count)
-        return pages.count
+        print("presentationCount ",pageViews.count)
+        return pageViews.count
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
@@ -165,7 +212,7 @@ extension BasePageViewController: UIPageViewControllerDelegate{
         guard let firstVC = pageViewController.viewControllers?.first else {
             return 0
         }
-        guard let firstVCIndex = pages.firstIndex(of: firstVC) else {
+        guard let firstVCIndex = pageViews.firstIndex(of: firstVC) else {
             return 0
         }
         

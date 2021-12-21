@@ -18,6 +18,21 @@ class SegmentControlItem: UIView {
         }
     }
     
+    var isSelect: Bool = false{
+        didSet{
+//            segmentItemDevider.isHidden = !isSelect
+            
+            if isSelect{
+//                segmentItemDevider.backgroundColor = LAsset.tabbarSelTitle.color
+                segmentItemButton.setTitleColor(LAsset.tabbarSelTitle.color, for: .normal)
+            }else{
+//                segmentItemDevider.backgroundColor = .clear
+                segmentItemButton.setTitleColor(LAsset.tabbarTitle.color, for: .normal)
+            }
+            
+        }
+    }
+    
     lazy var segmentItemSv: UIStackView = {
         let view = UIStackView()
         view.axis = .vertical
@@ -35,7 +50,7 @@ class SegmentControlItem: UIView {
     
     lazy var segmentItemDevider: UIView = {
         let view = UIView()
-        view.backgroundColor = LAsset.main.color
+        
         segmentItemSv.addArrangedSubview(view)
         return view
     }()
@@ -63,7 +78,7 @@ class SegmentControlItem: UIView {
         segmentItemDevider.snp.makeConstraints { make in
             make.top.equalTo(segmentItemButton.snp.bottom)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(2)
+            make.height.equalTo(5)
         }
         
         

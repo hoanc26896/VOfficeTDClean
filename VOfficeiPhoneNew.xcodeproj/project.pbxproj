@@ -34,6 +34,7 @@
 		2E8D76D1274F7A140050CB8D /* RsaSignner.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */; };
 		2E8D76D2274F7A140050CB8D /* RsaSignner.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E8E1C5B27560EB900BE04EC /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E1C5A27560EB900BE04EC /* UIApplication+.swift */; };
+		2EAA4D1C277161F000CFEC63 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA4D1B277161F000CFEC63 /* Navigator.swift */; };
 		2EBC03D627572EDD00149374 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBC03D527572EDC00149374 /* Config.swift */; };
 		2ED08C68273E0648009B4068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED08C67273E0648009B4068 /* AppDelegate.swift */; };
 		2ED08C6A273E0648009B4068 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2ED08C69273E0648009B4068 /* Podfile */; };
@@ -169,6 +170,7 @@
 		2E8B80542750C31300897DB9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2E8D76CF274F7A110050CB8D /* RsaSignner.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = RsaSignner.xcframework; sourceTree = "<group>"; };
 		2E8E1C5A27560EB900BE04EC /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
+		2EAA4D1B277161F000CFEC63 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		2EBC03D527572EDC00149374 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		2ED08C64273E0648009B4068 /* VOfficeiPhoneNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOfficeiPhoneNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED08C67273E0648009B4068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				2EFA86BF2744B403000B1569 /* scripts */,
 				2ED08C67273E0648009B4068 /* AppDelegate.swift */,
 				2ED08C6D273E0648009B4068 /* Assembler.swift */,
+				2EAA4D1B277161F000CFEC63 /* Navigator.swift */,
 				2ED08C6F273E0648009B4068 /* UnitTestViewController.swift */,
 				2ED08CEC273E0FDE009B4068 /* Helper */,
 				2ED08CD8273E0AE4009B4068 /* Design */,
@@ -934,6 +937,7 @@
 				2ED08C9A273E0648009B4068 /* MainAssembler.swift in Sources */,
 				2E02F69D27635ADD00DD6793 /* BasePageViewController.swift in Sources */,
 				2E8B80552750C31300897DB9 /* User.swift in Sources */,
+				2EAA4D1C277161F000CFEC63 /* Navigator.swift in Sources */,
 				2E85E3082743B32700FF9412 /* UIView+.swift in Sources */,
 				2ED08C80273E0648009B4068 /* APIInput.swift in Sources */,
 				2EE891DD2745FB3E00196114 /* Validation+Collection.swift in Sources */,
