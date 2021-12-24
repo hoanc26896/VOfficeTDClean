@@ -13,6 +13,7 @@ class SegmentControlItem: UIView {
         didSet{
             if !title.isEmpty{
                 segmentItemButton.setTitle(title, for: .normal)
+                segmentItemButton.setTitleColor(LAsset.tabbarTitle.color, for: .normal)
             }
             
         }
@@ -20,16 +21,22 @@ class SegmentControlItem: UIView {
     
     var isSelect: Bool = false{
         didSet{
-//            segmentItemDevider.isHidden = !isSelect
-            
             if isSelect{
-//                segmentItemDevider.backgroundColor = LAsset.tabbarSelTitle.color
+                segmentItemDevider.backgroundColor = LAsset.tabbarSelTitle.color
                 segmentItemButton.setTitleColor(LAsset.tabbarSelTitle.color, for: .normal)
+                segmentItemDevider.snp.remakeConstraints { make in
+                    make.bottom.left.right.equalToSuperview()
+                    make.height.equalTo(5)
+                }
             }else{
-//                segmentItemDevider.backgroundColor = .clear
+                segmentItemDevider.backgroundColor = LAsset.tabIndicator.color
                 segmentItemButton.setTitleColor(LAsset.tabbarTitle.color, for: .normal)
+                segmentItemDevider.snp.remakeConstraints { make in
+                    make.bottom.left.right.equalToSuperview()
+                    make.height.equalTo(0.5)
+                }
             }
-            
+//            setNeedsUpdateConstraints()
         }
     }
     
@@ -43,14 +50,14 @@ class SegmentControlItem: UIView {
     lazy var segmentItemButton: UIButton = {
         let view = UIButton()
         view.backgroundColor = .clear
-        
+        view.setTitleColor(LAsset.tabbarTitle.color, for: .normal)
         segmentItemSv.addArrangedSubview(view)
         return view
     }()
     
     lazy var segmentItemDevider: UIView = {
         let view = UIView()
-        
+        view.backgroundColor = LAsset.tabIndicator.color
         segmentItemSv.addArrangedSubview(view)
         return view
     }()
@@ -71,16 +78,13 @@ class SegmentControlItem: UIView {
         
         segmentItemButton.snp.makeConstraints { make in
            
-            make.top.leading.trailing.equalToSuperview()
-            make.height.equalTo(segmentItemSv.bounds.height - 2)
+            make.top.left.right.equalToSuperview()
+            make.height.equalTo(segmentItemSv.bounds.height - 0.5)
         }
         
         segmentItemDevider.snp.makeConstraints { make in
-            make.top.equalTo(segmentItemButton.snp.bottom)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(5)
+            make.bottom.left.right.equalToSuperview()
+            make.height.equalTo(0.5)
         }
-        
-        
     }
 }

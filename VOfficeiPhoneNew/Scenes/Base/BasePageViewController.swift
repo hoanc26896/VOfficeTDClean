@@ -118,7 +118,6 @@ class BasePageViewController: UIViewController {
         let segments = enablePages.enumerated().map { (index, item) -> SegmentControlItem in
             let sg = SegmentControlItem()
             sg.title = item.tilte
-            sg.isSelect = currentIndex.value == index
             sg.segmentItemButton.rx.tap.subscribe { [weak self] _ in
                 guard let currentIndex = self?.currentIndex.value else { return }
                 self?.setSelected(index, direction: index > currentIndex ? .forward: .reverse, animate: true)
@@ -143,30 +142,18 @@ class BasePageViewController: UIViewController {
     
     private func setSegments(segmentControlItems: [SegmentControlItem] = []){
         self.segmentItems = segmentControlItems
-        if (currentIndex.value < segmentControlItems.count){
-            segmentControlView.items.onNext(segmentControlItems)
+        if (!segmentControlItems.isEmpty && currentIndex.value < segmentControlItems.count){
+            segmentControlView.items = segmentControlItems
+            segmentControlView.currentIndex = currentIndex.value
         }
     }
     
     public func setSelected(_ pageIndex: Int, direction: UIPageViewController.NavigationDirection = .forward, animate: Bool = true) {
         if pageIndex < pageViews.count{
-            UIView.animate(withDuration: 1,
-                           delay: 0,
-                           options: .curveEaseIn,
-                           animations: {[weak self] () -> Void in
-                self?.view.layoutIfNeeded()
-            }, completion: { [weak self] (finished) -> Void in
-                guard let page = self?.pageViews[pageIndex] as? UIViewController else { return }
-                self?.pageViewController.setViewControllers([page], direction: direction, animated: animate, completion: nil)
-                self?.currentIndex.accept(pageIndex)
-                
-                let segmentControlItems = self?.segmentItems.enumerated().map { (index, item) -> SegmentControlItem in
-                        item.isSelect = pageIndex == index
-                    return item
-                }
-                guard let segmentControlItems = segmentControlItems else { return  }
-                self?.setSegments(segmentControlItems: segmentControlItems)
-            })
+            guard let page = self.pageViews[pageIndex] as? UIViewController else { return }
+            self.currentIndex.accept(pageIndex)
+            self.pageViewController.setViewControllers([page], direction: direction, animated: animate, completion: nil)
+            segmentControlView.currentIndex = pageIndex
         }
     }
 }
@@ -182,6 +169,7 @@ extension BasePageViewController: UIPageViewControllerDataSource{
         
         guard pageViews.count > previousIndex else { return nil }
         currentIndex.accept(previousIndex)
+        segmentControlView.currentIndex = previousIndex
         return pageViews[previousIndex]
     }
     
@@ -195,6 +183,7 @@ extension BasePageViewController: UIPageViewControllerDataSource{
         
         guard pageViews.count > nextIndex else { return nil }
         currentIndex.accept(nextIndex)
+        segmentControlView.currentIndex = nextIndex
         return pageViews[nextIndex]
     }
     
