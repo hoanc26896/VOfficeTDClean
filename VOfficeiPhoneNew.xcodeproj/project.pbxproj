@@ -23,6 +23,12 @@
 		2E571A7727672E4D00FCE6BB /* SegmentControlItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E571A7627672E4D00FCE6BB /* SegmentControlItem.swift */; };
 		2E5F81AF274C9D1F00357CDC /* Error+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F81AE274C9D1F00357CDC /* Error+.swift */; };
 		2E6E21C9277963340099E287 /* BasePageItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E21C8277963340099E287 /* BasePageItemViewController.swift */; };
+		2E6E21CB27799B5D0099E287 /* DocumentItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E21CA27799B5D0099E287 /* DocumentItemViewModel.swift */; };
+		2E6E21CD27799C090099E287 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E21CC27799C090099E287 /* Document.swift */; };
+		2E6E21CF27799CA80099E287 /* Observable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E21CE27799CA80099E287 /* Observable+.swift */; };
+		2E6E21D127799CB50099E287 /* PagingInfo+Equalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E21D027799CB50099E287 /* PagingInfo+Equalable.swift */; };
+		2E6E21D32779B1C20099E287 /* DocumentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E21D22779B1C20099E287 /* DocumentModel.swift */; };
+		2E6E21D52779B66E0099E287 /* DocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E21D42779B66E0099E287 /* DocumentCell.swift */; };
 		2E730F1D2758709000AF6FA4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F1C2758709000AF6FA4 /* BaseTabBarController.swift */; };
 		2E730F23275873B900AF6FA4 /* DocumentAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F1E275873B900AF6FA4 /* DocumentAssembler.swift */; };
 		2E730F24275873B900AF6FA4 /* DocumentNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F1F275873B900AF6FA4 /* DocumentNavigator.swift */; };
@@ -161,6 +167,12 @@
 		2E571A7627672E4D00FCE6BB /* SegmentControlItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlItem.swift; sourceTree = "<group>"; };
 		2E5F81AE274C9D1F00357CDC /* Error+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+.swift"; sourceTree = "<group>"; };
 		2E6E21C8277963340099E287 /* BasePageItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageItemViewController.swift; sourceTree = "<group>"; };
+		2E6E21CA27799B5D0099E287 /* DocumentItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentItemViewModel.swift; sourceTree = "<group>"; };
+		2E6E21CC27799C090099E287 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		2E6E21CE27799CA80099E287 /* Observable+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+.swift"; sourceTree = "<group>"; };
+		2E6E21D027799CB50099E287 /* PagingInfo+Equalable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PagingInfo+Equalable.swift"; sourceTree = "<group>"; };
+		2E6E21D22779B1C20099E287 /* DocumentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentModel.swift; sourceTree = "<group>"; };
+		2E6E21D42779B66E0099E287 /* DocumentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCell.swift; sourceTree = "<group>"; };
 		2E730F1C2758709000AF6FA4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		2E730F1E275873B900AF6FA4 /* DocumentAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentAssembler.swift; sourceTree = "<group>"; };
 		2E730F1F275873B900AF6FA4 /* DocumentNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentNavigator.swift; sourceTree = "<group>"; };
@@ -306,6 +318,9 @@
 				2E730F20275873B900AF6FA4 /* DocumentUseCase.swift */,
 				2E730F21275873B900AF6FA4 /* DocumentViewController.swift */,
 				2E730F22275873B900AF6FA4 /* DocumentViewModel.swift */,
+				2E6E21CA27799B5D0099E287 /* DocumentItemViewModel.swift */,
+				2E6E21D22779B1C20099E287 /* DocumentModel.swift */,
+				2E6E21D42779B66E0099E287 /* DocumentCell.swift */,
 			);
 			path = Document;
 			sourceTree = "<group>";
@@ -425,6 +440,7 @@
 				2E8B80542750C31300897DB9 /* User.swift */,
 				2EBC03D527572EDC00149374 /* Config.swift */,
 				2E730F282758789700AF6FA4 /* Tabbar+Pageview.swift */,
+				2E6E21CC27799C090099E287 /* Document.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -525,6 +541,8 @@
 				2E8E1C5A27560EB900BE04EC /* UIApplication+.swift */,
 				2E4706AE2761E67A008B5B6B /* UIPageViewController+Rx.swift */,
 				2E02F69A27633C1200DD6793 /* UIPageViewController+.swift */,
+				2E6E21CE27799CA80099E287 /* Observable+.swift */,
+				2E6E21D027799CB50099E287 /* PagingInfo+Equalable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -935,11 +953,14 @@
 			files = (
 				2ED08D20273E21C1009B4068 /* UINavigationBar+Ext.swift in Sources */,
 				2ED08C73273E0648009B4068 /* APIUrls.swift in Sources */,
+				2E6E21D32779B1C20099E287 /* DocumentModel.swift in Sources */,
 				2ED08CDC273E0B1B009B4068 /* Assets.swift in Sources */,
+				2E6E21CB27799B5D0099E287 /* DocumentItemViewModel.swift in Sources */,
 				2EE891DC2745FB3E00196114 /* Validation+String.swift in Sources */,
 				2ED08C9A273E0648009B4068 /* MainAssembler.swift in Sources */,
 				2E02F69D27635ADD00DD6793 /* BasePageViewController.swift in Sources */,
 				2E8B80552750C31300897DB9 /* User.swift in Sources */,
+				2E6E21CD27799C090099E287 /* Document.swift in Sources */,
 				2EAA4D1C277161F000CFEC63 /* Navigator.swift in Sources */,
 				2E85E3082743B32700FF9412 /* UIView+.swift in Sources */,
 				2ED08C80273E0648009B4068 /* APIInput.swift in Sources */,
@@ -956,6 +977,7 @@
 				2ED08D1F273E21C1009B4068 /* UIImage+Ext.swift in Sources */,
 				2E28634A274E36BB0006F4F0 /* APIParams.swift in Sources */,
 				2ED08D08273E1854009B4068 /* LoginViewModel.swift in Sources */,
+				2E6E21D52779B66E0099E287 /* DocumentCell.swift in Sources */,
 				2EFA86CB2744FB57000B1569 /* Storage.swift in Sources */,
 				2E8E1C5B27560EB900BE04EC /* UIApplication+.swift in Sources */,
 				2EE891E72746327D00196114 /* RSAKey.swift in Sources */,
@@ -981,8 +1003,10 @@
 				2ED08C87273E0648009B4068 /* GatewaysAssembler.swift in Sources */,
 				2ED08C8F273E0648009B4068 /* AppNavigator.swift in Sources */,
 				2ED08C9C273E0648009B4068 /* MainNavigator.swift in Sources */,
+				2E6E21D127799CB50099E287 /* PagingInfo+Equalable.swift in Sources */,
 				2E571A6F2766DADF00FCE6BB /* DocumentPageNavigator.swift in Sources */,
 				2EE891E32745FB5D00196114 /* LoginDto.swift in Sources */,
+				2E6E21CF27799CA80099E287 /* Observable+.swift in Sources */,
 				2E571A712766DADF00FCE6BB /* DocumentPageViewController.swift in Sources */,
 				2E730F23275873B900AF6FA4 /* DocumentAssembler.swift in Sources */,
 				2E4706AF2761E67A008B5B6B /* UIPageViewController+Rx.swift in Sources */,

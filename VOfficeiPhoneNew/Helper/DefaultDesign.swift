@@ -23,13 +23,25 @@ extension UILabel {
 
 extension Design {
     struct DefaultFont {
-        static let gigantic     = Fonts.shared.defaultFont(ofSize: 64, weight: .heavy)
-        static let header       = Fonts.shared.defaultFont(ofSize: 32, weight: .heavy)
-        static let subheader    = Fonts.shared.defaultFont(ofSize: 24, weight: .bold)
-        static let title        = Fonts.shared.defaultFont(ofSize: 17, weight: .semibold)
-        static let primary      = Fonts.shared.defaultFont(ofSize: 15, weight: .regular)
-        static let secondary    = Fonts.shared.defaultFont(ofSize: 13, weight: .light)
+        static let gigantic      = Fonts.shared.defaultHelveticaNeueFont(ofSize: 64)
+        static let header        = Fonts.shared.defaultHelveticaNeueFont(ofSize: 32)
+        static let subheader     = Fonts.shared.defaultHelveticaNeueFont(ofSize: 24)
+        static let title         = Fonts.shared.defaultHelveticaNeueFont(ofSize: 16)
+        static let titleBold     = Fonts.shared.defaultHelveticaNeueBoldFont(ofSize: 16)
+        static let titleItalic   = Fonts.shared.defaultHelveticaNeueLightItalicFont(ofSize: 16)
+        static let primary       = Fonts.shared.defaultHelveticaNeueFont(ofSize: 14)
+        static let primaryBold   = Fonts.shared.defaultHelveticaNeueBoldFont(ofSize: 14)
+        static let primaryItalic = Fonts.shared.defaultHelveticaNeueLightItalicFont(ofSize: 14)
+        static let secondary       = Fonts.shared.defaultHelveticaNeueFont(ofSize: 13)
+        static let secondaryBold   = Fonts.shared.defaultHelveticaNeueBoldFont(ofSize: 13)
+        static let secondaryItalic = Fonts.shared.defaultHelveticaNeueLightItalicFont(ofSize: 13)
     }
 
     public static let hint = Design(font: DefaultFont.secondary, color: .lightText, alignment: .center)
+    
+    // Document
+    public static let documentTitle = Design(font: DefaultFont.titleBold, color: LAsset.text.color, alignment: .left)
+    public static let documentWarningTitle = Design(font: DefaultFont.primary, color: LAsset.text.color, alignment: .left)
+    public static let documentWarningContent = Design(font: DefaultFont.primary, color: .red, alignment: .left)
+    public static let documentTime = Design(font: DefaultFont.primaryItalic, color: LAsset.text.color, alignment: .left)
 }

@@ -49,6 +49,7 @@ extension DocumentPageViewModel: DocumentPageViewModelProtocol{
             var title = ""
             let vc = navigator.toDocument(pageView: pageView)
             vc.index = i
+            vc.type = pageView
            
             switch pageView {
             case .reviewPage(let type):
@@ -65,6 +66,7 @@ extension DocumentPageViewModel: DocumentPageViewModelProtocol{
             }
             
             let page = PageModel(index: i, type: pageView, title: title, count: 0,viewController: vc)
+            
             pages.append(page)
         }
         return  pages

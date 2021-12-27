@@ -9,7 +9,8 @@ import UIKit
 
 class BasePageItemViewController: BaseViewController {
     var index: Int = -1
-
+    var type: PageViewEnum?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
