@@ -48,7 +48,7 @@ extension DocumentPageViewModel: DocumentPageViewModelProtocol{
             let pageView = pageViews[i]
             var title = ""
             let vc = navigator.toDocument(pageView: pageView)
-           
+            vc.index = i
            
             switch pageView {
             case .reviewPage(let type):

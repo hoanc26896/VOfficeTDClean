@@ -21,6 +21,13 @@ class SegmentControlView: UIView {
         return view
     }()
     
+    lazy var segmentIndicator: UIView = {
+        let view = UIView()
+        view.backgroundColor = LAsset.tabbarSelTitle.color
+        segmentScoll.addSubview(view)
+        return view
+    }()
+    
     // MARK: - Properties
     var disposeBag = DisposeBag()
     var items:[SegmentControlItem] = []{
@@ -45,23 +52,36 @@ class SegmentControlView: UIView {
     }
     
     private func configView(){
-        self.translatesAutoresizingMaskIntoConstraints = false
+        
     }
     
     private func configSelected(index: Int){
         if index > -1 && index < items.count{
+            var widthScroll = 0.0
             for (i, item) in items.enumerated(){
+                let widthItem = item.title.widthOfString(usingFont: Design.DefaultFont.title) + 75
                 if index == i{
                     item.isSelect = true
+                    UIView.animate(withDuration: 0.3) {
+                        self.segmentIndicator.frame = CGRect(x: widthScroll, y: CGFloat(self.segmentScoll.frame.maxY - 5), width: widthItem, height: 5)
+                    } completion: { _ in
+                        
+                    }
                 }else{
                     item.isSelect = false
                 }
+                widthScroll += widthItem
             }
+            self.layoutIfNeeded()
         }
     }
     
     private func commonInit(items: [SegmentControlItem]){
         guard items.count > 0 else { return }
+        segmentScoll.snp.remakeConstraints { make in
+            make.top.left.right.bottom.equalToSuperview()
+        }
+        
         var widthScroll = 0.0
         for (index, item) in items.enumerated(){
             let widthItem = item.title.widthOfString(usingFont: Design.DefaultFont.title) + 75
@@ -73,13 +93,19 @@ class SegmentControlView: UIView {
                 make.width.equalTo(widthItem)
                 make.height.equalTo(44)
             }
+            item.addBorder(to: .right, color: LAsset.tabIndicator.color, thickness: 0.5, padding: 12.5)
+            if (currentIndex == index){
+                UIView.animate(withDuration: 0.3) {
+                    self.segmentIndicator.frame = CGRect(x: widthScroll, y: CGFloat(self.segmentScoll.frame.maxY - 5), width: widthItem, height: 5)
+                } completion: { _ in
+                    
+                }
+            }
             widthScroll += widthItem
         }
       
-        segmentScoll.snp.remakeConstraints { make in
-            make.top.left.right.bottom.equalToSuperview()
-        }
-       
         segmentScoll.contentSize = CGSize(width: widthScroll, height: segmentScoll.frame.height)
+        self.segmentIndicator.frame = CGRect(x: 0, y: CGFloat(self.segmentScoll.frame.maxY - 5), width: CGFloat(items[0].title.widthOfString(usingFont: Design.DefaultFont.title) + 75), height: 5)
+        self.layoutIfNeeded()
     }
 }

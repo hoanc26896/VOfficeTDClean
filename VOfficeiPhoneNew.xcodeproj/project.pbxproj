@@ -22,6 +22,7 @@
 		2E571A7527672E1500FCE6BB /* SegmentControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E571A7427672E1400FCE6BB /* SegmentControlView.swift */; };
 		2E571A7727672E4D00FCE6BB /* SegmentControlItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E571A7627672E4D00FCE6BB /* SegmentControlItem.swift */; };
 		2E5F81AF274C9D1F00357CDC /* Error+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5F81AE274C9D1F00357CDC /* Error+.swift */; };
+		2E6E21C9277963340099E287 /* BasePageItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E21C8277963340099E287 /* BasePageItemViewController.swift */; };
 		2E730F1D2758709000AF6FA4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F1C2758709000AF6FA4 /* BaseTabBarController.swift */; };
 		2E730F23275873B900AF6FA4 /* DocumentAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F1E275873B900AF6FA4 /* DocumentAssembler.swift */; };
 		2E730F24275873B900AF6FA4 /* DocumentNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E730F1F275873B900AF6FA4 /* DocumentNavigator.swift */; };
@@ -159,6 +160,7 @@
 		2E571A7427672E1400FCE6BB /* SegmentControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlView.swift; sourceTree = "<group>"; };
 		2E571A7627672E4D00FCE6BB /* SegmentControlItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlItem.swift; sourceTree = "<group>"; };
 		2E5F81AE274C9D1F00357CDC /* Error+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+.swift"; sourceTree = "<group>"; };
+		2E6E21C8277963340099E287 /* BasePageItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageItemViewController.swift; sourceTree = "<group>"; };
 		2E730F1C2758709000AF6FA4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		2E730F1E275873B900AF6FA4 /* DocumentAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentAssembler.swift; sourceTree = "<group>"; };
 		2E730F1F275873B900AF6FA4 /* DocumentNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentNavigator.swift; sourceTree = "<group>"; };
@@ -610,6 +612,7 @@
 				2ED08D14273E20BC009B4068 /* BaseViewController.swift */,
 				2E730F1C2758709000AF6FA4 /* BaseTabBarController.swift */,
 				2E02F69C27635ADD00DD6793 /* BasePageViewController.swift */,
+				2E6E21C8277963340099E287 /* BasePageItemViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -964,6 +967,7 @@
 				2E730F1D2758709000AF6FA4 /* BaseTabBarController.swift in Sources */,
 				2E730F24275873B900AF6FA4 /* DocumentNavigator.swift in Sources */,
 				2E571A7527672E1500FCE6BB /* SegmentControlView.swift in Sources */,
+				2E6E21C9277963340099E287 /* BasePageItemViewController.swift in Sources */,
 				2ED08C91273E0648009B4068 /* AppUseCase.swift in Sources */,
 				2E730F292758789700AF6FA4 /* Tabbar+Pageview.swift in Sources */,
 				2ED08C6E273E0648009B4068 /* Assembler.swift in Sources */,

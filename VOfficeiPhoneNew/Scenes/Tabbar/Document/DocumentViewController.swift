@@ -12,7 +12,7 @@ import RxCocoa
 import Reusable
 import Then
 
-final class DocumentViewController: BaseViewController, Bindable {
+final class DocumentViewController: BasePageItemViewController, Bindable {
     
     
     // MARK: - Properties

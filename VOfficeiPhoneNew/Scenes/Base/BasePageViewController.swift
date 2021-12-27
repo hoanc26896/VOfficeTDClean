@@ -63,7 +63,7 @@ class BasePageViewController: UIViewController {
             self.didSetPages(pages: pages)
         }
     }
-    private var pageViews: [UIViewController] = []
+    private var pageViews: [BasePageItemViewController] = []
     private var segmentItems: [SegmentControlItem] = []
     private var currentIndex = BehaviorRelay<Int>(value: 0)
     
@@ -133,7 +133,7 @@ class BasePageViewController: UIViewController {
         setPageViews(pageViews: pageViews)
     }
     
-    private func setPageViews(pageViews: [UIViewController] = []){
+    private func setPageViews(pageViews: [BasePageItemViewController] = []){
         self.pageViews = pageViews
         if (currentIndex.value < pages.count){
             pageViewController.setViewControllers([pageViews[currentIndex.value]], direction: .forward, animated: true, completion: nil)
@@ -150,7 +150,7 @@ class BasePageViewController: UIViewController {
     
     public func setSelected(_ pageIndex: Int, direction: UIPageViewController.NavigationDirection = .forward, animate: Bool = true) {
         if pageIndex < pageViews.count{
-            guard let page = self.pageViews[pageIndex] as? UIViewController else { return }
+            guard let page = self.pageViews[pageIndex] as? BasePageItemViewController else { return }
             self.currentIndex.accept(pageIndex)
             self.pageViewController.setViewControllers([page], direction: direction, animated: animate, completion: nil)
             segmentControlView.currentIndex = pageIndex
@@ -161,29 +161,27 @@ class BasePageViewController: UIViewController {
 extension BasePageViewController: UIPageViewControllerDataSource{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         print("viewControllerBefore")
-        guard let viewControllerIndex = pageViews.firstIndex(of: viewController) else { return nil }
+        guard let viewControllerIndex = pageViews.firstIndex(of: viewController as! BasePageItemViewController) else { return nil }
         
         let previousIndex = viewControllerIndex - 1
         
         guard previousIndex >= 0 else { return nil }
         
         guard pageViews.count > previousIndex else { return nil }
-        currentIndex.accept(previousIndex)
-        segmentControlView.currentIndex = previousIndex
+        
         return pageViews[previousIndex]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         print("viewControllerAfter")
-        guard let viewControllerIndex = pageViews.firstIndex(of: viewController) else { return nil }
+        guard let viewControllerIndex = pageViews.firstIndex(of: viewController as! BasePageItemViewController) else { return nil }
         
         let nextIndex = viewControllerIndex + 1
         
         guard nextIndex < pageViews.count else { return nil }
         
         guard pageViews.count > nextIndex else { return nil }
-        currentIndex.accept(nextIndex)
-        segmentControlView.currentIndex = nextIndex
+   
         return pageViews[nextIndex]
     }
     
@@ -191,6 +189,18 @@ extension BasePageViewController: UIPageViewControllerDataSource{
 }
 
 extension BasePageViewController: UIPageViewControllerDelegate{
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if finished, completed {
+            if let firstVC = pageViewController.viewControllers?.first as? BasePageItemViewController {
+                let newIndex = firstVC.index
+                if currentIndex.value != newIndex {
+                    currentIndex.accept(newIndex)
+                    segmentControlView.currentIndex = newIndex
+                }
+            }
+        }
+    }
+    
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         print("presentationCount ",pageViews.count)
         return pageViews.count
@@ -201,10 +211,9 @@ extension BasePageViewController: UIPageViewControllerDelegate{
         guard let firstVC = pageViewController.viewControllers?.first else {
             return 0
         }
-        guard let firstVCIndex = pageViews.firstIndex(of: firstVC) else {
+        guard let firstVCIndex = pageViews.firstIndex(of: firstVC as! BasePageItemViewController) else {
             return 0
         }
-        
         return firstVCIndex
     }
 }

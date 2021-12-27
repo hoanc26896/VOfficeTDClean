@@ -259,10 +259,10 @@ public struct PageModel {
     var type: PageViewEnum
     var tilte: String
     var count: Int
-    var viewController: UIViewController
+    var viewController: BasePageItemViewController
     var status: PageModelStatus
     
-    init(index: Int, type: PageViewEnum, title: String, count: Int, viewController: UIViewController, status: PageModelStatus = PageModelStatus.enable) {
+    init(index: Int, type: PageViewEnum, title: String, count: Int, viewController: BasePageItemViewController, status: PageModelStatus = PageModelStatus.enable) {
         self.index = index
         self.type = type
         self.tilte = title

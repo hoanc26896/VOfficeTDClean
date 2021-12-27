@@ -22,21 +22,10 @@ class SegmentControlItem: UIView {
     var isSelect: Bool = false{
         didSet{
             if isSelect{
-                segmentItemDevider.backgroundColor = LAsset.tabbarSelTitle.color
                 segmentItemButton.setTitleColor(LAsset.tabbarSelTitle.color, for: .normal)
-                segmentItemDevider.snp.remakeConstraints { make in
-                    make.bottom.left.right.equalToSuperview()
-                    make.height.equalTo(5)
-                }
             }else{
-                segmentItemDevider.backgroundColor = LAsset.tabIndicator.color
                 segmentItemButton.setTitleColor(LAsset.tabbarTitle.color, for: .normal)
-                segmentItemDevider.snp.remakeConstraints { make in
-                    make.bottom.left.right.equalToSuperview()
-                    make.height.equalTo(0.5)
-                }
             }
-//            setNeedsUpdateConstraints()
         }
     }
     
@@ -77,9 +66,8 @@ class SegmentControlItem: UIView {
         }
         
         segmentItemButton.snp.makeConstraints { make in
-           
             make.top.left.right.equalToSuperview()
-            make.height.equalTo(segmentItemSv.bounds.height - 0.5)
+            make.height.equalTo(43.5)
         }
         
         segmentItemDevider.snp.makeConstraints { make in
